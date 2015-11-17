@@ -1,0 +1,34 @@
+<?php 
+
+ 
+ $secure=array();
+ 
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
+ $secure['news']=array( 
+	'index'=>2,
+	'edit' =>3
+	'delete' =>4
+ );
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
+ $secure['login']=array( 
+	'index'=>2,
+	'login'=>3
+ );
