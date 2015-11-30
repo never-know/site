@@ -11,7 +11,7 @@
 					}else if(data==1){
 							itag.innerHTML="&#xe634;"
 							itag.style.display="inline"; 
-							itag.style.color='blue';
+							itag.style.color='green';
 					} 
 				 }
 			);

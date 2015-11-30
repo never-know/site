@@ -5,7 +5,7 @@
 
 <div class="content-wrapper">	
 	<div class="breadcrumb">
-		<strong>进口食品</strong>  > 进口牛奶  >  纽麦福 >  纽麦福/Meadow Fresh全脂纯牛奶1L/盒
+		<strong>进口食品</strong>&gt;<a href="">进口牛奶</a>&gt;<a href="">纽麦福</a>&gt;<a href="">纽麦福/Meadow Fresh全脂纯牛奶1L/盒</a>
 	</div>
 
 	<div id="product-detail">
@@ -33,12 +33,16 @@
 	
 
 		<div id="product-code">
-            <div class="product-code"><span>商品编号：</span><span>1856588</span></div>
-                    <a id="choose-btn-coll" class="choose-btn-coll" href="#none" data-id="1856588" clstag="shangpin|keycount|product|guanzhushangpin_1"><b></b><em id="">关注商品</em></a>
-                    <a id="share-list" class="share-list" href="#none" clstag="shangpin|keycount|product|share_1">
-                      <b></b><em>分享</em>
-                    </a>
-                </div>
+            <div class="product-code">
+				<span>商品编号：</span>
+				<span>1856588</span>
+			</div>
+			<div class="p-share">
+					  <span><i class="iconfont">&#xe651;</i>分享</span>
+                    <span><i class="iconfont">&#xe64b;</i>关注商品</span> 
+                  
+             </div>  
+        </div>
 	
 	</div>
 	<div class="product-property">
@@ -102,21 +106,23 @@
 		 
 	</div>
 	<div class="product-recommend">
-	<p>------------ 为您推荐 ------------</p>
+	<p> ------- &nbsp;为您推荐 &nbsp; -------- </p>
 	 			<div class="wrapper">                       
 								<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+								<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 							  <span>￥200.00</span>
 							</div>               
 					    
 					 
 							<div class="wrapper">                       
 								<img src="http://cdn.annqi.com/public/images/product/1.jpg" alt=""  > 
-								 
+								 <p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 							  <span>￥200.00</span>
 							</div>               
 					 
 							<div class="wrapper">                       
 								<img src="http://cdn.annqi.com/public/images/product/0.jpg" alt=""  > 
+								<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 							   <span>￥200.00</span>
 							</div>               
 						 
@@ -143,7 +149,7 @@
 					<p>查看配送范围<i class="iconfont ">&#xe624;</i></p>
 			</div>
 
-			<div class="product-recommend">
+			<div class="product-recommend product-recommend-leftbar">
 	 
 	 			<div class="wrapper">                       
 					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
@@ -159,15 +165,14 @@
 				</div>               
 			</div>
 		</div>
-		<div class="product-rightbar" style="float:left;width:990px;margin-left:14px;">
+		<div class="product-rightbar"  >
 		 
 			<div id="product-nav-tab" class="product-nav-tab ptn-shadow">
 				<ul>
 					
 					<li for="product-description" class="pnt-selected">商品详情</li>
 					<li  for="product-parameter">商品参数</li>
-					<li for="product-comment">累计评价 
-						<em style="display: inline;">486</em></li>
+					<li for="product-comment">累计评价 <em>486</em></li>
 					<li  for="product-package">包装清单</li>
 					<li  for="product-recommend">同类商品推荐</li>
 					
@@ -308,8 +313,8 @@
 						<h4>与描述相符</h4>
 						<strong>4.9</strong>
 						<div class="comment-star">
-						<i class=" icon-star iconfont">&#xe64c;</i>
-						<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+						<i class=" icon-star iconfont">&#xe660;</i>
+						<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 						</div>
 					</div>
 			
@@ -462,8 +467,7 @@
 	
 </div>
 	
-	
-<link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/product.css" />
+
 	 
  <script type="text/javascript" src="http://cdn.annqi.com/public/js/ShopShow.js"></script>
  <script type="text/javascript" src="http://cdn.annqi.com/public/js/MagicZoom.js"></script>

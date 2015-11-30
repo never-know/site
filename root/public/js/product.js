@@ -1,5 +1,4 @@
  
-
 function menuFixed(id){ 
 var obj = document.getElementById(id); 
 var _getHeight = obj.offsetTop; 
@@ -62,11 +61,8 @@ for(var i=0;i<navs_length;i++){
 				_$('product-comment').style.display="block";
 			}
 		}
- 
- 
- 
- 
  }
 
 
 }
+ 

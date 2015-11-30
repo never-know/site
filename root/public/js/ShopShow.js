@@ -34,10 +34,10 @@ function tsScrollArrRight()
 function tsScrollDh(i)
 {
 	//设置上一页导航
-	document.getElementById("tsImgSArrL").setAttribute("showPicNum",i);
+	_$("tsImgSArrL").setAttribute("showPicNum",i);
 	
 	//设置下一页导航
-	document.getElementById("tsImgSArrR").setAttribute("showPicNum",i);
+	_$("tsImgSArrR").setAttribute("showPicNum",i);
 	
 }
 
@@ -102,7 +102,7 @@ function tsScrollResizeHd(imgNew,maxWidth,maxHeight,myimg)
 	myimg.width = w;
 	
 	
-	var tsImgsBox=document.getElementById("MagicZoom");
+	var tsImgsBox=_$("MagicZoom");
 	if(myimg.height<390)
 	{
 		var TopBottom=(390-myimg.height)/2;
@@ -119,13 +119,13 @@ function tsScrollResizeHd(imgNew,maxWidth,maxHeight,myimg)
 //一行显示几个
 function tsRowNum()
 {
-	return document.getElementById("tsImgSCon").offsetWidth/FliS(0).offsetWidth;
+	return _$("tsImgSCon").offsetWidth/FliS(0).offsetWidth;
 }
 
 //第几行 从0开始
 function tsNum()
 {
-	return Math.floor(document.getElementById("tsImgSArrL").getAttribute("showPicNum")/tsRowNum());
+	return Math.floor(_$("tsImgSArrL").getAttribute("showPicNum")/tsRowNum());
 }
 //共几行
 function tsRowCount()
@@ -136,32 +136,32 @@ function tsRowCount()
 //返回图片对象
 function Fpic(i)
 {
-	var tsImgSCon=document.getElementById("tsImgSCon").getElementsByTagName("li");
+	var tsImgSCon=_$("tsImgSCon").getElementsByTagName("li");
 	return src=tsImgSCon.item(i).getElementsByTagName("img")[0];
 }
 //返回li对象
 function FliS(i)
 {
-	return document.getElementById("tsImgSCon").getElementsByTagName("li")[i];
+	return _$("tsImgSCon").getElementsByTagName("li")[i];
 }
 
 //返回图片列表对象
 function FulS()
 {
-	return document.getElementById("tsImgSCon").getElementsByTagName("li");
+	return _$("tsImgSCon").getElementsByTagName("li");
 }
 //查找最大的图
 function FimgS(){
-	return document.getElementById("MagicZoom").getElementsByTagName("img")[0];
+	return _$("MagicZoom").getElementsByTagName("img")[0];
 }
 //查找Ul对象
 function FulSs()
 {
-	return document.getElementById("tsImgSCon").getElementsByTagName("ul")[0];
+	return _$("tsImgSCon").getElementsByTagName("ul")[0];
 }
 	
 //图片集外面的DIV宽
-document.getElementById("tsImgSCon").style.width=FliS(0).offsetWidth*5+"px";
+_$("tsImgSCon").style.width=FliS(0).offsetWidth*5+"px";
 	
 //Ul宽
 FulSs().style.width=FliS(0).offsetWidth*FulS().length+"px";

@@ -2,9 +2,40 @@
 function isPwd(str) {	   
 	return /^[a-zA-Z0-9`~!@#$%^&*()_+-=\[\]{}|:;,./<>?]+$/.test(str);
 }
+function Pwd_OK(str){
+	return /^[a-zA-Z0-9`~!@#$%^&*()_+-=\[\]{}|:;,./<>?]{6,}$/.test(str);
+}
 function betweenLength(str, _min, _max) {
     return (str.length >= _min && str.length <= _max);
 }
+function strong_settimer(obj,width,tag){
+	obj.className="tips-s";
+	var itag = obj.getElementsByTagName('i')[0];
+	if( !itag ){
+		obj.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd" style="width:0px;">&#xe661;</i>';
+		itag = obj.getElementsByTagName('i')[0];
+	}
+	clearInterval(itag.timer);	
+
+
+
+
+	itag.timer=setInterval(function(){
+		var cw=parseInt(itag.offsetWidth);
+		if(cw-width>0){
+			itag.style.width= parseInt(cw-1)+'px';
+		}else if(cw-width<0){
+			itag.style.width= parseInt(cw+1)+'px';
+		}
+		else{		
+				clearInterval(itag.timer);	
+				itag.parentNode.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd" style="width:'+cw+'px;">&#xe661;</i>';		 
+			}
+		  
+		},15);
+
+}
+
 function pwdstrong(pwd){
 	var strong = 0;
 	if(/[a-z]/.test(pwd)){ strong++;}
@@ -14,15 +45,14 @@ function pwdstrong(pwd){
 	if(pwd.length>5){ strong++;} 
 	return strong;
 }
-
 function setstrong(strong,obj){
-	obj.className="tips";
-	if(strong<3){
-		obj.innerHTML='密码强度：&nbsp;<b class="show">弱</b><b>中</b><b>强</b>';	
+	
+	if(strong<3){	
+		strong_settimer(obj,16,'弱');		 
 	}else if(strong>3){
-		obj.innerHTML='密码强度：&nbsp;<b class="show">弱</b><b class="show">中</b><b class="show">强</b>';	
-	}else{
-		obj.innerHTML='密码强度：&nbsp;<b class="show">弱</b><b class="show">中</b><b>强</b>';	
+		strong_settimer(obj,80,'强');
+	}else{ 
+		strong_settimer(obj,48,'中');
 	}
 }
 function setError(obj,msg,name){
@@ -35,30 +65,40 @@ _$('regpwd').onkeyup =function(e){
 	var error = getNextElement(itag);
 	var flag = 0;
 	if(this.value==''){	
+	 
+		setError(error,'6-20位字母、数字或标点（空格、引号、反斜线\除外）','tips');
+		this.removeAttribute('style');
 		return;
 	}
 	var pwd1 =_$('regpwd1');
 	if( isPwd(this.value) == false || this.value.length < 6 ){	
 		flag =1;
-		 
 		pwd1.setAttribute('disabled','disabled');
+		this.removeAttribute('style');
 		var tmp= getNextElement(pwd1);
 		tmp.removeAttribute('style');
-		tmp.innerHTML = "&#xe63a";
+		tmp.innerHTML = "&#xe63a;";
 		tmp.style.background="none";
-		setError(_$('regpwd1_error'),'','hide');
+		setError(_$('regpwd1-error'),'','hide');
 		pwd1.removeAttribute('style');
-
+		pwd1.style.background="#e8e8e8"; 
 		
 		if(isPwd(this.value) == false){
 			setError( error,'密码中含有非法字符，请输入字母、数字或标点（空格、引号、反斜线\除外）','errors');
-			 flag=2;
+			this.style.borderColor="red";
+			// flag=2;
+		}else if( this.value.length < 6 ){
+				setError(error,'6-20位字母、数字或标点（空格、引号、反斜线\除外）','tips');
 		}
 	}else{
 		pwd1.removeAttribute('disabled');
+		pwd1.removeAttribute('style');
+		getNextElement(pwd1).innerHTML = "&#xe63a;";
 		getNextElement(pwd1).style.background = "white";
+		
 	}
-	if(flag !=2){
+	if(flag !=1){
+		this.removeAttribute('style');
 		var strong = pwdstrong(this.value); 
 		setstrong(strong,error);
 	}
@@ -96,24 +136,21 @@ _$('regpwd1').onkeyup =function(e){
 		this.value=''; 
 		this.setAttribute('disabled','disabled'); 
 		getNextElement(this).style.background = "none"; 
-		_$('regpwd1_error').className='hide';
+		_$('regpwd1-error').className='hide';
 		_$('regpwd').focus();
 		return true;
 	}
-	console.log(1);
+
 	if((this.value.length<len && pwd.substring(0,this.value.length)!= this.value) || this.value.length>len || (this.value.length==len &&  this.value!= pwd )	){
-		console.log(2);
-		setError(_$('regpwd1_error'),'两次密码不相同，请重新输入','errors');
+		setError(_$('regpwd1-error'),'两次密码不相同，请重新输入','errors');
 		return;
 	}else if( this.value == pwd ) {console.log(3);
-	
-			setError(_$('regpwd1_error'),'','hide');
+			setError(_$('regpwd1-error'),'','hide');
 			itag = getNextElement(this);
 			itag.innerHTML="&#xe634;"
 			itag.style.color="#7ABD54";
 	}else{
-	console.log(3);
-		setError(_$('regpwd1_error'),'请再次输入密码','tips');
+		setError(_$('regpwd1-error'),'请再次输入密码','tips');
 		itag = getNextElement(this);
 			itag.innerHTML="&#xe63a;"
 			itag.removeAttribute('style');
@@ -123,31 +160,37 @@ _$('regpwd1').onkeyup =function(e){
 }
 
 _$('regpwd').onfocus=function(){
-	var tips=_$('regpwd_error');
-	tips.innerHTML='6-20位字母、数字或标点（空格、引号、反斜线\除外）';
-	tips.className="tips";
-	this.removeAttribute('style');
-	var itag=getNextElement(this);
-	itag.innerHTML="&#xe63a;"
-	itag.removeAttribute('style');
+	var tips=_$('regpwd-error');
+	 
+	if(Pwd_OK(this.value) == true){
+		 var strong = pwdstrong(this.value); 
+			setstrong(strong,tips);
+	}else if(  this.value=='' || isPwd(this.value) == true){
+		setError( tips,'6-20位字母、数字或标点（空格、引号、反斜线\除外）','tips');
+		this.removeAttribute('style');
+		var itag=getNextElement(this);
+		itag.innerHTML="&#xe63a;"
+		itag.removeAttribute('style');
+	}
 };
+
 _$('regpwd').onblur=function(){
 	if(this.value==''){
-		setError(_$('regpwd_error'),'','hide');
+		setError(_$('regpwd-error'),'','hide');
 		return;
 	}
  
 	if(isPwd(this.value)==false){
 		this.style.borderColor="#f00";
 	}else if(this.value.length < 6){
-		setError(_$('regpwd_error'),'请输入6-20位密码','errors');
+		setError(_$('regpwd-error'),'请输入6-20位密码','errors');
 		this.style.borderColor="#f00";
 		var itag=getNextElement(this);
 		itag.innerHTML="&#xe63a;"
 		itag.removeAttribute('style');
 		return;
 	}else{
-		setError(_$('regpwd_error'),'','hide');
+		setError(_$('regpwd-error'),'','hide');
 		var itag=getNextElement(this);
 		itag.innerHTML="&#xe634;"
 		itag.style.color="#7ABD54";
@@ -158,7 +201,7 @@ _$('regpwd').onblur=function(){
 	
 	//确认密码
 	_$('regpwd1').onfocus=function(){
-		var tips=_$('regpwd1_error');
+		var tips=_$('regpwd1-error');
 		tips.innerHTML='请再次输入密码';
 		tips.className="tips";
 		this.removeAttribute('style');
@@ -168,12 +211,12 @@ _$('regpwd').onblur=function(){
 	};
 	_$('regpwd1').onblur = function(){ 
 		if(this.value==''){
-			setError(_$('regpwd1_error'),'','hide');
+			setError(_$('regpwd1-error'),'','hide');
 			return;
 		}
 		var pwd=_$('regpwd').value;
 		if( pwd != this.value ){
-			setError(_$('regpwd1_error'),'两次输入密码不相同，请重新输入','errors');
+			setError(_$('regpwd1-error'),'两次输入密码不相同，请重新输入','errors');
 			this.style.borderColor="red";
 		}
 	
@@ -248,7 +291,7 @@ _$('regpwd').onblur=function(){
 	
  
 function phoneCheck(phone){
-	var tips=_$('regphone_error');
+	var tips=_$('regphone-error');
 	
 	if(phone.length != 11 && /^1[\d]*$/.test(phone)){
 		setError(tips,'请输入11位手机号码','errors');
@@ -262,7 +305,7 @@ function phoneCheck(phone){
 }
 
 	_$('regphone').onfocus=function(){
-		var tips=_$('regphone_error');
+		var tips=_$('regphone-error');
 		tips.innerHTML='请输入11位手机号码';
 		tips.className="tips";
 		this.removeAttribute('style');
@@ -271,7 +314,7 @@ function phoneCheck(phone){
 		itag.removeAttribute('style');	 
 	};
 	_$('regphone').onblur=function(){
-		var tips =_$('regphone_error');
+		var tips =_$('regphone-error');
 		tips.className ="hide";
 		var name = this.value;
 		if(name==''){return true;}
@@ -289,21 +332,22 @@ function phoneCheck(phone){
 	};
 	
 _$('regphone').onkeyup = function(){
-	var itag=getNextElement(this);
+	var itag = getNextElement(this);
 	if( (this.value.length != 11 && /^1[\d]*$/.test(this.value)) || this.value == '' ){
-		setError(_$('regphone_error'),'请输入11位手机号码','tips');
+		setError(_$('regphone-error'),'请输入11位手机号码','tips');
 		itag.innerHTML="&#xe619;"
 		itag.removeAttribute("style");
 		return ;
 		 
 	}
 	 if(/^1[\d]{10}$/.test(this.value)==false){
-		setError(_$('regphone_error'),'手机号码格式不对','errors');
+		setError(_$('regphone-error'),'手机号码格式不对','errors');
 		 
 	}else{
 		
 		itag.innerHTML="&#xe634;"
 		itag.style.color="#7ABD54";
+		setError(_$('regphone-error'),'','hide');
 		return ;
 	
 	}

@@ -4,7 +4,6 @@
 #product-gallery{
 	width: 390px;
     position: relative; 
-    font-size: 12px;
     padding-bottom: 5px;
     margin-top: 10px;
 	float:left;z-index:99;
@@ -89,26 +88,28 @@ overflow: hidden;
 width:360px;
 height:22px;
 } 
-.breadcrumb{
-height:30px;
-}
 .product-code{
 float:left;
 margin-left:20px;
 }
-#product-code a{
-display:block;
+#product-code .p-share{
 float:right;
-width:60px;
+}
+#product-code .p-share span{
+width:80px;
 overflow:hidden;
+margin-left:10px;
+}
+#product-code span i{
+font-size:12px;
+color:#e10000;
+margin-right:2px;
 }
 .product-property{
-
 float:left;
 width:550px;
 margin-left:26px;
 color:#666;
-font-size:12px;
 }
 .product-property dl {
 display:block;
@@ -196,7 +197,6 @@ border-bottom:1px solid #fff;
 .product-promote dd span{
 display:block;
 padding-left: 80px;
-/*background:#e9e9e9;*/
  padding-right: 76px;
  line-height: 28px;
  padding-top:2px;
@@ -247,8 +247,6 @@ margin-top:6px;
     display: block;
     float: left;
     margin: 0px 12px 8px 0px;
-    height: 28px;
-    line-height: 28px;
     cursor:pointer;
 	white-space: nowrap;
 }
@@ -312,15 +310,20 @@ margin-right:20px;
 }
 .product-recommend{
     width: 208px;
-	color:#C7C4C4;
+	color:#C3C3C3;
     border-left: 1px solid #f3f3f3;
+	border-right: 1px solid #f3f3f3;
     float: left;
     margin-left: 26px;
- overflow:hidden;
+	overflow:hidden;
+	display:inline;
+
 }
 .product-recommend p{
 width:166px;
 margin: 0 auto;
+	font-size:13px;
+	font-family:"\5FAE\8F6F\96C5\9ED1";
 }
 .product-recommend .wrapper{
     width: 150px;
@@ -330,22 +333,26 @@ margin: 0 auto;
     width: 150px;
     height:150px;
 }
+.product-recommend .wrapper p{
+overflow:hidden;
+width:150px;
+font-size:12px;
+white-space:nowrap;
+}
 .product-recommend .wrapper span{
      width: 150px;
     text-align: center;
     display: block;
-    margin-top:-16px;
 }
 #product-desc{
 overflow:hidden;
-padding-top: 26px;
+padding-top: 8px;
  
 }
 #product-desc .check-error{
 padding:10px 0px 10px 16px;
 }
-#product-desc .product-recommend{
-border-left:none;
+.product-recommend-leftbar{
 margin-left:0px;
 border: 1px solid #E8E8E7;
 }
@@ -354,25 +361,21 @@ float:left;
 width:206px;
 
 }
+.product-rightbar, .product-list-rightbar1, .product-list-select1, .list-subcategroy1, .list-subcategroy-header1{
+float:left;width:990px;margin-left:14px;
+}
 .product-shop{
 width:206px;
 border: 1px solid #E8E8E7;
 margin-bottom:10px;
 }
-.ptn-shadow{
-	z-index: 99;
-    -webkit-box-shadow: rgba(0,0,0,.2) 0 1px 5px 0;
-    -moz-box-shadow: rgba(0,0,0,.2) 0 1px 5px 0;
-    box-shadow: rgba(0,0,0,.2) 0 1px 5px 0;
-}
+
 .product-shop h2{
     font-size: 14px;
     width: 100%;
     text-align: center;
-    padding: 10px 0px;
+    padding: 9px 0px;
 	background:#fafafa;
-	border-top: 1px solid #E8E8E8;
-	border-bottom: 1px solid #E8E8E8;
 }
 .product-shop .rate {
     border-bottom: 1px solid #E8E8E7;
@@ -421,7 +424,7 @@ overflow:hidden;
 }
 .product-nav-tab {
 	position:relative;
-    height: 44px;
+    height: 40px;
     border: 1px solid #e8e8e8;
 	background: white;
     float: left;
@@ -433,7 +436,7 @@ float: left;
 text-align: center;
 border-right: 1px solid #e8e8e8;
 padding: 0 38px;
-margin: 10px 0;
+margin: 10px 0 8px 0;
 cursor:pointer;
 
 }
@@ -441,16 +444,16 @@ cursor:pointer;
 background:#b10000;
 color:white;
 margin:0;
-padding:10px 50px;
+padding:9px 50px;
 float:right;
 }
 .product-nav-tab li.pnt-selected{
     border-top: 3px solid #b10000;
 	border-left: 1px solid #e8e8e8;
     margin: 0 0 0 -1px;
-    padding-top: 7px;
-    background: white;
-	color: #b10000;
+    padding: 6px 38px 9px 38px;
+    background: #b10000;
+	color: #fff;
 	font-weight:700;
 }
 
@@ -534,8 +537,6 @@ float:left;
 }
 .product-comment .comment-header .comment-score h4{
 color: #404040;
-font-size: 12px;
-font-weight: 100;
 }
 .product-comment .comment-header .comment-score strong{ 
 font-size:20px;
@@ -566,9 +567,8 @@ font-weight:600;
     display: block;
     float: left;
     margin: 6px 12px 0px 14px;
-    line-height: 14px;
-    font-size: 12px;
 	color:silver;
+	line-height: 16px;
 }
 .comment-common-list{
 margin:8px 20px 0px 26px;

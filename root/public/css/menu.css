@@ -1,6 +1,6 @@
 #menu {
 	z-index:999;
-	padding-bottom:12px;
+	padding-bottom:32px;
 }
 #menu li {
 	display:block;
@@ -17,29 +17,23 @@ padding:0;
 float:none;
 }
 #menu li:hover {
-	background: #F4F4F4;
+	background: #FF6700;
+	 
 	z-index:999;
+	 box-shadow: rgba(0,0,0,0.6) 0 4px 12px 0;
 }
-#menu li:hover .menu_icon {
-	color:#000;
-}
-#menu li:hover span {
-	color:#000;
-}
-
+ 
 
 #menu li a {
-    font: 14px/38px "Microsoft Yahei", Arial, "SimSum";
+    font: 14px/21px "\5fae\8f6f\96c5\9ed1";
 	color: white;
 	outline:0;
 	text-decoration:none;		
 	display: block;
     float: left;
-    padding-top: 1px;
+    padding:9px 0;
 }
-#menu .menu_icon{
-
-}
+ 
 #menu span{
 color: white;
 position:absolute;
@@ -73,22 +67,27 @@ display:none;
 	padding:2px;	
 }
 
-#menu li:hover a {
-	color:#161616;
-	text-shadow: 1px 1px 1px #ffffff;	 
-}
+
 .dropdown_5columns {
 	z-index:998;
 	margin:4px auto;
 	float:left;
 	position:absolute;
 	text-align:left;
-	padding:10px 5px 10px 5px;
-	border:1px solid #F4F4F4;
-	background:white;
+	padding:10px;
+	border:2px solid #E8E8E8;
+	border-left:none;
+	background:#FFF;
+	/*
 	-moz-border-radius: 0px 5px 5px 5px;
 	-webkit-border-radius: 0px 5px 5px 5px;
 	border-radius: 0px 5px 5px 5px;
+	 -moz-border-radius: 15px;       
+    -webkit-border-radius: 15px;   
+    border-radius:15px; 
+	*/
+	-webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
 	left:210px;
 	top:-4px;
 	display:none;
@@ -99,12 +98,7 @@ display:none;
 display:block;
 }
  
-#menu li:hover div a {
-	font-size:12px;
-	color:#015b86;
-}
-#menu li div a {
-	font-size:12px;
+#menu li:hover div a, #menu li div a {
 	color:#015b86;
 }
 #menu li:hover div a:hover {

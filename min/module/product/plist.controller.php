@@ -1,21 +1,21 @@
 <?php
 namespace min\module\product;
 use min\inc\app;
-class details{
+class plist{
 
 	public function __construct($action){
-		if( $action == 'item') {
-			$this->item();
+		if( $action == 'category') {
+			$this->category();
 		}
 	}
 	
-	private function item(){ 
+	private function category(){ 
 	 
 		 if(is_numeric(app::getargs())){
 			$service	= new \min\service\product();
-			$service->item(app::getargs());
+			$service->category(app::getargs());
 		 }
 	
 	}
-
+	
 }

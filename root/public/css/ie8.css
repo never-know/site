@@ -1,0 +1,19 @@
+/*  index  product-list---------------fucome.css ++++  list.css */
+
+.floor{
+background:#f5f5f5;
+}
+.c_col .goods dl{
+margin:0px 4px 8px 4px;
+padding:8px 14px 12px 14px;
+}
+.product-list-rightbar dl{
+margin:0px 6px 8px 2px;
+padding:8px 15px 12px 15px\0;	
+}
+ .c_col .goods dl:hover, .product-list-rightbar dl:hover{
+border-color:#f0f0f0;
+}
+.product-list-rightbar .product-lists{
+margin-left:4px;
+}
