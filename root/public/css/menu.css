@@ -1,5 +1,5 @@
 #menu {
-	z-index:999;
+	z-index:199;
 	padding-bottom:32px;
 }
 #menu li {
@@ -8,7 +8,7 @@
 	margin:0;
 	vertical-align:top;
 	height:39px;
-	z-index: 999;
+	z-index: 199;
  
 }
 #all_cat_hide #menu li{
@@ -19,8 +19,9 @@ float:none;
 #menu li:hover {
 	background: #FF6700;
 	 
-	z-index:999;
-	 box-shadow: rgba(0,0,0,0.6) 0 4px 12px 0;
+	z-index:199;
+	 box-shadow: rgba(161,0,0,0.8) 0 2px 10px 0;
+	 
 }
  
 

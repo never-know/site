@@ -40,16 +40,3 @@ color:#ff6b00;
 .defimg{
 color:white;
 }
-
-.curimg1{
-background:url(images/01.png) no-repeat;
-/*以下为IE6设置PNG透明代码*/
-_background:none;
-_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/01.png");
-}
-.defimg1{
-background:url(images/02.png) no-repeat;
-/*以下为IE6设置PNG透明代码*/
-_background:none;
-_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/02.png");
-              }

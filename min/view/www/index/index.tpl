@@ -529,7 +529,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								<div  class="inner-p">
+									<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -539,7 +544,12 @@
 					 <dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								<div  class="inner-p">
+									<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -549,7 +559,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								<div  class="inner-p">
+									<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -559,7 +574,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+								<div  class="inner-p">
+									<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -569,7 +589,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								<div  class="inner-p">
+									<p>Orion 好丽友 呀!土豆2+1 160g/组</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -579,7 +604,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>湖泽 皮蛋 熟咸鸭蛋混合礼盒400枚2200g/盒 节日礼盒</p>
+								<div  class="inner-p">
+									<p>湖泽 皮蛋 熟咸鸭蛋混合礼盒400枚2200g/盒 节日礼盒</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -589,7 +619,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								<div  class="inner-p">
+									<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
@@ -599,7 +634,12 @@
 					<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 						<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 						<dd>
-							<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+							<div class="pl-title">
+								<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								<div  class="inner-p">
+									<p>湖泽 皮蛋 熟咸鸭蛋 混合礼盒 40枚 2200g/盒 节日礼盒</p>
+								</div>
+							</div>
 							<strong><em class="yen">¥</em>200.00</strong>
 						 
 							  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>

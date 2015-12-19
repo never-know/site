@@ -8,8 +8,10 @@
 <link rel="stylesheet" href="http://cdn.annqi.com/public/css/menu.css">
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/lrtk.css" />
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/list.css" />
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/base.js"></script>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/pptbox.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/Min.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/slideshow.js"></script>
+
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/slidemenu.js"></script>
 
 <!--[if IE]><![endif]-->
@@ -30,34 +32,220 @@
 <div class="container" >
 	<div class="shortcut-wrapper">
 		<div class="shortcut">
-			<div class="login-info">	
-			<ul>
-				<li><a href="#" ><i class="icon-black iconfont" style="color:#f5f5f5;">&#xe609;</i>安琪首页 </a></li>
-				<li> <a href="http://passport.annqi.com/login.html" >请登录</a></li>
-				<li><a href="http://passport.annqi.com/regist.html" >免费注册</a></li>
-				</ul>
+			<div class="region-list">
+			
+				<i class="iconfont">&#xe613;</i>
+				<span id="shop-name">世纪联华-金海城店</span>
+				<div class="region-select" id="region-select">
+					<dl class="region-used"><dt>常用地址：</dt><dd><span>世纪联华-金海城店</span> <span>华润万家-金海城店</span><span>世纪联华-金海城店</span> <span>华润万家-金海城店</span></dd></dl>
+					<ul>
+						<li class="on" for="province-list"><label>城市</label>
+							<div class="cityTab" id="province-list">	
+								<dl>
+									<dt>HOT</dt>
+									<dd>
+										<a href="#kkk">北京</a>
+										<a href="#kkk">上海</a>
+										<a href="#kkk">广州</a>
+										<a href="#kkk">深圳</a>
+										<a href="#kkk">杭州</a>
+										<a href="#kkk">南京</a>
+										<a href="#kkk">苏州</a>
+										<a href="#kkk">天津</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">青岛</a>
+										<a href="#kkk">厦门</a>
+										<a href="#kkk">西安</a>
+										<a href="#kkk">长沙</a>
+									</dd>
+								</dl>
+								
+								<dl>
+									<dt>A-B-C</dt>
+									<dd>
+										<a href="#kkk">安徽</a>
+										<a href="#kkk">澳门</a>
+										<a href="#kkk">北京</a>
+										<a href="#kkk">重庆</a>
+										<a href="#kkk">广州</a>
+										<a href="#kkk">杭州</a>
+										<a href="#kkk">南京</a>
+										<a href="#kkk">苏州</a>
+										<a href="#kkk">天津</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">南昌</a>
+										<a href="#kkk">三亚</a>
+										<a href="#kkk">青岛</a>
+										<a href="#kkk">厦门</a>
+										<a href="#kkk">西安</a>
+										<a href="#kkk">长沙</a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>F-G-H-J-L</dt>
+									<dd>
+										<a href="#kkk">北京</a>
+										<a href="#kkk">上海</a>
+										<a href="#kkk">重庆</a>
+										<a href="#kkk">深圳</a>
+										<a href="#kkk">广州</a>
+										<a href="#kkk">杭州</a>
+										<a href="#kkk">南京</a>
+										<a href="#kkk">苏州</a>
+										<a href="#kkk">天津</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">南昌</a>
+										<a href="#kkk">三亚</a>
+										<a href="#kkk">青岛</a>
+										<a href="#kkk">厦门</a>
+										<a href="#kkk">西安</a>
+										<a href="#kkk">长沙</a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>N-Q-S</dt>
+									<dd>
+										<a href="#kkk">北京</a>
+										<a href="#kkk">上海</a>
+										<a href="#kkk">重庆</a>
+										<a href="#kkk">深圳</a>
+										<a href="#kkk">广州</a>
+										<a href="#kkk">杭州</a>
+										<a href="#kkk">南京</a>
+										<a href="#kkk">苏州</a>
+										<a href="#kkk">天津</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">南昌</a>
+										<a href="#kkk">三亚</a>
+										<a href="#kkk">青岛</a>
+										<a href="#kkk">厦门</a>
+										<a href="#kkk">西安</a>
+										<a href="#kkk">长沙</a>
+									</dd>
+								</dl>
+								<dl>
+									<dt> T-X-Y-Z</dt>
+									<dd>
+										<a href="#kkk">北京</a>
+										<a href="#kkk">上海</a>
+										<a href="#kkk">重庆</a>
+										<a href="#kkk">深圳</a>
+										<a href="#kkk">广州</a>
+										<a href="#kkk">杭州</a>
+										<a href="#kkk">南京</a>
+										<a href="#kkk">苏州</a>
+										<a href="#kkk">天津</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">南昌</a>
+										<a href="#kkk">三亚</a>
+										<a href="#kkk">青岛</a>
+										<a href="#kkk">厦门</a>
+										<a href="#kkk">西安</a>
+										<a href="#kkk">长沙</a>
+									</dd>
+								</dl>
+							</div>
+						
+						</li>
+						<li for="city-list"><label>市</label>
+							<div class="cityTab hide" id="city-list">
+								 
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="#kkk">重庆</a>
+										<a href="#kkk">成都</a>
+										<a href="#kkk">长沙</a>
+										<a href="#kkk">长治</a>
+										<a href="#kkk">长春</a>
+										<a href="#kkk">常州</a>
+										<a href="#kkk">昌都</a>
+										<a href="#kkk">朝阳</a>
+										<a href="#kkk">常德</a>
+										<a href="#kkk">长白山</a>
+										<a href="#kkk">赤峰</a>
+									</dd>
+								</dl> 
+							</div>
+						</li>
+						<li for="shop-list"><label>超市</label>
+							<div class="cityTab hide" id="shop-list">
+							<dl>
+								<dt>世纪联华</dt>
+								<dd>
+									<a href="#kkk">金海城店</a>
+									<a href="#kkk">江陵路店</a>
+									<a href="#kkk">铺沿路店</a>
+									<a href="#kkk">人民广场店</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>华润万家</dt>
+								<dd>
+									<a href="#kkk">金海城店</a>
+									<a href="#kkk">江陵路店</a>
+									<a href="#kkk">铺沿路店</a>
+									<a href="#kkk">人民广场店</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>大润发</dt>
+								<dd>
+									<a href="#kkk">金海城店</a>
+									<a href="#kkk">江陵路店</a>
+									<a href="#kkk">铺沿路店</a>
+									<a href="#kkk">人民广场店</a>
+									<a href="#kkk">金海城店</a>
+									<a href="#kkk">江陵路店</a>
+									<a href="#kkk">铺沿路店</a>
+									<a href="#kkk">人民广场店</a>
+									<a href="#kkk">金海城店</a>
+									<a href="#kkk">江陵路店</a>
+									<a href="#kkk">铺沿路店</a>
+									<a href="#kkk">人民广场店</a>
+								</dd>
+							</dl> 
+						</div>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="shortcut-menu">
-			<ul>
-				<li><a href="#" >天猫宝</a></li>			
-				<li class="arrow-down"><a href="#" >我的淘宝</a><i class="icon-right iconfont">&#xe66c;</i>
-					<div>
-						<p><a href="#">Chinese</a></p>
-						<p><a href="#">English</a></p>
-					</div>
-				</li>
-				<li><a href="#" >购物车2件</a><i class="icon-right iconfont">&#xe66c;</i></li>
-				<li class="arrow-down"> <a href="#" >我的收藏</a><i class="icon-right iconfont">&#xe66c;</i>
-					<div>
-						<p><a href="#">Chinese</a></p>
-						<p><a href="#">English</a></p>
-					</div>
-				</li>
-				<li><i class="icon-black iconfont">&#xe609;</i><a href="#" >手机版</a></li>
-				<li><i class="icon-black iconfont">&#xe60b;</i><a href="#" >网站导航</a></li>
-				</ul>
-			</div>
+			<ul class="shortcut-menu">
+					<li>
+						<span><i class="iconfont" style="margin-right:16px;color: #c00000;">&#xe63f;</i><a href="http://passport.annqi.com/login.html">请登录</a></span><span><a href="http://passport.annqi.com/regist.html">免费注册</a></span>
+					</li>
+					 
+					<li class="arrow-down" id="arrow-first">
+						<span>
+							<a href="#" >我的安琪<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
+							<div>
+							<p><a href="#">Chinese</a></p>
+							<p><a href="#">English</a></p>
+							</div>
+					</li>
+					<li  class="arrow-down">
+						<span>
+							<a href="#" >购物车2件<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
+							<div>
+							abcdefaghlja;dfk
+							</div>
+					</li>
+					<li class="arrow-down">
+						<span>
+							<a href="#" >我的收藏<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
+							<div>
+							<p><a href="#">Chinese</a></p>
+							<p><a href="#">English</a></p>
+							</div>
+					</li>
+				<li class="arrow-left"><span><a href="#" ><i class="iconfont">&#xe609;</i>手机版</a></span></li>
+				<li class="arrow-left"><span><a href="#" ><i class="iconfont">&#xe60b;</i>网站导航</a></span></li>
+			
+			
+			</ul>
+			
 		</div>
+			<script>if(ie_version=='7.0'){console.log('123');set_arrow_focus();}</script>
 	</div>
  	 
 	<div class="header">

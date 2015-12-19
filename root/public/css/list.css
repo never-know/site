@@ -15,6 +15,8 @@ margin-bottom:46px;
 overflow:hidden;
 border-top:1px solid #e1e1e1;
 padding:2px 0;
+border-left:2px solid #fff;
+border-right:2px solid #fff;
 }
 .list-subcategory dl.list-brand{
 padding:6px 0;
@@ -89,11 +91,14 @@ padding :6px 0  0 0;
 .plist-recommend-leftbar em{
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid #e8e8e8;
-    padding: 5px 0;
     text-align: center;
     margin-bottom: 8px;
 	display: block;
+	    font-size: 13px;
+	_font-size:12px;
+	    height: 26px;
+    line-height: 26px;
+    padding: 4px 0 2px 0;
 }
 
 
@@ -113,17 +118,20 @@ padding :6px 0  0 0;
     height: 26px;
     line-height: 26px;
     padding: 4px 12px 2px 20px;
-    border-right: 1px solid #C8C8C8;
+    border-right: 1px solid #c8c8c8;
     text-align: center;
+}
+.product-list-select li:hover{
+
 }
 .product-list-select i.iconfont{
 font-size:14px;
 
 }
-.product-list-select li.pc-selected{
-border-color:#a10000;
-color:white;
-background:#a10000;
+.product-list-select li.pc-selected, .product-list-select li:hover{
+border-color:#c00000;
+background: #c00000;
+color:#fff;
 }
 .product-list-select li.sp{
 width: 20px;
@@ -132,18 +140,23 @@ float:right;
 padding:3px 2px ;
 border:none;
 border-left:1px solid #C8C8C8;
+background:#fff;
+color:#555;
 }
 .product-list-select li.page{
 float:right;
 border:none;
 padding:3px 2px 3px 6px;
+background:#fff;
+color:#555;
 }
 
 
 .product-list-select li.in-stock{
  border-right: none;
  width: 98px;
-
+ background:#fff;
+color:#555;
 }
 .product-list-select li.in-stock .in-stock-inner{
 position:relative;
@@ -245,9 +258,25 @@ font-size:20px;
 margin-right:20px;
 color:silver;
 }
+.product-list-rightbar dd {
+position:relative;
+	padding-left:2px;
+}
+.product-list-rightbar dd h3{
+overflow:hidden;
+height:22px;
+font-size: 13px;
+font-family: "\5FAE\8F6F\96C5\9ED1";
+margin-top:4px;
+font-weight:normal;
+margin: 4px 0;
+}
 .product-list-rightbar dd p{
 overflow:hidden;
-height:22px
+height:22px;
+width:150px;
+color:#ffaa71;
+margin: 4px 0;
 }
 .product-list-rightbar dd p:hover{
 color:#b10000;
@@ -257,4 +286,10 @@ cursor:pointer;
 font-weight:600;
 color:#005aa0;
 padding:0 2px;
+}
+.product-list-rightbar dd .ui-cart{
+position:absolute;
+right: 8px;
+bottom: 0px;
+
 }

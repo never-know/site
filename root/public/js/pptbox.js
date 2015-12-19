@@ -50,7 +50,6 @@
             this._curIndex = idx;
         },
         mouseoverPic:function(idx){
-			
             this.changeIndex(idx,0);
             this.autorun();
         },

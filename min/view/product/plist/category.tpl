@@ -122,7 +122,7 @@
 		 
 	</div>
 	<div class="product-recommend plist-recommend-leftbar ">
-		<em class="ptn-shadow">------------ 为您推荐 ------------</em>
+		<em class="ptn-shadow"> - - - - &nbsp; 为您推荐  &nbsp; - - - - </em>
 		<div class="wrapper">                       
 			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
 			<span>￥200.00</span>
@@ -140,10 +140,10 @@
 	<div class="product-list-rightbar">
 		<div class="product-list-select ptn-shadow">
 		<ul>
-			<li class="pc-selected"> 销量 <i class="iconfont">&#xe671;</i></li>
-			<li>价格 <i class="iconfont">&#xe670;</i></li>
+			<li class="pc-selected"> 销量 <i class="iconfont">&#xe670;</i></li>
+			<li>价格 <i class="iconfont">&#xe670;</i>    <i class="icon-half iconfont hide">&#xe672;</i>   </li>
 			<li>价格 <i class="iconfont">&#xe671;</i></li>
-			<li class="pc-selected">评论数 <i class="iconfont">&#xe670;</i></li>
+			<li  >评论数 <i class="iconfont">&#xe670;</i></li>
 			<li>新品 <i class="iconfont">&#xe670;</i></li>
 			<li class="in-stock">
 				<div class="in-stock-inner">
@@ -165,8 +165,23 @@
 				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
 				<dd>
 				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 <button class="ui-cart iconfont" data-itemid="45772212652"></button>
 				 <span>已有<em>2000</em>人评价</span>
+				
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单年度荣耀之星，thinkpad销售达人！</p>
+				 <strong>￥200.00</strong>
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
 				</dd>
 				 </a>
 			</dl>
@@ -174,40 +189,11 @@
 				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
 				<dd>
 				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999，thinkpad销售达人！</p>
+				 
 				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg" /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
 				</dd>
 				 </a>
 			</dl>
@@ -215,32 +201,11 @@
 				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
 				<dd>
 				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！！！thinkpad销售达人！</p>
+				 
 				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg" /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			 <dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
 				</dd>
 				 </a>
 			</dl>
@@ -248,25 +213,133 @@
 				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
 				<dd>
 				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
 				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg" /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
 			</dl>
 			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
 				<dd>
 				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
 				 <span>已有<em>2000</em>人评价</span>
-				</dd>  </a>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				</a>
+			</dl>
+			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
+				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
+				<dd>
+				<strong>￥200.00</strong>
+				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
+				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
+				 
+				 <span>已有<em>2000</em>人评价</span>
+				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
+				</dd>
+				 </a>
 			</dl>
 			 
 		</div>	 

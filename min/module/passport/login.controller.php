@@ -9,11 +9,12 @@ class login
     public function __construct($action)
     {  
 
-		if ( $action == 'index' && isset($_POST['login']) ){		
+		if ( isset($_POST['login']) ){		
 			$this->dologinWithPostData();		
-		}
-		if ( $action == 'index' && strtolower($_SERVER['REQUEST_METHOD']) == 'get' ){		
-			$this->display();		
+		}elseif ( $action == 'index'){
+			$this->display();	
+		}elseif ( $action == 'popup'){		
+			$this->popup();		
 		}
 
     }
@@ -22,10 +23,13 @@ class login
 	private function display(){
 		app::view('common/type-login');
 	}
+	private function popup(){
+		app::view();
+	}
    
     private function dologinWithPostData()
     {
-        echo 2;
+        echo 1;
         
     }
      

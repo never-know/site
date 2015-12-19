@@ -10,25 +10,37 @@
 
 	<div id="product-detail">
 	<div id="product-gallery">
-		 
-	 <div href="http://cdn.annqi.com/public/images/product/big-0.jpg" title="Images" class="MagicZoom" id="MagicZoom"><img width="390" height="390" src="http://cdn.annqi.com/public/images/product/0.jpg" /> </div>
+	<div id="MagicZoomWrapper"   > 
+	 <div href="http://cdn.annqi.com/public/images/product/big-0.jpg" title="Images" class="MagicZoom" id="MagicZoom">		
+	 <img width="390" height="390" src="http://cdn.annqi.com/public/images/product/0.jpg" />
+	 </div>
+	 </div>
 	<div id="tsPicContainer">
-		<div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
+		<div id="tsImgSArrL" ></div>
 		<div id="tsImgSCon">
 			<ul>
-				<li    class="tsSelectImg"><img src="http://cdn.annqi.com/public/images/product/small-0.jpg" tsImgS="http://cdn.annqi.com/public/images/product/0.jpg"  source="http://cdn.annqi.com/public/images/product/big-0.jpg"/></li>
-					<li    ><img src="http://cdn.annqi.com/public/images/product/small-1.jpg" tsImgS="http://cdn.annqi.com/public/images/product/1.jpg"  source="http://cdn.annqi.com/public/images/product/big-1.jpg"/></li>
-					<li   ><img   src="http://cdn.annqi.com/public/images/product/small-2.jpg" tsImgS="http://cdn.annqi.com/public/images/product/2.jpg"    source="http://cdn.annqi.com/public/images/product/big-2.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-3.jpg" tsImgS="http://cdn.annqi.com/public/images/product/3.jpg" source="http://cdn.annqi.com/public/images/product/big-3.jpg" /></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-4.jpg" tsImgS="http://cdn.annqi.com/public/images/product/4.jpg" source="http://cdn.annqi.com/public/images/product/big-4.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-5.jpg" tsImgS="http://cdn.annqi.com/public/images/product/5.jpg" source="http://cdn.annqi.com/public/images/product/big-5.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-6.jpg" tsImgS="http://cdn.annqi.com/public/images/product/6.jpg" source="http://cdn.annqi.com/public/images/product/big-6.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-7.jpg" tsImgS="http://cdn.annqi.com/public/images/product/7.jpg" source="http://cdn.annqi.com/public/images/product/big-7.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-8.jpg" tsImgS="http://cdn.annqi.com/public/images/product/8.jpg" source="http://cdn.annqi.com/public/images/product/big-8.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-9.jpg" tsImgS="http://cdn.annqi.com/public/images/product/9.jpg" source="http://cdn.annqi.com/public/images/product/big-9.jpg"/></li>
+				<li class="tsSelectImg"><img src="http://cdn.annqi.com/public/images/product/small-0.jpg" mi="http://cdn.annqi.com/public/images/product/0.jpg"  bi="http://cdn.annqi.com/public/images/product/big-0.jpg"/></li>
+					<li    ><img src="http://cdn.annqi.com/public/images/product/small-1.jpg" mi="http://cdn.annqi.com/public/images/product/1111.jpg"  bi="http://cdn.annqi.com/public/images/product/big-1.jpg"/></li>
+					<li   ><img   src="http://cdn.annqi.com/public/images/product/small-2.jpg" mi="http://cdn.annqi.com/public/images/product/2.jpg"    bi="http://cdn.annqi.com/public/images/product/big-2.jpg"/></li>
+					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-3.jpg" mi="http://cdn.annqi.com/public/images/product/3.jpg" bi="http://cdn.annqi.com/public/images/product/big-3.jpg" /></li>
+					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-4.jpg" mi="http://cdn.annqi.com/public/images/product/4.jpg" bi="http://cdn.annqi.com/public/images/product/big-4.jpg"/></li>
+					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-5.jpg" mi="http://cdn.annqi.com/public/images/product/5.jpg" bi="http://cdn.annqi.com/public/images/product/big-5.jpg"/></li>
+					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-6.jpg" mi="http://cdn.annqi.com/public/images/product/6.jpg" bi="http://cdn.annqi.com/public/images/product/big-6.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/product/small-7.jpg" mi="http://cdn.annqi.com/public/images/product/7.jpg" bi="http://cdn.annqi.com/public/images/product/big-7.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/product/small-8.jpg" mi="http://cdn.annqi.com/public/images/product/8.jpg" bi="http://cdn.annqi.com/public/images/product/big-8.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/product/small-9.jpg" mi="http://cdn.annqi.com/public/images/product/9.jpg" bi="http://cdn.annqi.com/public/images/product/big-9.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/09.jpg" mi="http://cdn.annqi.com/public/images/mz/09.jpg" bi="http://cdn.annqi.com/public/images/mz/09.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/08.jpg" mi="http://cdn.annqi.com/public/images/mz/08.jpg" bi="http://cdn.annqi.com/public/images/mz/08.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/07.jpg" mi="http://cdn.annqi.com/public/images/mz/07.jpg" bi="http://cdn.annqi.com/public/images/mz/07.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/05.jpg" mi="http://cdn.annqi.com/public/images/mz/06.jpg" bi="http://cdn.annqi.com/public/images/mz/06.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/05.jpg" mi="http://cdn.annqi.com/public/images/mz/05.jpg" bi="http://cdn.annqi.com/public/images/mz/05.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/04.jpg" mi="http://cdn.annqi.com/public/images/mz/04.jpg" bi="http://cdn.annqi.com/public/images/mz/04.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/03.jpg" mi="http://cdn.annqi.com/public/images/mz/03.jpg" bi="http://cdn.annqi.com/public/images/mz/03.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/02.jpg" mi="http://cdn.annqi.com/public/images/mz/022.jpg" bi="http://cdn.annqi.com/public/images/mz/02.jpg"/></li>
+					<li ><img   src="http://cdn.annqi.com/public/images/mz/01.jpg" mi="http://cdn.annqi.com/public/images/mz/a.jpg" bi="http://cdn.annqi.com/public/images/mz/a.jpg"/></li>
 			</ul>
 		</div>
-		<div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
+		<div id="tsImgSArrR" ></div>
 	</div>
 	
 
@@ -53,8 +65,8 @@
 		<div class="product-summary">
 		
 		
-			<dl class="product-price"> <dt>安 琪 价：</dt> <dd>￥200.00</dd></dl>
-			<dl class="product-promote"> 
+			<dl class="product-price"> <dt>价&nbsp;&nbsp;格：</dt> <dd>￥200.00</dd></dl>
+			<dl class="product-promote" id="product-promote"> 
 			<dt>促销信息：</dt> 
 			<dd>
 				<em>共3项优惠</em>
@@ -66,6 +78,7 @@
 			</dl>
 		
 		</div>
+		<script>_$('product-promote').style.height=parseInt(_$('product-promote').offsetHeight)+'px';</script>
 	 
 		<dl class="product-deliver">
 			<dt>配&nbsp;&nbsp;送：</dt> <dd><span>由<strong> 世纪联华金海城店 </strong>发货并提供售后，配送范围5公里 </span><a href=""  style="margin-left:30px;">查看配送范围</a></dd>
@@ -469,8 +482,12 @@
 	
 
 	 
- <script type="text/javascript" src="http://cdn.annqi.com/public/js/ShopShow.js"></script>
- <script type="text/javascript" src="http://cdn.annqi.com/public/js/MagicZoom.js"></script>
+ 
+ 
+    <script type="text/javascript" src="http://cdn.annqi.com/public/js/cache.js"></script>
+	  <script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
+	  <script type="text/javascript" src="http://cdn.annqi.com/public/js/ShopShow.js"></script>
+ <script type="text/javascript" src="http://cdn.annqi.com/public/js/zoom1.js"></script>
   <script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>
 	
 	

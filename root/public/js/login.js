@@ -30,7 +30,6 @@
 		var code	= this.getAttribute('sindex');
 		if( code == 0 ){
 			this.setAttribute('sindex',1);
-			 
 			this.style.cssText =" background:silver; border:1px solid silver;";
 			minAjax({
 				url:"http://passport.annqi.com/login.html", 
@@ -45,7 +44,13 @@
 				success: function(data){
 				sleep(5000);
 					if(data==1){
-						return true;
+						var ReturnUrl = getQueryString('ReturnUrl')
+						if(ReturnUrl){
+							location=ReturnUrl; 
+						
+						}else{
+							location="http://www.annqi.com";
+						}
 					}else{
 
 						if(data==0){

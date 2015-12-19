@@ -1,4 +1,18 @@
+var MagicZoom_ua = 'msie';
+var W = navigator.userAgent.toLowerCase();
+if (W.indexOf("opera") != -1) {
+    MagicZoom_ua = 'opera'
+} else if (W.indexOf("msie") != -1) {
+    MagicZoom_ua = 'msie'
+} else if (W.indexOf("safari") != -1) {
+    MagicZoom_ua = 'safari'
+} else if (W.indexOf("mozilla") != -1) {
+    MagicZoom_ua = 'gecko'
+}
 var MagicZoom_zooms = new Array();
+function _el(id) {
+    return document.getElementById(id)
+};
 function MagicZoom_getBounds(e) {
     if (e.getBoundingClientRect) {
         var r = e.getBoundingClientRect();
@@ -52,6 +66,24 @@ var MagicZoom_extendElement = function() {
     for (var property in args[1]) args[0][property] = args[1][property];
     return args[0]
 };
+function MagicZoom_addEventListener(obj, event, listener) {
+    if (MagicZoom_ua == 'gecko' || MagicZoom_ua == 'opera' || MagicZoom_ua == 'safari') {
+        try {
+            obj.addEventListener(event, listener, false)
+        } catch(e) {
+            alert("MagicZoom error: " + e + ", event=" + event)
+        }
+    } else if (MagicZoom_ua == 'msie') {
+        obj.attachEvent("on" + event, listener)
+    }
+};
+function MagicZoom_removeEventListener(obj, event, listener) {
+    if (MagicZoom_ua == 'gecko' || MagicZoom_ua == 'opera' || MagicZoom_ua == 'safari') {
+        obj.removeEventListener(event, listener, false)
+    } else if (MagicZoom_ua == 'msie') {
+        obj.detachEvent("on" + event, listener)
+    }
+};
 function MagicZoom_concat() {
     var result = [];
     for (var i = 0; i < arguments.length; i++) for (var j = 0; j < arguments[i].length; j++) result.push(arguments[i][j]);
@@ -79,10 +111,10 @@ function MagicZoom_stopEventPropagation(e) {
 };
 function MagicZoom(smallImageContId, smallImageId, bigImageContId, bigImageId, settings) {
     this.recalculating = false;
-    this.smallImageCont = _$(smallImageContId);
-    this.smallImage = _$(smallImageId);
-    this.bigImageCont = _$(bigImageContId);
-    this.bigImage = _$(bigImageId);
+    this.smallImageCont = _el(smallImageContId);
+    this.smallImage = _el(smallImageId);
+    this.bigImageCont = _el(bigImageContId);
+    this.bigImage = _el(bigImageId);
     this.pup = 0;
     this.settings = settings;
     if (!this.settings["header"]) {
@@ -116,7 +148,7 @@ function MagicZoom(smallImageContId, smallImageId, bigImageContId, bigImageId, s
 MagicZoom.prototype.stopZoom = function() {
     MagicZoom_removeEventListener(window.document, "mousemove", this.checkcoords_ref);
     if (this.settings["position"] == "custom") {
-        _$(this.smallImageCont.id + "-big").removeChild(this.bigImageCont)
+        _el(this.smallImageCont.id + "-big").removeChild(this.bigImageCont)
     }
 };
 MagicZoom.prototype.checkcoords = function(e) {
@@ -374,7 +406,7 @@ MagicZoom.prototype.initZoom = function() {
 };
 MagicZoom.prototype.replaceZoom = function(e, ael) {
   
-	var aels = _$('tsImgSCon').getElementsByTagName("li");
+	var aels = _el('tsImgSCon').getElementsByTagName("li");
 	var len=aels.length;
 	var index=0;
 	for(var i=0;i<len;i++)
@@ -399,7 +431,7 @@ MagicZoom.prototype.replaceZoom = function(e, ael) {
     this.initZoom()
 };
 function MagicZoom_findSelectors(id, zoom) {
-     var aels = _$('tsImgSCon').getElementsByTagName("li");
+     var aels = _el('tsImgSCon').getElementsByTagName("li");
     for (var i = 0; i < aels.length; i++) {
         
             MagicZoom_addEventListener(aels[i], "click",
@@ -427,7 +459,7 @@ function MagicZoom_findSelectors(id, zoom) {
 function MagicZoom_stopZooms() {};
 function MagicZoom_findZooms() {
 
-			var aels = _$("MagicZoom");
+			var aels = _el("MagicZoom");
             var rand = Math.round(Math.random() * 1000000);
             aels.style.position = "relative";
             aels.style.display = 'block';
@@ -486,7 +518,7 @@ function MagicZoom_findZooms() {
             if (position != 'custom') {
                 aels.appendChild(bigCont)
             } else {
-                _$(aels.id + '-big').appendChild(bigCont)
+                _el(aels.id + '-big').appendChild(bigCont)
             }
             var settings = {
         bigImage_always_visible: false,

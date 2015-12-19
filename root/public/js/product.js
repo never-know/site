@@ -24,9 +24,9 @@ _$('product-shop-id').style.width = '220px';
 _$('pnt-add-to-cart').style.display="block";
 } 
 } 
- var ie6=!-[1,]&&!window.XMLHttpRequest;
 
-if(  !ie6){
+
+if(  !Min.UA.isIE6){
 menuFixed('product-nav-tab');
 }
 

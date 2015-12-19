@@ -76,7 +76,7 @@
 								<a href="javascript:void(0);" onclick="window.open('/login/qq');" title="QQ" class="iconLinks qq" mars_sead="passport_bottom_qq_button"></a> 
 								<a href="javascript:void(0);" onclick="javascript:window.open('/login/alipay');" title="支付宝" class="iconLinks alipay" mars_sead="passport_bottom_alipay_button"></a>
 								<a href="javascript:void(0);" title="微信" onclick="window.open('/login/weixin');" class="iconLinks weixin" mars_sead="passport_bottom_weixin_button"></a>
-								<a class="plusLink on" href="javascript:void(0);"  >更多<i class="icon-more iconfont">&#xe611;</i></a>
+								<a class="plusLink on" href="javascript:void(0);"  >更多<i class="icon-more iconfont">&#xe604;</i></a>
 							</div>
 							</p>
 				 

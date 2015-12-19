@@ -1,3 +1,4 @@
+*{margin:0;padding:0}
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,dl, dt, dd, ul, ol, li,pre,form, fieldset, legend, button, input, textarea,th, td{
   margin: 0;
   padding: 0;
@@ -55,11 +56,12 @@ hr {
 }
 input:focus {
     outline:none;
+	 border:1px solid #3aa2e4;
+}
+input[type=checkbox]:focus {
+	 border:none;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-    border:1px solid #3aa2e4;
-}
 
 
 input::-ms-clear, input::-ms-reveal{display: none;}
