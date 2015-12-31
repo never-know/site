@@ -6,7 +6,6 @@ function slideMenu(sm,mt,s){
 };
 
 slideMenu.prototype.init = function(e){
-	console.log('slide menu init');
 	var m =_$(this.sm);
 	if( ! Min.obj.imgLoad(m.getElementsByTagName('img'),this,'init')){
 		return;
@@ -29,21 +28,20 @@ slideMenu.prototype.init = function(e){
 	Min.event.bind( m ,'mouseover',{ handler:Min.obj.methodReference(this,'run'),selector:'li'});
 }
 slideMenu.prototype.run = function(e){
-console.log('b');
+
 	clearInterval(this.timer);
-	this.timer = setInterval(Min.obj.methodReference(this,'slide',[{delegateEvent:e.delegateEvent}]),this.t);
+	this.timer = setInterval(Min.obj.methodReference(this,'slide',[{delegateTarget:e.delegateTarget}]),this.t);
 };
 slideMenu.prototype.slide = function(e){
 
-	var s = e.delegateEvent,
+	var s = e.delegateTarget,
 		cw = parseInt(s.style.width);
-		console.log(s);
+
 	if(cw < this.st){
 		var owt = 0, sa = _$(this.sm).getElementsByTagName('li');
 		for(var i=0,o;o=sa[i++];){
 			if( o != s ){
 				var oi=0 , ow=parseInt(o.style.width);
-				console.log('ow++++'+ow);
 				if(ow>this.ot){
 					oi=Math.floor((ow-this.ot)/this.sp); 
 					oi=(oi>0)?oi:1; 

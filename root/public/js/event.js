@@ -6,8 +6,11 @@ Min.event = {
 		
 		// 将事件函数添加到缓存中; 先进后出 
 		options.handler = options.handler || options;
-		events.push( options );
-		 
+		if( events.indexOf(options) == -1 ){
+			events.push( options );
+		 }else{
+		 console.log(" twice avoid!!!!!");
+		 }
 		// 同一事件类型只注册一次事件，防止重复注册
 		if( events.length === 1 ){
 			var eventHandler = this.eventHandler( elem );
@@ -42,9 +45,8 @@ Min.event = {
 		if( !elem ) return;
 		
 		var options = Min.cache.data( elem , 'e' + type );
-		
 		if( !options ) return;
-			
+		
 		// 如果没有传入要删除的事件处理函数则删除该事件类型的缓存
 		if( !option ){
 			options = undefined;		
@@ -53,12 +55,11 @@ Min.event = {
 		else{
 			for( var i = options.length , fn ; fn = options[--i];){
 			
-				if( fn === option || fn.handler === option.handler || fn.handler === option ){
+				if( fn === option || fn.handler === option ){
 					options.splice( i, 1 );
 				}				
 			}
 		}		
-	 
 		// 删除事件和缓存
 		if( !options || !options.length ){
 			var eventHandler = Min.cache.data( elem, type + 'Handler' );			
@@ -83,16 +84,15 @@ Min.event = {
                 event.currentTarget =  elem;
             }	
 			
-			event.delegateEvent = elem;
+			event.delegateTarget = elem;
 			
 			var type = event.type,
 				orginalTarget = event.target,
 				options = Min.cache.data( elem, 'e' + type );
-				console.log(options);
-			 
+
 			for(var i=options.length, option; option = options[--i];){
 		
-				var isDelegate = false;
+			//	var isDelegate = false;
 				
 				if( option.selector) {
 				
@@ -100,13 +100,20 @@ Min.event = {
 					
 					for( ; target !== elem; target = target.parentNode || elem ){
 						if( Min.event.delegateFilter(target, option.selector) ){
-							isDelegate = true;
-							event.delegateEvent = target;
-							break;
+							//isDelegate = true;
+							event.delegateTarget = target;
+							if ( option.once == true ){
+								Min.event.unbind( elem, type,option);
+							} 
+					
+							if( option.handler.call(elem, event) === false ){
+								event.preventDefault();
+								event.stopPropagation();	
+							}	 
 						}                        
 					}      
 				}
-				if( option.selector== undefined || isDelegate ){
+				if( option.selector== undefined  ){
 					if ( option.once == true ){
 						Min.event.unbind( elem, type,option);
 					} 
@@ -190,26 +197,18 @@ Min.event = {
 		var x = 0;
 		var y = 0;
 		if ( Min.UA.belowIE8 ) {
-			y = e.clientY;
-			x = e.clientX;
-			if (document.body && (document.body.scrollLeft || document.body.scrollTop)) {
-				y = e.clientY + document.body.scrollTop;
-				x = e.clientX + document.body.scrollLeft
-			} else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
-				y = e.clientY + document.documentElement.scrollTop;
-				x = e.clientX + document.documentElement.scrollLeft
-			}
+			y = e.clientY + Min.dom.getScrollTop();
+			x = e.clientX + Min.dom.getScrollLeft();
 		} else {
-			y = e.clientY;
-			x = e.clientX;
-			y += window.pageYOffset;
-			x += window.pageXOffset
+			y = e.clientY + window.pageYOffset;
+			x = e.clientX + window.pageXOffset;
 		}
 		return {
 			'x': x,
 			'y': y
 		}
 	},
+	
 	target : function(e){
 	
 		var target = e.target || e.srcElement || document;
@@ -217,7 +216,19 @@ Min.event = {
 		 return target.nodeType === 3 ? target.parentNode :target;
 
 	}
-	
-	
-	
+
 }
+/*
+if(Min.UA.isIE6){
+
+ Min.event.bind(document,'mouseover',{handler:function(e){
+ //console.log(e.delegateTarget);
+	Min.css.addClass('hover',e.delegateTarget);
+	Min.event.bind(e.delegateTarget,'mouseout',{handler:function(e){
+	Min.css.removeClass('hover',e.delegateTarget);
+ },once:true});
+ },selector:'.hovermark'});
+  
+ 
+}   
+*/

@@ -1,12 +1,7 @@
 var Min={};
-
 var _$ = function(id){
-		if (!document.getElementById) return false;
-		return document.getElementById(id);
+	return document.getElementById(id);
 }
-
-
-
 Min.cache = {
 
 	cacheData : {},
@@ -83,9 +78,6 @@ removeData : function( elem, val ){
 
 };
 
-
-
-
 Min.UA = {
 	
 	kernel 		:   Min.cache.data('UA') || 
@@ -119,6 +111,7 @@ Min.css = {
 	addClass : function (c, node) {
         if(!node)return;
         node.className = this.hasClass(c,node) ? node.className : node.className + ' ' + c ;
+		console.log(this.hasClass(c,node));
     },
 
 	removeClass : function (c, node) {
@@ -129,8 +122,16 @@ Min.css = {
 
 	hasClass : function (c, node) {
         if(!node || !node.className)return false;
-        return node.className.indexOf(c)>-1;
-    }
+		var tmp = ' '+ node.className + ' ';
+		c = ' ' + Min.util.trim(c) + ' ';
+        return tmp.indexOf(c)>-1;
+    },
+	setOpacity : function(n,m){
+		n.style["opacity"] = m;
+		n.style["-moz-opacity"] = m;
+		n.style["-html-opacity"] = m;
+		n.style["filter"] = "alpha(Opacity=" + m*100 + ")";
+	}
 
 };
 
@@ -139,6 +140,10 @@ Min.util = {
 	trim : function (str) {
         return str.replace(/^\s+|\s+$/g,'');
     },
+	sleep : function(milliSeconds){
+    	var startTime = new Date().getTime(); 
+    	while (new Date().getTime() < startTime + milliSeconds); 
+	},
 	isEmptyObj : function( obj ) {
 		var name;
 		for ( name in obj ) {
@@ -154,12 +159,7 @@ Min.util = {
 		}
 		return null;
 	},
-	
-	sleep : function(milliSeconds){
-    	var startTime = new Date().getTime(); // get the current time
-    	while (new Date().getTime() < startTime + milliSeconds); // hog cpu
-	},
-	
+
 	checkCapslock : function(event,obj){
 		var e = event||window.event;
 	 
@@ -223,9 +223,11 @@ Min.print ={
 
 	debug : function(msg){
 		if (console && console.log) {
-			//console.log(msg);
-			console.log( Min.util.clone(msg));
-			
+			if(typeof msg == "String"){
+				console.log(msg);
+			}else{
+				console.log( Min.util.clone(msg));
+			}
 		}else{
 			alert(msg);
 		}
@@ -349,55 +351,91 @@ Min.dom = {
 	
 	getBounds : function(e) {
 		if (e.getBoundingClientRect) {
-			var r = e.getBoundingClientRect();
-			var wx = 0;
-			var wy = 0;
-			if (document.body && (document.body.scrollLeft || document.body.scrollTop)) {
-				wy = document.body.scrollTop;
-				wx = document.body.scrollLeft
-			} else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
-				wy = document.documentElement.scrollTop;
-				wx = document.documentElement.scrollLeft
-			}
+			var r = e.getBoundingClientRect(),
+				wy = this.getScrollTop(),
+				wx = this.getScrollLeft();
 			return {
 				'left': r.left + wx,
 				'top': r.top + wy,
 				'right': r.right + wx,
 				'bottom': r.bottom + wy
 			}
+		} else {
+			var left=0 , top=0, node = e;
+			while (node) { 
+				left += node.offsetLeft;
+				top  += node.offsetTop; 
+				node  = node.offsetParent; 
+			};
+			return {
+				'right'  : left + e.offsetWidth, 
+				'bottom' : top  + e.offsetHeight,
+				'left' : left,
+				'top' : top
+			}
 		}
+	},
+	
+	getScrollTop : function(node) {
+		var doc = node ? node.ownerDocument : document;
+		return doc.documentElement.scrollTop || doc.body.scrollTop;
+	},
+	
+	getScrollLeft : function(node) {
+		var doc = node ? node.ownerDocument : document;
+		return doc.documentElement.scrollLeft || doc.body.scrollLeft;
+	},
+	contains : document.defaultView? 
+		function (a, b) {
+			return !!( a.compareDocumentPosition(b) & 16 ); 
+		} : 
+		function (a, b) { 
+			return a != b && a.contains(b); 
+	},
+
+	clientRect : function(node) {
+		var rect = this.getBounds(node), 
+			sLeft = this.getScrollLeft(node), 
+			sTop = this.getScrollTop(node);
+		rect.left -= sLeft; 
+		rect.right -= sLeft;
+		rect.top -= sTop; 
+		rect.bottom -= sTop;
+		return rect;
 	}
 	
 }
 
-
 Min.obj = {
 
-	extend : function( destination , source){
-			 
-		for (var i in source ) {
-			destination[i] = source[i];
+	extend : function (destination, source, override) {
+		if (override === undefined) override = true;
+		for (var property in source) {
+			if (override || !(property in destination)) {
+				destination[property] = source[property];
+			}
 		}
 		return destination;
-		
 	},
-	
-	methodReference : function(object, methodName) {
-		 
-		var args= arguments[2]||[];
-		 
+	wrapper : function(me, parent) {
+		var ins = function() { me.apply(this, arguments); };
+		var subclass = function() {};
+		subclass.prototype = parent.prototype;
+		ins.prototype = new subclass;
+		return ins;
+	},
+	methodReference : function(object, methodName) {	 
+		var args= arguments[2]||[]; 
 		return  function() {
 			[].push.apply(arguments, args);
-			object[methodName].apply(object, arguments);
+			return object[methodName].apply(object, arguments);
 		}
-	 
-	 
 	},
 	imgLoad : function(a,b,c,d){
 		for(var i=0, args; args=a[i++];){
-			ok = ( args.readyState==='complete' || args.complete );
+			ok = (( Min.UA.belowIE8 && args.readyState ==='complete') || (!Min.UA.belowIE8 && args.complete == true ));
 			if ( args.width == 0 || args.height == 0 ||  !ok ){
-				if( typeof b === 'object' && b != null ){
+				if( typeof b == 'object' && b != null ){
 					c = c ||'init';
 					Min.event.bind(args, "load", {handler: Min.obj.methodReference(b,c,d),once:true});
 				}
@@ -405,6 +443,111 @@ Min.obj = {
 			}
 		}
 		return true;
+	},
+	each :function( object, callback ) {
+		if ( undefined === object.length ){
+			for ( var name in object ) {
+				if (false === callback( object[name], name, object )) break;
+			}
+		} else {
+			for ( var i = 0, len = object.length; i < len; i++ ) {
+				if (i in object) { if (false === callback( object[i], i, object )) break; }
+			}
+		}
 	}
-
 }
+ 
+if (typeof Array.prototype.forEach != "function") {
+  Array.prototype.forEach = function (fn, context) {
+    Min.obj.each( this, function(){ fn.apply(context, arguments); } );
+  };
+}
+if (typeof Array.prototype.map != "function") {
+  Array.prototype.map = function (fn, context) {
+	var arr = [];
+	Min.obj.each( this, function(){ 
+		arr.push(fn.apply(context, arguments)); 
+	});
+	return arr;
+  };
+}
+if (typeof Array.prototype.filter != "function") {
+  Array.prototype.filter = function (fn, context) {
+	var arr = [];
+	Min.obj.each( this, function(item){
+			fn.apply(context, arguments) && arr.push(item);
+		});
+	return arr;
+  };
+}
+if (typeof Array.prototype.some != "function") {
+  Array.prototype.some = function (fn, context) {
+	var passed = false;
+	Min.obj.each( this, function(){
+		if ( fn.apply(context, arguments) ){ 
+			passed = true; 
+			return false; 
+		};
+	});
+	return passed;
+  };
+}
+
+if (typeof Array.prototype.every != "function") {
+  Array.prototype.every = function (fn, context) {
+	var passed = true;
+	Min.obj.each( this, function(){
+		if ( !fn.apply(context, arguments) ){ 
+			passed = false; 
+			return false;
+		};
+	});
+	return passed;
+  };
+}
+if (typeof Array.prototype.indexOf != "function") {
+  Array.prototype.indexOf = function (elt, from) {
+	var len = this.length;
+	from = isNaN(from) ? 0
+		: from < 0 ? Math.ceil(from) + len : Math.floor(from);
+	for ( ; from < len; from++ ) {
+		if ( this[from] === elt ) return from;
+	}
+	return -1;
+  };
+}
+
+if (typeof Array.prototype.lastIndexOf != "function") {
+  Array.prototype.lastIndexOf = function (elt, from) {
+	var len = this.length;
+	from = isNaN(from) || from >= len - 1 ? len - 1
+		: from < 0 ? Math.ceil(from) + len : Math.floor(from);
+	for ( ; from > -1; from-- ) {
+		if ( this[from] === elt ) return from;
+	}
+	return -1;
+  };
+}
+
+if (Min.UA.isIE6) try {
+    document.execCommand("BackgroundImageCache", false, true)
+} catch(e) {};
+
+/*
+
+method:
+var method='document|getElementsByTagName|prototype|length|apply|call|';
+
+var css='style|removeAttribute|href|width|height|offsetWidth|offsetHeight|offsetTop|offsetBottom|top|bottom|left|right|length';
+
+var math='floor|ceil';
+
+var event = '';
+
+var arr ='push|';
+
+dom='parentNode|';
+
+string:
+var a2= 'style|px|ul|li|img|relative|absolute|';
+*/
