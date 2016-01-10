@@ -79,7 +79,7 @@
 			var  p = _$('product-promote');
 			if(p.scrollHeight > 80 ){
 				p.getElementsByTagName('dd')[0].className="Hovmark";
-				p.style.height = "56px";
+				p.style.height = "62px";
 			}
 		</script>
 	 
