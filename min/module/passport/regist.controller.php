@@ -16,7 +16,7 @@ class regist{
 	}
 	
 	private function display(){
-		app::view('common/type-login');
+		app::display('type-login');
 	}
    
     private function regWithPostData(){

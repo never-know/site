@@ -1,6 +1,6 @@
 <?php
 namespace min\module\www;
-
+use min\inc\app;
 class index{
 	public function __construct($args){
 		if($args=='index') {
@@ -12,7 +12,7 @@ class index{
 
 	private function index(){
  
-		\min\inc\app::view('common/type-index');
+		app::display();
 
 	}
 

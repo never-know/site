@@ -31,11 +31,7 @@
             this.timerId = null;
             this.elOriginalLeft = parseInt(this.el.offsetLeft);
             this.elOriginalTop = parseInt(this.el.offsetTop);
-			console.log(this.elOriginalLeft);
-			console.log(this.el.offsetLeft);
-			console.log(this.elOriginalTop);
-			console.log( this.el.offsetTop);
-			
+
             // this.driftX X轴的偏移总量
             //this.driftY Y轴的偏移总量
             if (ops.targetEl) {
@@ -45,7 +41,7 @@
                 this.driftX = ops.offset[0];
                 this.driftY = ops.offset[1];
             }
-			console.log( this.driftX);
+
             this.duration = ops.duration;
             // 处理公式常量
             this.curvature = ops.curvature;

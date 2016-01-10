@@ -84,21 +84,26 @@ white-space: nowrap;
 padding :6px 0  0 0;
 }
 .plist-recommend-leftbar{
-    margin: 0 4px;
-    width: 238px;
-	border: 1px solid #E8E8E8;
+margin: 0 4px;
+width: 238px;
+border:none;
+border-top: 1px solid #f3f3f3;
+*border:1px solid #f3f3f3;
+padding-bottom:20px;
+
 }
 .plist-recommend-leftbar em{
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 8px;
-	display: block;
-	    font-size: 13px;
-	_font-size:12px;
-	    height: 26px;
-    line-height: 26px;
-    padding: 4px 0 2px 0;
+width: 100%;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 8px;
+display: block;
+font-size: 13px;
+_font-size:12px;
+height: 26px;
+line-height: 26px;
+padding: 4px 0 2px 0;
+*padding-top:10px;
 }
 
 
@@ -106,7 +111,7 @@ padding :6px 0  0 0;
     text-align: center;
     border: 1px solid #C8C8C8;
     height: 32px;
-    margin-left: 7px;
+    margin-left: 4px;
     margin-bottom: 8px;
 }
 .product-list-select li{
@@ -121,9 +126,7 @@ padding :6px 0  0 0;
     border-right: 1px solid #c8c8c8;
     text-align: center;
 }
-.product-list-select li:hover{
 
-}
 .product-list-select i.iconfont{
 font-size:14px;
 
@@ -217,79 +220,17 @@ margin-top:8px;
 	_overflow:hidden;
 }
 
+
+
 .product-list-rightbar{
+float: left;
+width: 968px;
 padding:0 0 6px 0;
 overflow:hidden;
 _zoom:1;
 }
-.product-list-rightbar .product-lists{
-*margin-left:4px;
-}
-.product-list-rightbar dl{
-float: left;
-margin: 0 4px 8px 10px;
-padding: 8px 13px 12px 13px;
-overflow: hidden;
-border: 2px solid white;
-background: white; 
-*margin:0px 6px 8px 2px;
-*padding:8px 15px 12px 15px;
-_display:inline;	
+
+.product-list-rightbar .goods dl a{
+width:208px;
 }
  
-.product-list-rightbar dl a{
-display:block;
-width:198px;
-overflow:hidden;
-}
-
-.product-list-rightbar dt{
-text-align:center;
-width:198px;
-}
-.product-list-rightbar dt img{
-width:190px;
-}
-.product-list-rightbar dd strong{
-color:#e10000;
-font-size:20px;
-}
-.product-list-rightbar dd span{
-margin-right:20px;
-color:silver;
-}
-.product-list-rightbar dd {
-position:relative;
-	padding-left:2px;
-}
-.product-list-rightbar dd h3{
-overflow:hidden;
-height:22px;
-font-size: 13px;
-font-family: "\5FAE\8F6F\96C5\9ED1";
-margin-top:4px;
-font-weight:normal;
-margin: 4px 0;
-}
-.product-list-rightbar dd p{
-overflow:hidden;
-height:22px;
-width:150px;
-color:#ffaa71;
-margin: 4px 0;
-}
-.product-list-rightbar dd p:hover{
-color:#b10000;
-cursor:pointer;
-}
-.product-list-rightbar dd em{
-font-weight:600;
-color:#005aa0;
-padding:0 2px;
-}
-.product-list-rightbar dd .ui-cart{
-position:absolute;
-right: 8px;
-bottom: 0px;
-
-}

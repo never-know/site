@@ -11,7 +11,6 @@
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/Min.js"></script>
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/slideshow.js"></script>
-
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/slidemenu.js"></script>
 
 <!--[if IE]><![endif]-->
@@ -20,13 +19,7 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/ie8.css" />
 <![endif]-->	
 <!--[if gte IE 9]><![endif]-->
-<!--[if lte  IE 6]>
- <style>
- body {behavior: url("/public/js/csshover.htc");}
- </style>
 
-<![endif]-->
-  
 </head>
 <body>
 <div class="container" >

@@ -8,54 +8,50 @@
 		<strong>进口食品</strong>&gt;<a href="">进口牛奶</a>&gt;<a href="">纽麦福</a>&gt;<a href="">纽麦福/Meadow Fresh全脂纯牛奶1L/盒</a>
 	</div>
 
-	<div id="product-detail">
-	<div id="product-gallery">
-	<div id="MagicZoomWrapper"   > 
-	 <div href="http://cdn.annqi.com/public/images/product/big-0.jpg" title="Images" class="MagicZoom" id="MagicZoom">		
-	 <img width="390" height="390" src="http://cdn.annqi.com/public/images/product/0.jpg" />
-	 </div>
-	 </div>
-	<div id="tsPicContainer">
-		<div id="tsImgSArrL" ></div>
-		<div id="tsImgSCon">
-			<ul>
-				<li class="tsSelectImg"><img src="http://cdn.annqi.com/public/images/product/small-0.jpg" mi="http://cdn.annqi.com/public/images/product/0.jpg"  bi="http://cdn.annqi.com/public/images/product/big-0.jpg"/></li>
-					<li    ><img src="http://cdn.annqi.com/public/images/product/small-1.jpg" mi="http://cdn.annqi.com/public/images/product/1111.jpg"  bi="http://cdn.annqi.com/public/images/product/big-1.jpg"/></li>
-					<li   ><img   src="http://cdn.annqi.com/public/images/product/small-2.jpg" mi="http://cdn.annqi.com/public/images/product/2.jpg"    bi="http://cdn.annqi.com/public/images/product/big-2.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-3.jpg" mi="http://cdn.annqi.com/public/images/product/3.jpg" bi="http://cdn.annqi.com/public/images/product/big-3.jpg" /></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-4.jpg" mi="http://cdn.annqi.com/public/images/product/4.jpg" bi="http://cdn.annqi.com/public/images/product/big-4.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-5.jpg" mi="http://cdn.annqi.com/public/images/product/5.jpg" bi="http://cdn.annqi.com/public/images/product/big-5.jpg"/></li>
-					<li  ><img   src="http://cdn.annqi.com/public/images/product/small-6.jpg" mi="http://cdn.annqi.com/public/images/product/6.jpg" bi="http://cdn.annqi.com/public/images/product/big-6.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-7.jpg" mi="http://cdn.annqi.com/public/images/product/7.jpg" bi="http://cdn.annqi.com/public/images/product/big-7.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-8.jpg" mi="http://cdn.annqi.com/public/images/product/8.jpg" bi="http://cdn.annqi.com/public/images/product/big-8.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/product/small-9.jpg" mi="http://cdn.annqi.com/public/images/product/9.jpg" bi="http://cdn.annqi.com/public/images/product/big-9.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/09.jpg" mi="http://cdn.annqi.com/public/images/mz/09.jpg" bi="http://cdn.annqi.com/public/images/mz/09.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/08.jpg" mi="http://cdn.annqi.com/public/images/mz/08.jpg" bi="http://cdn.annqi.com/public/images/mz/08.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/07.jpg" mi="http://cdn.annqi.com/public/images/mz/07.jpg" bi="http://cdn.annqi.com/public/images/mz/07.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/05.jpg" mi="http://cdn.annqi.com/public/images/mz/06.jpg" bi="http://cdn.annqi.com/public/images/mz/06.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/05.jpg" mi="http://cdn.annqi.com/public/images/mz/05.jpg" bi="http://cdn.annqi.com/public/images/mz/05.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/04.jpg" mi="http://cdn.annqi.com/public/images/mz/04.jpg" bi="http://cdn.annqi.com/public/images/mz/04.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/03.jpg" mi="http://cdn.annqi.com/public/images/mz/03.jpg" bi="http://cdn.annqi.com/public/images/mz/03.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/02.jpg" mi="http://cdn.annqi.com/public/images/mz/022.jpg" bi="http://cdn.annqi.com/public/images/mz/02.jpg"/></li>
-					<li ><img   src="http://cdn.annqi.com/public/images/mz/01.jpg" mi="http://cdn.annqi.com/public/images/mz/a.jpg" bi="http://cdn.annqi.com/public/images/mz/a.jpg"/></li>
-			</ul>
-		</div>
-		<div id="tsImgSArrR" ></div>
-	</div>
-	
-
-		<div id="product-code">
-            <div class="product-code">
-				<span>商品编号：</span>
+<div class="product-detail"> 
+	<div class="slide-wrapper" id="slide-wrapper"> 
+		<div class="slide">
+			<div id="MagicZoom" class="slidebox"></div>
+		</div> 
+		<div  class="slidena">
+			<div  class="slidena_pre" ></div> 
+			<div id="tsImgSCon" class="slidenabox-z">
+				<ul>
+					<li mi="http://cdn.annqi.com/public/images/product/0.jpg"  bi="http://cdn.annqi.com/public/images/product/big-0.jpg" si="http://cdn.annqi.com/public/images/product/small-0.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/1.jpg"  bi="http://cdn.annqi.com/public/images/product/big-1.jpg"  si="http://cdn.annqi.com/public/images/product/small-1.jpg"></li>
+					<li mi="http://cdn.annqi.com/public/images/product/2.jpg"    bi="http://cdn.annqi.com/public/images/product/big-2.jpg"   si="http://cdn.annqi.com/public/images/product/small-2.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/3.jpg" bi="http://cdn.annqi.com/public/images/product/big-3.jpg"    si="http://cdn.annqi.com/public/images/product/small-3.jpg"  ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/4.jpg" bi="http://cdn.annqi.com/public/images/product/big-4.jpg"   si="http://cdn.annqi.com/public/images/product/small-4.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/5.jpg" bi="http://cdn.annqi.com/public/images/product/big-5.jpg"    si="http://cdn.annqi.com/public/images/product/small-5.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/6.jpg" bi="http://cdn.annqi.com/public/images/product/big-6.jpg"   si="http://cdn.annqi.com/public/images/product/small-6.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/7.jpg" bi="http://cdn.annqi.com/public/images/product/big-7.jpg"   si="http://cdn.annqi.com/public/images/product/small-7.jpg"></li>
+					<li mi="http://cdn.annqi.com/public/images/product/8.jpg" bi="http://cdn.annqi.com/public/images/product/big-8.jpg"   si="http://cdn.annqi.com/public/images/product/small-8.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/product/9.jpg" bi="http://cdn.annqi.com/public/images/product/big-9.jpg"   si="http://cdn.annqi.com/public/images/product/small-9.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/09.jpg" bi="http://cdn.annqi.com/public/images/mz/09.jpg"   si="http://cdn.annqi.com/public/images/mz/09.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/08.jpg" bi="http://cdn.annqi.com/public/images/mz/08.jpg"   si="http://cdn.annqi.com/public/images/mz/08.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/07.jpg" bi="http://cdn.annqi.com/public/images/mz/07.jpg"   si="http://cdn.annqi.com/public/images/mz/07.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/06.jpg" bi="http://cdn.annqi.com/public/images/mz/06.jpg"   si="http://cdn.annqi.com/public/images/mz/05.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/05.jpg" bi="http://cdn.annqi.com/public/images/mz/05.jpg"   si="http://cdn.annqi.com/public/images/mz/05.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/04.jpg" bi="http://cdn.annqi.com/public/images/mz/04.jpg"   si="http://cdn.annqi.com/public/images/mz/04.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/03.jpg" bi="http://cdn.annqi.com/public/images/mz/03.jpg"   si="http://cdn.annqi.com/public/images/mz/03.jpg" ></li>
+					<li mi="http://cdn.annqi.com/public/images/mz/02.jpg" bi="http://cdn.annqi.com/public/images/mz/02.jpg"   si="http://cdn.annqi.com/public/images/mz/02.jpg" ></li>
+				</ul>
+			</div>
+			<div class="slidena_next" ></div>
+		</div>			
+		<div class="product-code">
+			<div class="p-code">
+				<span><i class="iconfont">&#xe64d;</i>商品编号：</span>
 				<span>1856588</span>
 			</div>
+		
 			<div class="p-share">
 					  <span><i class="iconfont">&#xe651;</i>分享</span>
-                    <span><i class="iconfont">&#xe64b;</i>关注商品</span> 
-                  
-             </div>  
-        </div>
-	
+					<span><i class="iconfont">&#xe64b;</i>关注商品</span> 
+				  
+			 </div> 
+		 
+		</div>		
 	</div>
 	<div class="product-property">
 		<div class="product-title">
@@ -66,19 +62,30 @@
 		
 		
 			<dl class="product-price"> <dt>价&nbsp;&nbsp;格：</dt> <dd>￥200.00</dd></dl>
+			 
 			<dl class="product-promote" id="product-promote"> 
 			<dt>促销信息：</dt> 
 			<dd>
 				<em>共3项优惠</em>
 				<span><strong>加价购</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
 				<span><strong>满减</strong> 满99.00减15.00   详情 >></span>
-				<span style="padding-bottom:2px;"><strong>满减</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
+				<span style="padding-bottom:4px;"><strong>满减</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
+			
 			</dd>
 			
 			</dl>
-		
+			
+			<script>
+			var  p = _$('product-promote');
+			if(p.scrollHeight > 80 ){
+				p.getElementsByTagName('dd')[0].className="Hovmark";
+				p.style.height = "56px";
+			}
+		</script>
+	 
+		 
 		</div>
-		<script>_$('product-promote').style.height=parseInt(_$('product-promote').offsetHeight)+'px';</script>
+
 	 
 		<dl class="product-deliver">
 			<dt>配&nbsp;&nbsp;送：</dt> <dd><span>由<strong> 世纪联华金海城店 </strong>发货并提供售后，配送范围5公里 </span><a href=""  style="margin-left:30px;">查看配送范围</a></dd>
@@ -119,30 +126,28 @@
 		 
 	</div>
 	<div class="product-recommend">
-	<p> ------- &nbsp;为您推荐 &nbsp; -------- </p>
-	 			<div class="wrapper">                       
-								<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
-								<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-							  <span>￥200.00</span>
-							</div>               
-					    
-					 
-							<div class="wrapper">                       
-								<img src="http://cdn.annqi.com/public/images/product/1.jpg" alt=""  > 
-								 <p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-							  <span>￥200.00</span>
-							</div>               
-					 
-							<div class="wrapper">                       
-								<img src="http://cdn.annqi.com/public/images/product/0.jpg" alt=""  > 
-								<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-							   <span>￥200.00</span>
-							</div>               
+		<p> ------- &nbsp;为您推荐 &nbsp; -------- </p>
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div> 
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div>  
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div>   
+					
+				 
+					        
 						 
 	
 	</div>
-
-
 
 </div>
 	<div style="clear:both;"></div>
@@ -162,20 +167,38 @@
 					<p>查看配送范围<i class="iconfont ">&#xe624;</i></p>
 			</div>
 
-			<div class="product-recommend product-recommend-leftbar">
-	 
+			<div class="product-recommend">
 	 			<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
-				</div>               
+				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/1.jpg" alt=""  > 
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
-				</div>               
+				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/0.jpg" alt=""  > 
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
-				</div>               
+				</div> 
+				<div class="wrapper">                       
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+					<span>￥200.00</span>
+				</div> 
+				<div class="wrapper">                       
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+					<span>￥200.00</span>
+				</div> 
+				<div class="wrapper">                       
+					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+					<span>￥200.00</span>
+				</div> 
+		
 			</div>
 		</div>
 		<div class="product-rightbar"  >
@@ -477,20 +500,10 @@
 			</div>
 		</div>
 </div>
-	
+
+
+
+ 
 </div>
 	
-
-	 
- 
- 
-    <script type="text/javascript" src="http://cdn.annqi.com/public/js/cache.js"></script>
-	  <script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
-	  <script type="text/javascript" src="http://cdn.annqi.com/public/js/ShopShow.js"></script>
- <script type="text/javascript" src="http://cdn.annqi.com/public/js/zoom1.js"></script>
-  <script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>
-	
-	
-	
-	
-	 
+		

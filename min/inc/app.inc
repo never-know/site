@@ -79,14 +79,23 @@ class app{
 		return self::$container->service($name);
 	}
 	public static function view($name=''){
-	// $name: public/type-login
-	// $name: passport/login/index
 		if(empty($name)){
 			include MIN_ROOT.'/view/'.self::$module.'/'.self::$controller.'/'.self::$action.'.tpl';
 		}else{
 			include MIN_ROOT.'/view/'.$name.'.tpl';
 		}
 	}
+	
+	public static function display($name=''){
+	
+		if(empty($name)){
+			include MIN_ROOT.'/view/common/frame.tpl';
+		}else{
+			include MIN_ROOT.'/view/common/'.$name.'.tpl';
+		}
+	
+	}
+	
 	public static function run(){
 		if(!self::$booted){
 			self::$booted = TRUE;

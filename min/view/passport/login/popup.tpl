@@ -9,9 +9,9 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/lrtk.css" />
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/product.css" />
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/list.css" />
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/base.js"></script>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/pptbox.js"></script>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/slidemenu.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/Min.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
+ 
  
 <!--[if IE]> <![endif]-->
 <!--[if lte IE 8]><![endif]-->
@@ -30,12 +30,10 @@
   
 </head>
 <body>
-<div class="container" >
+<div class="container"  id="container">
 	 <div class="login-form">
 	 <div class="login-box">
 		<div class="login-title">
-			
-			
 
 			<h2  class="static">账户登录</h2>
 			<h2  class="quick">扫码登录</h2> 
@@ -109,6 +107,11 @@
  
  
 </body>
+<script>
 
+var bh = document.body.scrollHeight;
+//window.top.location.hash = "#height=" + bh;
+console.log(window.parent.location.href);
+</script>
 
 </html>

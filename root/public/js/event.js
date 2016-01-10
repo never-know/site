@@ -1,6 +1,7 @@
 Min.event = {
  
 	bind : function( elem, type, options ){
+		elem = _$(elem);
 		if(!elem) return;
 		var events = Min.cache.data( elem, 'e' + type ) || Min.cache.data( elem, 'e' + type, [] );
 		
@@ -9,7 +10,7 @@ Min.event = {
 		if( events.indexOf(options) == -1 ){
 			events.push( options );
 		 }else{
-		 console.log(" twice avoid!!!!!");
+		// console.log(" twice avoid!!!!!");
 		 }
 		// 同一事件类型只注册一次事件，防止重复注册
 		if( events.length === 1 ){
@@ -27,21 +28,8 @@ Min.event = {
 		}
 	},
 	
-	childBind : function(elem, type, options){
-		
-		if(!elem) return;
-		
-		var tags = elem.getElementsByTagName(options.tag);
-		
-		for(var i=0 , tag; tag =tags[i++]; ){
-		
-			this.bind(tag,type,options);
-			
-		}
-	},
-	
 	unbind : function( elem, type, option ){
-	
+		elem = _$(elem);
 		if( !elem ) return;
 		
 		var options = Min.cache.data( elem , 'e' + type );
@@ -130,7 +118,7 @@ Min.event = {
 		}
 	},
 	
-	 delegateFilter : function( elem, selector ){
+	delegateFilter : function( elem, selector ){
         var tagName,  name, index,
 			className = elem.className,
 			s = selector.split(',');
@@ -194,11 +182,12 @@ Min.event = {
     },
 	
 	getEventCoords : function(e) {
+		e = e || window.event;
 		var x = 0;
 		var y = 0;
 		if ( Min.UA.belowIE8 ) {
-			y = e.clientY + Min.dom.getScrollTop();
-			x = e.clientX + Min.dom.getScrollLeft();
+			y = e.clientY + Min.dom.getScroll('top');
+			x = e.clientX + Min.dom.getScroll('left');
 		} else {
 			y = e.clientY + window.pageYOffset;
 			x = e.clientX + window.pageXOffset;
@@ -218,17 +207,3 @@ Min.event = {
 	}
 
 }
-/*
-if(Min.UA.isIE6){
-
- Min.event.bind(document,'mouseover',{handler:function(e){
- //console.log(e.delegateTarget);
-	Min.css.addClass('hover',e.delegateTarget);
-	Min.event.bind(e.delegateTarget,'mouseout',{handler:function(e){
-	Min.css.removeClass('hover',e.delegateTarget);
- },once:true});
- },selector:'.hovermark'});
-  
- 
-}   
-*/

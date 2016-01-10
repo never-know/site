@@ -6,10 +6,10 @@ class product
 	
 
 	public function item($id) {
-		app::view('common/type-not-index');
+		app::display();
 	}
 	public function category($id) {
-		app::view('common/type-not-index');
+		app::display();
 	}
 
 

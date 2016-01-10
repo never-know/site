@@ -1,71 +1,23 @@
-
-/* product-gallery */
-#product-gallery li,#product-gallery img{vertical-align:top;}
-#product-gallery{
-	width: 392px;
-    position: relative; 
-    padding-bottom: 5px;
-    margin-top: 10px;
-	float:left;z-index:99;
-	 
-	}
-#product-gallery #tsImgS{text-align:center;width:100%;position:relative;border-right: 1px solid #F0E1E1;}
-#product-gallery #tsImgS a{display:block;text-align:center;margin:0px auto;}
-#product-gallery #tsImgS img{border:0px;}
-#product-gallery #tsPicContainer{width:100%;height:66px;position:relative; margin-bottom: 10px; z-index:20;}
-#product-gallery #tsPicContainer #tsImgSArrL{width:17px;height:100%;background:url(../images/picshopArr.gif) no-repeat left center;position:absolute;top:2px;left:6px;cursor:pointer;}
-#product-gallery #tsPicContainer #tsImgSArrR{width:17px;height:100%;background:url(../images/picshopArr.gif) no-repeat right center;position:absolute;top:2px;right:6px;cursor:pointer;}
-#product-gallery #tsPicContainer #tsImgSCon{position:absolute;top:4px;left:26px;width:340px;height:66px;overflow:hidden;}
-#product-gallery #tsPicContainer #tsImgSCon ul{width:100%;overflow:hidden;}
-#product-gallery #tsPicContainer #tsImgSCon li{width:66px;float:left;cursor:pointer;outline:0px;margin:0 1px;}
-#product-gallery #tsPicContainer #tsImgSCon li img{display:block;width:56px;height:56px;border:2px solid #fff;margin:0 2px ;padding:1px;}
-#product-gallery #tsPicContainer #tsImgSCon li.tsSelectImg img{border-color:#F00; }
-
-
-
-
-/* Copyright 2008 MagicToolBox.com. To use this code on your own site, visit http://magictoolbox.com */
-
-/* CSS class for zoomed area */
-.MagicZoomBigImageCont {
-	border:1px solid  #F0E1E1;
-	background:#FFF;
-	z-index:99;
-	position:absolute;
-	left:390px;
-	top:-1px;
-	width:390px;
-	height:390px;
-	overflow:hidden;
-	visibility:hidden;
+.product-detail{padding-bottom: 16px;width:100%;}
+.product-detail .slide-wrapper{width:390px;height:500px;position:relative;z-index:3;}
+.product-detail .slide{border:1px solid #e7e7e7;height:390px;overflow:visible;}
+.product-detail .slidena{height:66px; margin:10px 0;}
+.slidena .slidena_pre, .slidena .slidena_next{
+width:17px;height:100%;position:absolute;top:2px;cursor:pointer;
 }
-
-.MagicZoomMain {
-	text-align: center !important;
-	width: 92px;
+.slidena .slidena_pre{background:url(../images/picshopArr.gif) no-repeat left center;left:6px;}
+.slidena .slidena_next{background:url(../images/picshopArr.gif) no-repeat right center;right:6px;}
+.slidenabox-z{position:absolute;top:4px;left:26px;width:340px;height:66px;overflow:hidden;visibility:hidden;}
+.slidenabox-z ul{width:100%;overflow:hidden;}
+.slidenabox-z li{width:66px;height: 62px;float:left;cursor:pointer;outline:0px;margin:0 1px;}
+.slidenabox-z li img{display:block;width:56px;height:56px;border:2px solid #fff;margin:0 2px ;padding:1px;}
+.slidenabox-z li.tsSelectImg img{border-color:#F00; }
+.MagicZoomBigImageCont img {position: relative;z-index:299;}
+.MagicZoomBigImageCont{border:1px solid #F0E1E1;background-color:#fff;z-index:99;
+position:absolute;left:390px;top:-1px;width:390px;height:390px;overflow:hidden;
+visibility:hidden;
 }
-
-.MagicZoomMain div {
-	padding: 0px !important;
-}
-
-/* Header look and feel CSS class */
-/* header is shown if "title" attribute is present in the <A> tag */
-.MagicZoomHeader {
-	font:			10px Tahoma, Verdana, Arial, sans-serif;
-	color:			#fff;
-	background:		#91b817;
-	text-align:     center !important; 
-}
-
-
-/* CSS class for small looking glass square under mouse */
-.MagicZoomPup {
-	border: 		0px solid #aaa;
-	background: 	#ffffff;
-	z-index : 10;
-    visibility :  hidden ;
-    position :  absolute ;
+.MagicZoomPup{border:0px solid #aaa;background:#fff;z-index:10;visibility:hidden;position:absolute;
 	 
     /* older safari/Chrome browsers */
     -webkit-opacity: 0.5;
@@ -82,59 +34,29 @@
     /*IE4-IE9*/
     filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 }
-}
-
-/* CSS style for loading animation box */
-.ZoomLoading {
-	text-align:		center;
-	background: 	#ffffff;
-	color:			#444;
-	border: 		1px solid #ccc;
-	opacity:		0.8;
-	padding:		3px 3px 3px 3px !important;
-	display: 		none; /* do not edit this line please */
-}
-
-/* CSS style for gif image in the loading animation box */
-.ZoomLoading img {
-	padding-top:3px !important;
-}
-#MagicZoomWrapper{
- border:1px solid #e7e7e7;
-width:390px;
-position:relative;
-}
-#MagicZoom{
-margin:0 auto;
-}
-
-#product-detail{
-
-padding-bottom: 16px;
-z-index:9;
-overflow: hidden;
-
-}
-#product-code{
+.product-code{
 width:360px;
 height:22px;
-} 
-.product-code{
-float:left;
-margin-left:20px;
+margin:0 auto;
+position:relative;
 }
-#product-code .p-share{
-float:right;
+.product-code .p-code{
+position:absolute;
+left:20px;
 }
-#product-code .p-share span{
+.product-code .p-share{
+position:absolute;
+right:20px;
+}
+.product-code .p-share span{
 width:80px;
 overflow:hidden;
 margin-left:10px;
 }
-#product-code span i{
+.product-code span i{
 font-size:12px;
 color:#e10000;
-margin-right:2px;
+margin-right:4px;
 }
 .product-property{
 float:left;
@@ -185,7 +107,6 @@ margin:3px 0px;
 background:#e9e9e9;
 padding:8px 0 12px 0;
 overflow:hidden;
-background-image: url("http://cdn.annqi.com/public/images/abc.png");
 }
 
 
@@ -203,11 +124,10 @@ height:32px;
 .product-promote {
 z-index:12;
 max-height:56px;
-min-height:30px;
 }
 .product-promote dt{
     position: absolute;
-    z-index: 12;
+    z-index: 2;
 }
 .product-promote dd{
 	color:#D10000;
@@ -219,12 +139,15 @@ min-height:30px;
 	 z-index:1;
 	 width: 550px;
 }
-.product-promote dd:hover {
+.product-promote .Hovmark:hover, .product-promote dd.hover {
 overflow:visible;
 position: absolute;
 }
-.product-promote dd:hover span {
-background:#e8e8e8;
+.product-promote .Hovmark:hover span, .product-promote dd.hover span, .product-summary {
+background-image: url("http://cdn.annqi.com/public/images/abc.png");
+}
+.product-promote .Hovmark:hover span, .product-promote dd.hover span {
+
 border-bottom:1px solid #fff;
 }
 .product-promote dd span{
@@ -391,7 +314,7 @@ padding-top: 8px;
 #product-desc .check-error{
 padding:10px 0px 10px 16px;
 }
-.product-recommend-leftbar{
+.product-sidebar .product-recommend{
 margin-left:0px;
 border: 1px solid #E8E8E7;
 }
@@ -422,7 +345,7 @@ margin-bottom:10px;
 }
 .product-shop p {
     text-align: right;
-    padding:10px 30px 2px 0;
+    padding:10px 30px 6px 0;
 }
 .product-shop .rate span {
     padding-top: 8px;

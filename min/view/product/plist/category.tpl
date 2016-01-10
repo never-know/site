@@ -121,20 +121,40 @@
 	 
 		 
 	</div>
-	<div class="product-recommend plist-recommend-leftbar ">
+	<div class="product-recommend plist-recommend-leftbar ptn-shadow">
 		<em class="ptn-shadow"> - - - - &nbsp; 为您推荐  &nbsp; - - - - </em>
+	
+		
 		<div class="wrapper">                       
 			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
-		</div>               
+		</div> 
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/1.jpg" alt=""  > 
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
-		</div>               
+		</div>  
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/0.jpg" alt=""  > 
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
-		</div>               
+		</div>   
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div> 
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div>  
+		<div class="wrapper">                       
+			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
+			<span>￥200.00</span>
+		</div>   
 	</div>
 
 	<div class="product-list-rightbar">
@@ -160,329 +180,121 @@
 		</ul>
 	</div>
 	
-		<div class="product-lists" >
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 <button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				 <span>已有<em>2000</em>人评价</span>
-				
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单年度荣耀之星，thinkpad销售达人！</p>
-				 <strong>￥200.00</strong>
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！！！thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				</a>
-			</dl>
-			<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-				<dt><img src="http://cdn.annqi.com/public/images/plist/5.jpg"  /></dt>
-				<dd>
-				<strong>￥200.00</strong>
-				<h3>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</h3>
-				<p>手机下单3999！抢！抢！抢！年度荣耀之星，thinkpad销售达人！</p>
-				 
-				 <span>已有<em>2000</em>人评价</span>
-				<button class="ui-cart iconfont" data-itemid="45772212652"></button>
-				</dd>
-				 </a>
-			</dl>
-			 
-		</div>	 
-	 </div>
-	
-	<div class="product-list-rightbar hide" >
-	   
+	<div class="goods" >
+		 
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
+				<strong><em class="yen">¥</em>200.00</strong>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>                            
-		 <dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
-				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
-			</dd>
-			</a>
-		</dl>   
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_3.jpg"  /></dt>
 			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
-			</dd>
-			</a>
-		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
-				<strong><em class="yen">¥</em>200.00</strong>
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>  
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>   
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_3.jpg"  /></dt>
 			<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-			</dd>
-			</a>
-		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
-		</dl>   
+		</dl>  
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>   
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>   
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
-				<strong>￥200.00</strong>
-				<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
-				 <span>已有<em>2000</em>人评价</span>
-			</dd>
-			</a>
-		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>   
 		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
 			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
 			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+				<div class="pl-title">
+					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					<div  class="inner-p">
+						<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
+					</div>
+				</div>
 				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
+				<button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
 			</dd>
 			</a>
 		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
-				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
-			</dd>
-			</a>
-		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
-			<dd>
-				<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
-				<strong><em class="yen">¥</em>200.00</strong>
-			 
-				  <button class="ui-cart iconfont" data-itemid="45772212652" >&#xe628;</button>
-			</dd>
-			</a>
-		</dl>   
+				 
 	</div>
 </div>	
 	 

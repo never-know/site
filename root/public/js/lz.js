@@ -81,7 +81,7 @@ LazyLoad.prototype = {
 	//设置获取scroll值函数
 	this._getScroll = isWindow
 		? function() { return {
-				"left": Min.dom.getScrollLeft(), "top": Min.dom.getScrollTop()
+				"left": Min.dom.getScroll('left'), "top": Min.dom.getScrol('top')
 			}}
 		: function() { return {
 				"left": container.scrollLeft, "top": container.scrollTop

@@ -1,6 +1,11 @@
+var	win = window,
+	doc = win.document,
+	body = doc.body,
+	docElem = doc.documentElement;
+	
 var Min={};
 var _$ = function(id){
-	return document.getElementById(id);
+	return "string" == typeof id ? document.getElementById(id) : id;
 }
 Min.cache = {
 
@@ -109,28 +114,37 @@ Min.UA = {
 Min.css = {
 
 	addClass : function (c, node) {
-        if(!node)return;
-        node.className = this.hasClass(c,node) ? node.className : node.className + ' ' + c ;
-		console.log(this.hasClass(c,node));
+        if(!node) return;
+        if( !this.hasClass(c,node) ) node.className =  node.className + ' ' + c ;
     },
 
 	removeClass : function (c, node) {
-        var reg = new RegExp("(^|\\s+)" + c + "(\\s+|$)", "g");
-        if(!this.hasClass(c,node))return;
-        node.className = reg.test(node.className) ? node.className.replace(reg, '') : node.className;
+        if(this.hasClass(c,node)){
+			var reg = new RegExp("(^|\\s+)" + c + "(\\s+|$)", "g");
+			node.className =  node.className.replace(reg, ' ');
+		}
     },
 
 	hasClass : function (c, node) {
-        if(!node || !node.className)return false;
-		var tmp = ' '+ node.className + ' ';
-		c = ' ' + Min.util.trim(c) + ' ';
-        return tmp.indexOf(c)>-1;
+        if(!node || !node.className) return false;
+		 return node.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));  
     },
 	setOpacity : function(n,m){
-		n.style["opacity"] = m;
-		n.style["-moz-opacity"] = m;
-		n.style["-html-opacity"] = m;
+		n.style["opacity"] = n.style["-moz-opacity"] = n.style["-html-opacity"] = m;
 		n.style["filter"] = "alpha(Opacity=" + m*100 + ")";
+	},
+	addCssByLink : function(url){
+	
+		var link=doc.createElement("link");
+		link.setAttribute("rel", "stylesheet");
+		link.setAttribute("type", "text/css");
+		link.setAttribute("href", url);
+
+		var heads = doc.getElementsByTagName("head");
+		if(heads.length)
+			heads[0].appendChild(link);
+		else
+			doc.documentElement.appendChild(link);
 	}
 
 };
@@ -140,9 +154,9 @@ Min.util = {
 	trim : function (str) {
         return str.replace(/^\s+|\s+$/g,'');
     },
-	sleep : function(milliSeconds){
+	sleep : function(m){
     	var startTime = new Date().getTime(); 
-    	while (new Date().getTime() < startTime + milliSeconds); 
+    	while (new Date().getTime() < startTime + m); 
 	},
 	isEmptyObj : function( obj ) {
 		var name;
@@ -236,15 +250,11 @@ Min.print ={
 	
 	log : function(msg){
 		if (console && console.log) {
-			//console.log(msg);
 			console.log( msg);
-			
 		}else{
 			alert(msg);
 		}
-	
 	}
-
 };
 
 Min.dom = {
@@ -257,8 +267,9 @@ Min.dom = {
  
 	isBind :false,
 	
-	ready : function(fn){
-	
+	ready : function(id,fn){
+		 
+		if( !_$(id))  return ;
 		if (this.isReady) {
 			fn.call(window);
 		}else{
@@ -352,13 +363,15 @@ Min.dom = {
 	getBounds : function(e) {
 		if (e.getBoundingClientRect) {
 			var r = e.getBoundingClientRect(),
-				wy = this.getScrollTop(),
-				wx = this.getScrollLeft();
+				wy = this.getScroll('top'),
+				wx = this.getScroll('left'),
+				ct  = document.documentElement.clientTop || document.body.clientTop || 0,
+				cl  = document.documentElement.clientLeft || document.body.clientLeft || 0;
 			return {
-				'left': r.left + wx,
-				'top': r.top + wy,
-				'right': r.right + wx,
-				'bottom': r.bottom + wy
+				'left': r.left + wx -cl,
+				'top': r.top + wy -ct,
+				'right': r.right + wx - cl,
+				'bottom': r.bottom + wy - ct
 			}
 		} else {
 			var left=0 , top=0, node = e;
@@ -375,15 +388,13 @@ Min.dom = {
 			}
 		}
 	},
-	
-	getScrollTop : function(node) {
-		var doc = node ? node.ownerDocument : document;
-		return doc.documentElement.scrollTop || doc.body.scrollTop;
+	capitalize : function( str ){
+		var firstStr = str.charAt(0);
+		return firstStr.toUpperCase() + str.replace( firstStr, '' );
 	},
-	
-	getScrollLeft : function(node) {
-		var doc = node ? node.ownerDocument : document;
-		return doc.documentElement.scrollLeft || doc.body.scrollLeft;
+	getScroll : function( type ){
+		var upType = this.capitalize( type );		
+		return document.documentElement['scroll' + upType] || document.body['scroll' + upType];	
 	},
 	contains : document.defaultView? 
 		function (a, b) {
@@ -391,17 +402,6 @@ Min.dom = {
 		} : 
 		function (a, b) { 
 			return a != b && a.contains(b); 
-	},
-
-	clientRect : function(node) {
-		var rect = this.getBounds(node), 
-			sLeft = this.getScrollLeft(node), 
-			sTop = this.getScrollTop(node);
-		rect.left -= sLeft; 
-		rect.right -= sLeft;
-		rect.top -= sTop; 
-		rect.bottom -= sTop;
-		return rect;
 	}
 	
 }
@@ -433,7 +433,7 @@ Min.obj = {
 	},
 	imgLoad : function(a,b,c,d){
 		for(var i=0, args; args=a[i++];){
-			ok = (( Min.UA.belowIE8 && args.readyState ==='complete') || (!Min.UA.belowIE8 && args.complete == true ));
+			var ok = (( Min.UA.belowIE8 && args.readyState ==='complete') || (!Min.UA.belowIE8 && args.complete == true ));
 			if ( args.width == 0 || args.height == 0 ||  !ok ){
 				if( typeof b == 'object' && b != null ){
 					c = c ||'init';
@@ -529,9 +529,37 @@ if (typeof Array.prototype.lastIndexOf != "function") {
   };
 }
 
+if (!Object.keys) {
+		Object.keys = function(o) {
+			if (o !== Object(o)) {
+				throw new TypeError('Object.keys called on a non-object');
+			}
+			var k=[], p;
+			for (p in o) {
+				if (Object.prototype.hasOwnProperty.call(o,p)) {
+					k.push(p);
+				}
+			}
+			return k;
+		};
+	}
+
+	
+	
 if (Min.UA.isIE6) try {
     document.execCommand("BackgroundImageCache", false, true)
 } catch(e) {};
+
+if (Min.UA.isIE8){
+Min.css.addCssByLink('http://cdn.annqi.com/public/css/ie8.css');
+}
+
+
+
+
+
+
+
 
 /*
 

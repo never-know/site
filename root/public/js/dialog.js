@@ -4,24 +4,7 @@
  * Author : chenmnkken@gmail.com
  * Date : 2012-04-22
  */
-(function( win, undefined ){
 
-
-var easyDialog = function(){
-
-var	body = document.body,
-	isIE = !-[1,],	// 判断IE6/7/8 不能判断IE9
-	isIE6 = isIE && /msie 6/.test( navigator.userAgent.toLowerCase() ), // 判断IE6
-	uuid = 1,
-	expando = 'cache' + ( +new Date() + "" ).slice( -8 ),  // 生成随机数
-	cacheData = {
-	/**
-	 *	1 : {
-	 *		eclick : [ handler1, handler2, handler3 ]; 
-	 *		clickHandler : function(){ //... }; 
-	 *	} 
-	 */	
-	};
 
 var	Dialog = function(){};
 
@@ -58,7 +41,7 @@ Dialog.prototype = {
 		for( i in defaults ){
 			options[i] = arg[i] !== undefined ? arg[i] : defaults[i];
 		}
-		Dialog.data( 'options', options );
+		Min.cache.data( 'ed_options', options );
 		return options;
 	},
 		
@@ -84,10 +67,11 @@ Dialog.prototype = {
 	 */
 	setFollow : function( elem, follow, x, y ){
 		follow = typeof follow === 'string' ? document.getElementById( follow ) : follow;
-		var style = elem.style;
+		var style = elem.style,
+			offsets = Min.dom.getBounds(follow);
 		style.position = 'absolute';			
-		style.left = Dialog.getOffset( follow, 'left') + x + 'px';
-		style.top = Dialog.getOffset( follow, 'top' ) + y + 'px';
+		style.left = offsets.left + x + 'px';
+		style.top = offsets.top + y + 'px';
 	},
 	
 	/**
@@ -97,9 +81,22 @@ Dialog.prototype = {
 	 */
 	setPosition : function( elem, fixed ){
 		var style = elem.style;
-		style.position = isIE6 ? 'absolute' : fixed ? 'fixed' : 'absolute';
+ 
+		style.position = Min.UA.isIE6 ? 'absolute' : fixed ? 'fixed' : 'absolute';
+		var docWidth = document.documentElement.clientWidth,
+			docHeight = document.documentElement.clientHeight,
+			eWidth = elem.offsetWidth,
+			eHeight = elem.offsetHeight,
+			widthOverflow = eWidth > docWidth,
+			heigthOverflow = eHeight > docHeight;
+		
+		elem.style.marginLeft = '-' + (widthOverflow ? docWidth/2 : eWidth/2) + 'px';
+		elem.style.marginTop = '-' + (heigthOverflow ? docHeight/2 : eHeight/2) + 'px';
+ 
+		
 		if( fixed ){
-			if( isIE6 ){
+
+			if( Min.UA.isIE6 ){
 				style.setExpression( 'top','fuckIE6=document.documentElement.scrollTop+document.documentElement.clientHeight/2+"px"' );
 			}
 			else{
@@ -108,11 +105,11 @@ Dialog.prototype = {
 			style.left = '50%';
 		}
 		else{
-			if( isIE6 ){
+			if( Min.UA.isIE6 ){
 				style.removeExpression( 'top' );
 			}
-			style.top = document.documentElement.clientHeight/2 + Dialog.getScroll( 'top' ) + 'px';
-			style.left = document.documentElement.clientWidth/2 + Dialog.getScroll( 'left' ) + 'px';
+			style.top = document.documentElement.clientHeight/2 + Min.dom.getScroll( 'top' ) + 'px';
+			style.left = document.documentElement.clientWidth/2 + Min.dom.getScroll( 'left' ) + 'px';
 		}
 	},
 	
@@ -127,7 +124,7 @@ Dialog.prototype = {
 		style.cssText = 'margin:0;padding:0;border:none;width:100%;height:100%;background:#333;opacity:0.6;filter:alpha(opacity=60);z-index:9999;position:fixed;top:0;left:0;';
 		
 		// IE6模拟fixed
-		if(isIE6){
+		if(Min.UA.isIE6){
 			body.style.height = '100%';
 			style.position = 'absolute';
 			style.setExpression('top','fuckIE6=document.documentElement.scrollTop+"px"');
@@ -136,7 +133,7 @@ Dialog.prototype = {
 		overlay.id = 'overlay';
 		return overlay;
 	},
-	
+
 	/**
 	 * 创建弹出层
 	 * @return { Object } 弹出层 
@@ -147,7 +144,7 @@ Dialog.prototype = {
 		dialogBox.id = 'easyDialogBox';		
 		return dialogBox;
 	},
-
+	
 	/**
 	 * 创建默认的弹出层内容模板
 	 * @param { Object } 模板参数
@@ -169,11 +166,16 @@ Dialog.prototype = {
 			// footer
 			footer = yesBtn === '' && noBtn === '' ? '' :
 				'<div class="easyDialog_footer">' + noBtn + yesBtn + '</div>',
+				
+			content = tmpl.url === undefined ? tmpl.content : '<iframe width="100%" height="'+ tmpl.height + 'px" frameborder="0" style="border:none 0;" allowtransparency="true" id="easyDialogIframe" scrolling="no"  src="' + tmpl.url + '"></iframe>',
+			
+			cover = tmpl.url === undefined ? '' :'<div id="coverIframe" style="position: absolute; height: 100%; width: 100%; display: none; background-color:#fff; opacity: 0.5;">&nbsp;</div> ',
 			
 			dialogTmpl = [
-			'<div class="easyDialog_content">',
-				header,
-				'<div class="easyDialog_text">' + tmpl.content + '</div>',
+			header,
+			'<div class="easyDialog_content" style="position: relative;">',
+				cover,
+				'<div class="easyDialog_text" >' , content , '</div>',
 				footer,
 			'</div>'
 			].join(''),
@@ -189,42 +191,6 @@ Dialog.prototype = {
 		dialogWrap.innerHTML = dialogTmpl.replace( rScript, '' );		
 		return dialogWrap;
 	}		
-};
-	
-
-/**
- * 首字母大写转换
- * @param { String } 要转换的字符串
- * @return { String } 转换后的字符串 top => Top
- */
-Dialog.capitalize = function( str ){
-	var firstStr = str.charAt(0);
-	return firstStr.toUpperCase() + str.replace( firstStr, '' );
-};
-
-/**
- * 获取滚动条的位置
- * @param { String } 'top' & 'left'
- * @return { Number } 
- */	
-Dialog.getScroll = function( type ){
-	var upType = this.capitalize( type );		
-	return docElem['scroll' + upType] || body['scroll' + upType];	
-};
-
-/**
- * 获取元素在页面中的位置
- * @param { Object } DOM元素
- * @param { String } 'top' & 'left'
- * @return { Number } 
- */		
-Dialog.getOffset = function( elem, type ){
-	var upType = this.capitalize( type ),
-		client  = docElem['client' + upType]  || body['client' + upType]  || 0,
-		scroll  = this.getScroll( type ),
-		box = elem.getBoundingClientRect();
-		
-	return Math.round( box[type] ) + scroll - client;
 };
 
 /**
@@ -242,47 +208,48 @@ Dialog.drag = function( target, moveElem ){
 			}
 			catch( e ){};
 		},
-		
-		self = this,
-		event = self.event,
+
 		isDown = false,
-		newElem = isIE ? target : doc,
+		newElem = Min.UA.belowIE8 ? target : doc,
 		fixed = moveElem.style.position === 'fixed',
-		_fixed = Dialog.data( 'options' ).fixed;
+		_fixed = Min.cache.data( 'ed_options' ).fixed;
 	
 	// mousedown
 	var down = function( e ){
 		isDown = true;
-		var scrollTop = self.getScroll( 'top' ),
-			scrollLeft = self.getScroll( 'left' ),
+		var scrollTop = Min.dom.getScroll( 'top' ),
+			scrollLeft = Min.dom.getScroll( 'left' ),
 			edgeLeft = fixed ? 0 : scrollLeft,
-			edgeTop = fixed ? 0 : scrollTop;
+			edgeTop = fixed ? 0 : scrollTop,
+			offsets = Min.dom.getBounds(moveElem);
 		
-		Dialog.data( 'dragData', {
-			x : e.clientX - self.getOffset( moveElem, 'left' ) + ( fixed ? scrollLeft : 0 ),	
-			y : e.clientY - self.getOffset( moveElem, 'top' ) + ( fixed ? scrollTop : 0 ),			
+		Min.cache.data( 'ed_dragData', {
+			x : e.clientX - offsets.left  + ( fixed ? scrollLeft : 0 ),	
+			y : e.clientY - offsets.top + ( fixed ? scrollTop : 0 ),			
 			// 设置上下左右4个临界点的位置
 			// 固定定位的临界点 = 当前屏的宽、高(下、右要减去元素本身的宽度或高度)
 			// 绝对定位的临界点 = 当前屏的宽、高 + 滚动条卷起部分(下、右要减去元素本身的宽度或高度)
 			el : edgeLeft,	// 左临界点
 			et : edgeTop,  // 上临界点
 			er : edgeLeft + document.documentElement.clientWidth - moveElem.offsetWidth,  // 右临界点
-			eb : edgeTop + document.documentElement.clientHeight - moveElem.offsetHeight  // 下临界点
+			eb : edgeTop + document.documentElement.clientHeight -30//- moveElem.offsetHeight +30 // 下临界点
 		});
-		
-		if( isIE ){
+		if (!Min.UA.isIE && _$('coverIframe') ) { //非ie浏览器下在拖拽时用一个层遮住iframe，以免光标移入iframe失去拖拽响应
+			_$('coverIframe').style.display = "";
+				}
+		if( Min.UA.belowIE8 ){
 			// IE6如果是模拟fixed在mousedown的时候先删除模拟，节省性能
-			if( isIE6 && _fixed ){
+			if( Min.UA.isIE6 && _fixed ){
 				moveElem.style.removeExpression( 'top' );
 			}
 			target.setCapture();
 		}
 		
-		event.bind( newElem, 'mousemove', move );
-		event.bind( newElem, 'mouseup', up );
+		Min.event.bind( newElem, 'mousemove', move );
+		Min.event.bind( newElem, 'mouseup', up );
 		
-		if( isIE ){
-			event.bind( target, 'losecapture', up );
+		if(Min.UA.belowIE8){
+			Min.event.bind( target, 'losecapture', up );
 		}
 		
 		e.stopPropagation();
@@ -290,19 +257,37 @@ Dialog.drag = function( target, moveElem ){
 		
 	};
 	
-	event.bind( target, 'mousedown', down );
+	Min.event.bind( target, 'mousedown', down );
 	
 	// mousemove
 	var move = function( e ){
 		if( !isDown ) return;
 		clearSelect();
-		var dragData = Dialog.data( 'dragData' ),
+		var dragData = Min.cache.data( 'ed_dragData' ),
 			left = e.clientX - dragData.x,
 			top = e.clientY - dragData.y,
+			style = moveElem.style;
+		
+		// 设置上下左右的临界点以防止元素溢出当前屏
+		style.marginLeft = style.marginTop = '0px';
+		style.left = left + 'px';
+		style.top = top + 'px';
+		e.stopPropagation();
+	};
+	
+	// mouseup
+	var up = function( e ){
+		isDown = false;
+		
+		var dragData = Min.cache.data( 'ed_dragData' ),
+			left = e.clientX - dragData.x,
+			top = e.clientY - dragData.y,
+			
 			et = dragData.et,
 			er = dragData.er,
 			eb = dragData.eb,
 			el = dragData.el,
+		
 			style = moveElem.style;
 		
 		// 设置上下左右的临界点以防止元素溢出当前屏
@@ -310,21 +295,23 @@ Dialog.drag = function( target, moveElem ){
 		style.left = ( left <= el ? el : (left >= er ? er : left) ) + 'px';
 		style.top = ( top <= et ? et : (top >= eb ? eb : top) ) + 'px';
 		e.stopPropagation();
-	};
-	
-	// mouseup
-	var up = function( e ){
-		isDown = false;
-		if( isIE ){
-			event.unbind( target, 'losecapture', arguments.callee );
+		
+		
+		
+		if( Min.UA.belowIE8 ){
+			Min.event.unbind( target, 'losecapture', arguments.callee );
 		}
-		event.unbind( newElem, 'mousemove', move );
-		event.unbind( newElem, 'mouseup', arguments.callee );		
-		if( isIE ){
+		Min.event.unbind( newElem, 'mousemove', move );
+		Min.event.unbind( newElem, 'mouseup', arguments.callee );	
+
+		if (!Min.UA.isIE && _$('coverIframe') ) { //非ie浏览器下在拖拽时用一个层遮住iframe，以免光标移入iframe失去拖拽响应
+			_$('coverIframe').style.display = "none";
+		}
+		if( Min.UA.belowIE8 ){
 			target.releaseCapture();
 			// IE6如果是模拟fixed在mouseup的时候要重新设置模拟
-			if( isIE6 && _fixed ){
-				var top = parseInt( moveElem.style.top ) - self.getScroll( 'top' );
+			if( Min.UA.isIE6 && _fixed ){
+				var top = parseInt( moveElem.style.top ) - Min.dom.getScroll( 'top' );
 				moveElem.style.setExpression('top',"fuckIE6=document.documentElement.scrollTop+" + top + '+"px"');
 			}
 		}
@@ -332,35 +319,33 @@ Dialog.drag = function( target, moveElem ){
 	};
 };
 
-var	timer,	// 定时器
-	// ESC键关闭弹出层
-	escClose = function( e ){
+
+
+var easyDialog = {
+
+	timer:undefined,	
+	escClose : function( e ){
 		if( e.keyCode === 27 ){
-			extend.close();
+			easyDialog.close();
 		}
 	},	
-	// 清除定时器
-	clearTimer = function(){
-		if( timer ){
-			clearTimeout( timer );
-			timer = undefined;
+	clearTimer :function(){
+		if( easyDialog.timer ){
+			clearTimeout( easyDialog.timer );
+			easyDialog.timer = undefined;
 		}
-	};
-	
-var extend = {
+	},
 	open : function(){
 		var $ = new Dialog(),
 			options = $.getOptions( arguments[0] || {} ),	// 获取参数
-			event = Dialog.event,
 			docWidth = document.documentElement.clientWidth,
 			docHeight = document.documentElement.clientHeight,
-			self = this,
 			overlay,
 			dialogBox,
 			dialogWrap,
 			boxChild;
 			
-		clearTimer();
+		easyDialog.clearTimer();
 		
 		// ------------------------------------------------------
 		// ---------------------插入遮罩层-----------------------
@@ -372,14 +357,14 @@ var extend = {
 			if( !overlay ){
 				overlay = $.createOverlay();
 				body.appendChild( overlay );
-				if( isIE6 ){
+				if( Min.UA.isIE6 ){
 					$.appendIframe( overlay );
 				}
 			}
 			overlay.style.display = 'block';
 		}
 		
-		if(isIE6){
+		if(Min.UA.isIE6){
 			$.setBodyBg();
 		}
 		
@@ -400,8 +385,9 @@ var extend = {
 			};
 			
 			follow();
-			event.bind( win, 'resize', follow );
-			Dialog.data( 'follow', follow );
+			
+			Min.event.bind( win, 'resize', follow );
+			Min.cache.data( 'ed_follow', follow );
 			if( overlay ){
 				overlay.style.display = 'none';
 			}
@@ -438,11 +424,12 @@ var extend = {
 			eHeight = dialogWrap.offsetHeight,
 			widthOverflow = eWidth > docWidth,
 			heigthOverflow = eHeight > docHeight;
-			
+		
 		// 强制去掉自定义弹出层内容的margin	
 		dialogWrap.style.marginTop = dialogWrap.style.marginRight = dialogWrap.style.marginBottom = dialogWrap.style.marginLeft = '0px';	
 		
 		// 居中定位
+		
 		if( !options.follow ){			
 			dialogBox.style.marginLeft = '-' + (widthOverflow ? docWidth/2 : eWidth/2) + 'px';
 			dialogBox.style.marginTop = '-' + (heigthOverflow ? docHeight/2 : eHeight/2) + 'px';			
@@ -452,7 +439,7 @@ var extend = {
 		}
 				
 		// 防止select穿透固定宽度和高度
-		if( isIE6 && !options.overlay ){
+		if( Min.UA.isIE6 && !options.overlay ){
 			dialogBox.style.width = eWidth + 'px';
 			dialogBox.style.height = eHeight + 'px';
 		}
@@ -467,9 +454,9 @@ var extend = {
 
 		// 绑定确定按钮的回调函数
 		if( dialogYesBtn ){
-			event.bind( dialogYesBtn, 'click', function( event ){
-				if( options.container.yesFn.call(self, event) !== false ){
-					self.close();
+			Min.event.bind( dialogYesBtn, 'click', function( event ){
+				if( options.container.yesFn.call(easyDialog, event) !== false ){
+					easyDialog.close();
 				}
 			});
 		}
@@ -477,50 +464,53 @@ var extend = {
 		// 绑定取消按钮的回调函数
 		if( dialogNoBtn ){
 			var noCallback = function( event ){
-				if( options.container.noFn === true || options.container.noFn.call(self, event) !== false ){
-					self.close();
+				if( options.container.noFn === true || options.container.noFn.call(easyDialog, event) !== false ){
+					easyDialog.close();
 				}
 			};
-			event.bind( dialogNoBtn, 'click', noCallback );
+			Min.event.bind( dialogNoBtn, 'click', noCallback );
 			// 如果取消按钮有回调函数 关闭按钮也绑定同样的回调函数
 			if( closeBtn ){
-				event.bind( closeBtn, 'click', noCallback );
+				Min.event.bind( closeBtn, 'click', noCallback );
 			}
 		}			
 		// 关闭按钮绑定事件	
 		else if( closeBtn ){
-			event.bind( closeBtn, 'click', self.close );
+			Min.event.bind( closeBtn, 'click', easyDialog.close );
 		}
 		
 		// ESC键关闭弹出层
 		if( !options.lock ){
-			event.bind( doc, 'keyup', escClose );
+			Min.event.bind( doc, 'keyup', easyDialog.escClose );
 		}
 		// 自动关闭弹出层
 		if( options.autoClose && typeof options.autoClose === 'number' ){
-			timer = setTimeout( self.close, options.autoClose );
+			timer = setTimeout( easyDialog.close, options.autoClose );
 		}		
 		// 绑定拖拽(如果弹出层内容的宽度或高度溢出将不绑定拖拽)
-		if( options.drag && dialogTitle && !widthOverflow && !heigthOverflow ){
+		//if( options.drag && dialogTitle && !widthOverflow && !heigthOverflow ){
+		if( options.drag && dialogTitle ){
 			dialogTitle.style.cursor = 'move';
 			Dialog.drag( dialogTitle, dialogBox );
 		}
 		
 		// 确保弹出层绝对定位时放大缩小窗口也可以垂直居中显示
 		
-		if( !options.follow && !options.fixed ){
+		//if( !options.follow && !options.fixed ){
+		if( !options.follow  ){
 			var resize = function(){
-				$.setPosition( dialogBox, false );
+				
+				$.setPosition( dialogBox, options.fixed );
 			};
 			// 如果弹出层内容的宽度或高度溢出将不绑定resize事件
-			if( !widthOverflow && !heigthOverflow ){
-				event.bind( win, 'resize', resize );
-			}
-			Dialog.data( 'resize', resize );
+			//if( !widthOverflow && !heigthOverflow ){
+				Min.event.bind( win, 'resize', resize );
+			//}
+			Min.cache.data( 'ed_resize', resize );
 		}
 		
 		// 缓存相关元素以便关闭弹出层的时候进行操作
-		Dialog.data( 'dialogElements', {
+		Min.cache.data( 'ed_dialogElements', {
 			overlay : overlay,
 			dialogBox : dialogBox,
 			closeBtn : closeBtn,
@@ -531,11 +521,10 @@ var extend = {
 	},
 	
 	close : function(){
-		var options = Dialog.data( 'options' ),
-			elements = Dialog.data( 'dialogElements' ),
-			event = Dialog.event;
-			
-		clearTimer();
+		var options = Min.cache.data( 'ed_options' ),
+			elements = Min.cache.data( 'ed_dialogElements' );
+			 
+		easyDialog.clearTimer();
 		//	隐藏遮罩层
 		if( options.overlay && elements.overlay ){
 			elements.overlay.style.display = 'none';
@@ -543,7 +532,7 @@ var extend = {
 		// 隐藏弹出层
 		elements.dialogBox.style.display = 'none';
 		// IE6清除CSS表达式
-		if( isIE6 ){
+		if( Min.UA.isIE6 ){
 			elements.dialogBox.style.removeExpression( 'top' );
 		}
 		
@@ -551,100 +540,45 @@ var extend = {
 		// --------------------删除相关事件----------------------
 		// ------------------------------------------------------
 		if( elements.closeBtn ){
-			event.unbind( elements.closeBtn, 'click' );
+			Min.event.unbind( elements.closeBtn, 'click' );
 		}
 
 		if( elements.dialogTitle ){
-			event.unbind( elements.dialogTitle, 'mousedown' );
+			Min.event.unbind( elements.dialogTitle, 'mousedown' );
 		}
 		
 		if( elements.dialogYesBtn ){
-			event.unbind( elements.dialogYesBtn, 'click' );
+			Min.event.unbind( elements.dialogYesBtn, 'click' );
 		}
 		
 		if( elements.dialogNoBtn ){
-			event.unbind( elements.dialogNoBtn, 'click' );
+			Min.event.unbind( elements.dialogNoBtn, 'click' );
 		}
 		
-		if( !options.follow && !options.fixed ){
-			event.unbind( win, 'resize', Dialog.data('resize') );
-			Dialog.removeData( 'resize' );
+		//if( !options.follow && !options.fixed ){
+		if( !options.follow  ){
+			Min.event.unbind( win, 'resize', Min.cache.data('ed_resize') );
+			Min.cache.removeData( 'ed_resize' );
 		}
 		
 		if( options.follow ){
-			event.unbind( win, 'resize', Dialog.data('follow') );
-			Dialog.removeData( 'follow' );
+			Min.event.unbind( win, 'resize', Min.cache.data('ed_follow') );
+			Min.cache.removeData( 'ed_follow' );
 		}
 		
 		if( !options.lock ){
-			event.unbind( doc, 'keyup', escClose );
+			Min.event.unbind( doc, 'keyup', easyDialog.escClose );
 		}
 		// 执行callback
 		if(typeof options.callback === 'function'){
-			options.callback.call( extend );
+			options.callback.call( easyDialog );
 		}
 		// 清除缓存
-		Dialog.removeData( 'options' );
-		Dialog.removeData( 'dialogElements' );
+		Min.cache.removeData( 'ed_options' );
+		Min.cache.removeData( 'ed_dialogElements' );
 	}
-};
-
-return extend;
 
 };
 
-// ------------------------------------------------------
-// ---------------------DOM加载模块----------------------
-// ------------------------------------------------------
-var loaded = function(){
-		win.easyDialog = easyDialog();
-	},
-	
-	doScrollCheck = function(){
-		if ( document.body ) return;
+ 
 
-		try {
-			document.documentElement.doScroll("left");
-		} catch(e) {
-			setTimeout( doScrollCheck, 1 );
-			return;
-		}
-		loaded();
-	};
-
-(function(){
-	if( document.body ){
-		loaded();
-	}
-	else{
-		if( document.addEventListener ){
-			document.addEventListener( 'DOMContentLoaded', function(){
-				document.removeEventListener( 'DOMContentLoaded', arguments.callee, false );
-				loaded();
-			}, false );
-			win.addEventListener( 'load', loaded, false );
-		}
-		else if( document.attachEvent ){
-			document.attachEvent( 'onreadystatechange', function(){
-				if( document.readyState === 'complete' ){
-					document.detachEvent( 'onreadystatechange', arguments.callee );
-					loaded();
-				}
-			});
-			win.attachEvent( 'onload', loaded );			
-			var toplevel = false;
-			try {
-				toplevel = win.frameElement == null;
-			} catch(e) {}
-
-			if ( document.documentElement.doScroll && toplevel ) {
-				doScrollCheck();
-			}
-		}
-	}
-})();
-
-})( window, undefined );
-
-// 2012-04-12 修复跟随定位缩放浏览器时无法继续跟随的BUG
-// 2012-04-22 修复弹出层内容的尺寸大于浏览器当前屏尺寸的BUG

@@ -1,5 +1,5 @@
 function scrollSlide(setting){
- 	
+	
 	this.sc = setting['sc'];
 	this.mc = setting['mc'];
 	this.inited = false;
@@ -13,19 +13,20 @@ function scrollSlide(setting){
 		lis = container.getElementsByTagName('li'),
 		len = lis.length;
 	this.currentHover = lis[len-1];
-	var	conwidth = parseInt(container.offsetWidth);
-	this.showsize = Math.floor(conwidth/parseInt(this.currentHover.offsetWidth));
+	var	conwidth = container.offsetWidth;
+	this.showsize = Math.floor(conwidth/this.currentHover.offsetWidth);
 		
 	this.row = Math.ceil(len/this.showsize); 	
 	this.currentRow = 0;
 	if(this.row > 1){
 		container.getElementsByTagName("ul")[0].style.width = this.row*conwidth  + "px"; 
 	}
-	container.style.left = (parseInt(container.parentNode.offsetWidth) - conwidth)/2 + "px";
+	container.style.left = (container.parentNode.offsetWidth - conwidth)/2 + "px";
+	container.style.visibility ="visible";
 	var inner = Array();
 	Min.obj.each(lis,function(a,b){
 		a.setAttribute('data-index',b);
-		inner[b] = '<li><a href= " '+ a.getAttribute('href') + '"  target="_blank"  style="position:relative"></a></li>';
+		inner[b] = '<li><a '+ (a.getAttribute('href') ? 'href="'+ a.getAttribute('href') + '"  target="_blank"' :'') + ' style="position:relative"></a></li>';
 		a.removeAttribute('href');
 	});
 	
@@ -47,7 +48,7 @@ scrollSlide.prototype.scrollLeft = function(){
 	if( this.currentRow>0)
 	{
 		this.currentRow--;
-		_$(this.sc).getElementsByTagName("ul")[0].style.marginLeft="-"+this.currentRow*parseInt(_$(this.sc).offsetWidth)+"px";
+		_$(this.sc).getElementsByTagName("ul")[0].style.marginLeft="-"+this.currentRow*(_$(this.sc).offsetWidth)+"px";
 	}
 };
 
@@ -55,7 +56,7 @@ scrollSlide.prototype.scrollRight = function(e){
 	if(this.currentRow + 1 < this.row)
 	{
 		this.currentRow++;
-		_$(this.sc).getElementsByTagName("ul")[0].style.marginLeft="-"+this.currentRow*parseInt(_$(this.sc).offsetWidth)+"px";
+		_$(this.sc).getElementsByTagName("ul")[0].style.marginLeft="-"+this.currentRow*(_$(this.sc).offsetWidth)+"px";
 		var k = e.currentTarget.getAttribute('data-index')|| 0 ;
 		if( k < this.currentRow ){
 			e.currentTarget.setAttribute('data-index', this.currentRow);
@@ -138,10 +139,16 @@ scrollSlide.prototype.replaceSlide = function(e){
 
 	var newloade = ael.getAttribute('loaded') ;
 	if (e.type == "click" || e.type == "mouseover" || newloade== "2"){
+	/*
 		lis[pre_index].style.zIndex =0;
+		lis[pre_index].style.position ="";
 		Min.css.setOpacity(lis[pre_index],0);
 		lis[index].style.zIndex = 2;
+		lis[index].style.position ="relative";
 		Min.css.setOpacity(lis[index],1);
+		*/
+		lis[pre_index].style.visibility="";
+		lis[index].style.visibility="visible";
 		this.currentHover.className='';
 		ael.className="tsSelectImg";
 		this.currentHover = ael;
@@ -194,7 +201,7 @@ scrollSlide.prototype.init = function(){
 	}
 };
 scrollSlide.prototype.initsc = function(){
-	console.log('initsc');
+
 	var lis = _$(this.sc).getElementsByTagName('li'),
 		start = this.currentRow * this.showsize,
 		len = lis.length,j,m,src;
@@ -206,7 +213,6 @@ scrollSlide.prototype.initsc = function(){
 		if(!Min.obj.imgLoad([m])){
 			m.setAttribute('data-index',start);
 			Min.event.bind( m,'load',{ handler:function(){
-				console.log(arguments);
 				var index = this.getAttribute("data-index");
 					lis[index].appendChild(this);
 					lis[index].removeAttribute('si');
@@ -268,10 +274,9 @@ scrollSlide.prototype.tsScrollResizeHd = function(Timage){
 	}
 
 	if(h%2!=0) h=h-1;
-
 	var  tsImgsBox = Timage.parentNode; 
 	Timage.height = h ;Timage.width = w;
-	tsImgsBox.style.width = Timage.offsetWidth;
+	tsImgsBox.style.width = Timage.offsetWidth+'px';
 	if(Timage.height<maxHeight){
 		var TopBottom=(maxHeight-Timage.height)/2;
 		 tsImgsBox.style.paddingTop=Math.floor(TopBottom)+"px";
