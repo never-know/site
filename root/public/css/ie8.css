@@ -17,3 +17,7 @@ border:1px solid #f3f3f3;
 .plist-recommend-leftbar em {
 padding-top:10px;
 }
+#product-shop-id.fixed{
+height:22px;
+border-bottom:1px solid silver;
+}

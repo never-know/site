@@ -5,17 +5,10 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/reset.css"/>
 <link rel="stylesheet" href="http://cdn.annqi.com/public/css/fucome.css"/>
 <link rel="stylesheet" href="http://cdn.annqi.com/public/font/iconfont.css"/>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/base.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/Min.js"></script>
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/minajax.js"></script>
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/jsonp.js"></script>
-
-<!--[if  IE]><![endif]-->
-  
-<!--[if lte IE 7]><![endif]-->	
-<!--[if lte IE 6]><![endif]-->	
-  
-  
-  
 
 </head>
 <body>

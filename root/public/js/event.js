@@ -10,14 +10,13 @@ Min.event = {
 		if( events.indexOf(options) == -1 ){
 			events.push( options );
 		 }else{
-		// console.log(" twice avoid!!!!!");
+			alert(" twice avoid!!!!!");
 		 }
 		// 同一事件类型只注册一次事件，防止重复注册
 		if( events.length === 1 ){
 			var eventHandler = this.eventHandler( elem );
 			Min.cache.data( elem, type + 'Handler', eventHandler );
-			 
-			 
+
 			if( elem.addEventListener ){
 				elem.addEventListener( type, eventHandler, false );
 			}
@@ -27,7 +26,15 @@ Min.event = {
 			 
 		}
 	},
-	
+	childBind : function(elem, type, options){
+		elem = _$(elem);
+		if(!elem) return;
+		var tags = elem.getElementsByTagName(options.tag);
+		
+		for(var i=0 , tag; tag =tags[i++]; ){
+			this.bind(tag,type,options);		
+		}
+	},
 	unbind : function( elem, type, option ){
 		elem = _$(elem);
 		if( !elem ) return;
@@ -79,29 +86,38 @@ Min.event = {
 				options = Min.cache.data( elem, 'e' + type );
 
 			for(var i=options.length, option; option = options[--i];){
-		
-			//	var isDelegate = false;
-				
+
 				if( option.selector) {
 				
 					var target = orginalTarget;
 					
 					for( ; target !== elem; target = target.parentNode || elem ){
+						
 						if( Min.event.delegateFilter(target, option.selector) ){
-							//isDelegate = true;
+							if( option.client != undefined && Min.dom.contains(target,event.relatedTarget) )
+							break;
+							
 							event.delegateTarget = target;
 							if ( option.once == true ){
 								Min.event.unbind( elem, type,option);
 							} 
 					
-							if( option.handler.call(elem, event) === false ){
+							if( option.handler.call(target, event) === false ){
 								event.preventDefault();
 								event.stopPropagation();	
-							}	 
-						}                        
+							}	
+							if( option.p == true) break;
+							
+						}else if( option.p == true ){
+							break;
+						}						
 					}      
-				}
-				if( option.selector== undefined  ){
+				}else{
+				
+					if( option.client != undefined  && Min.dom.contains(elem,event.relatedTarget) )
+							continue;
+				
+					if( orginalTarget != elem && option.p == true ) continue;
 					if ( option.once == true ){
 						Min.event.unbind( elem, type,option);
 					} 
@@ -162,6 +178,9 @@ Min.event = {
 		event.stopPropagation = function(){
 			e.cancelBubble = true;
 		};
+		if( !e.relatedTarget && e.fromElement ){
+            event.relatedTarget = e.fromElement === event.target ? e.toElement : e.fromElement;
+        }
 		// IE6/7/8在原生的window.event中直接写入自定义属性
 		// 会导致内存泄漏，所以采用复制的方式
 		for( name in e ){
@@ -204,6 +223,16 @@ Min.event = {
 		
 		 return target.nodeType === 3 ? target.parentNode :target;
 
-	}
+	},
+	fireEvent : function( elem, type ){
+        if( document.createEvent ){
+            var event = document.createEvent( 'HTMLEvents' );
+            event.initEvent( type, true, true );
+            elem.dispatchEvent( event );
+        }
+        else{
+            elem.fireEvent( 'on' + type );
+        }    
+    }
 
 }

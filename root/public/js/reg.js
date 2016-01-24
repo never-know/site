@@ -10,26 +10,23 @@ function betweenLength(str, _min, _max) {
 }
 function strong_settimer(obj,width,tag){
 	obj.className="tips-s";
-	var itag = obj.getElementsByTagName('i')[0];
+	var itag = obj.getElementsByTagName('em')[0];
 	if( !itag ){
-		obj.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd" style="width:0px;">&#xe661;</i>';
-		itag = obj.getElementsByTagName('i')[0];
+		obj.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd">&#xe661;</i><em style="left:86px;"></em>';
+		itag = obj.getElementsByTagName('em')[0];
 	}
 	clearInterval(itag.timer);	
 
-
-
-
 	itag.timer=setInterval(function(){
-		var cw=parseInt(itag.offsetWidth);
+		var cw=parseInt(itag.style.left);
 		if(cw-width>0){
-			itag.style.width= parseInt(cw-1)+'px';
+			itag.style.left= parseInt(cw-1)+'px';
 		}else if(cw-width<0){
-			itag.style.width= parseInt(cw+1)+'px';
+			itag.style.left= parseInt(cw+1)+'px';
 		}
 		else{		
 				clearInterval(itag.timer);	
-				itag.parentNode.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd" style="width:'+cw+'px;">&#xe661;</i>';		 
+				itag.parentNode.innerHTML='密码强度：'+tag+'&nbsp;&nbsp;<i class="iconfont icon-pwd" >&#xe661;</i><em style="left:'+cw+'px" ></em>';		 
 			}
 		  
 		},15);
@@ -48,11 +45,11 @@ function pwdstrong(pwd){
 function setstrong(strong,obj){
 	
 	if(strong<3){	
-		strong_settimer(obj,16,'弱');		 
+		strong_settimer(obj,98,'弱');		 
 	}else if(strong>3){
-		strong_settimer(obj,80,'强');
+		strong_settimer(obj,150,'强');
 	}else{ 
-		strong_settimer(obj,48,'中');
+		strong_settimer(obj,122,'中');
 	}
 }
 function setError(obj,msg,name){
@@ -61,8 +58,8 @@ function setError(obj,msg,name){
 }
 
 _$('regpwd').onkeyup =function(e){
-	var itag  = getNextElement(this);
-	var error = getNextElement(itag);
+	var itag  = Min.dom.next(this);
+	var error = Min.dom.next(itag);
 	var flag = 0;
 	if(this.value==''){	
 	 
@@ -75,7 +72,7 @@ _$('regpwd').onkeyup =function(e){
 		flag =1;
 		pwd1.setAttribute('disabled','disabled');
 		this.removeAttribute('style');
-		var tmp= getNextElement(pwd1);
+		var tmp= Min.dom.next(pwd1);
 		tmp.removeAttribute('style');
 		tmp.innerHTML = "&#xe63a;";
 		tmp.style.background="none";
@@ -93,8 +90,8 @@ _$('regpwd').onkeyup =function(e){
 	}else{
 		pwd1.removeAttribute('disabled');
 		pwd1.removeAttribute('style');
-		getNextElement(pwd1).innerHTML = "&#xe63a;";
-		getNextElement(pwd1).style.background = "white";
+		Min.dom.next(pwd1).innerHTML = "&#xe63a;";
+		Min.dom.next(pwd1).style.background = "white";
 		
 	}
 	if(flag !=1){
@@ -105,8 +102,8 @@ _$('regpwd').onkeyup =function(e){
 	
 	
 	if(pwd1.value != ''){
-		var itag1  = getNextElement(pwd1);
-		var error1 = getNextElement(itag1);
+		var itag1  = Min.dom.next(pwd1);
+		var error1 = Min.dom.next(itag1);
 		if(flag==0){
 			if(this.value == pwd1.value){
 				setError( error,'','hide');
@@ -135,7 +132,7 @@ _$('regpwd1').onkeyup =function(e){
 	if( pwd ==''  ){
 		this.value=''; 
 		this.setAttribute('disabled','disabled'); 
-		getNextElement(this).style.background = "none"; 
+		Min.dom.next(this).style.background = "none"; 
 		_$('regpwd1-error').className='hide';
 		_$('regpwd').focus();
 		return true;
@@ -146,12 +143,12 @@ _$('regpwd1').onkeyup =function(e){
 		return;
 	}else if( this.value == pwd ) {console.log(3);
 			setError(_$('regpwd1-error'),'','hide');
-			itag = getNextElement(this);
+			itag = Min.dom.next(this);
 			itag.innerHTML="&#xe634;"
 			itag.style.color="#7ABD54";
 	}else{
 		setError(_$('regpwd1-error'),'请再次输入密码','tips');
-		itag = getNextElement(this);
+		itag = Min.dom.next(this);
 			itag.innerHTML="&#xe63a;"
 			itag.removeAttribute('style');
 		return;
@@ -168,7 +165,7 @@ _$('regpwd').onfocus=function(){
 	}else if(  this.value=='' || isPwd(this.value) == true){
 		setError( tips,'6-20位字母、数字或标点（空格、引号、反斜线\除外）','tips');
 		this.removeAttribute('style');
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		itag.innerHTML="&#xe63a;"
 		itag.removeAttribute('style');
 	}
@@ -185,13 +182,13 @@ _$('regpwd').onblur=function(){
 	}else if(this.value.length < 6){
 		setError(_$('regpwd-error'),'请输入6-20位密码','errors');
 		this.style.borderColor="#f00";
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		itag.innerHTML="&#xe63a;"
 		itag.removeAttribute('style');
 		return;
 	}else{
 		setError(_$('regpwd-error'),'','hide');
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		itag.innerHTML="&#xe634;"
 		itag.style.color="#7ABD54";
 	}
@@ -205,7 +202,7 @@ _$('regpwd').onblur=function(){
 		tips.innerHTML='请再次输入密码';
 		tips.className="tips";
 		this.removeAttribute('style');
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		itag.innerHTML="&#xe63a;"
 		itag.removeAttribute('style');	 
 	};
@@ -227,7 +224,7 @@ _$('regpwd').onblur=function(){
 
 	_$('regcode').onblur=function(){
 		var code = this.value;
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		
 		if(code){
 		
@@ -256,7 +253,7 @@ _$('regpwd').onblur=function(){
  _$('regcode').onkeyup=function (event){
 		var obj= _$('regcode')
 		var code = obj.value;
-		var itag = getNextElement(obj);
+		var itag = Min.dom.next(obj);
 		 
 		if(code.length==4){
 		
@@ -309,7 +306,7 @@ function phoneCheck(phone){
 		tips.innerHTML='请输入11位手机号码';
 		tips.className="tips";
 		this.removeAttribute('style');
-		var itag=getNextElement(this);
+		var itag=Min.dom.next(this);
 		itag.innerHTML="&#xe619;"
 		itag.removeAttribute('style');	 
 	};
@@ -323,7 +320,7 @@ function phoneCheck(phone){
 			this.style.borderColor="#f00";
 			return;
 		}else{ 
-			var itag=getNextElement(this);
+			var itag=Min.dom.next(this);
 			itag.innerHTML="&#xe634;"
 			itag.style.color="#7ABD54";
 			return ;
@@ -332,7 +329,7 @@ function phoneCheck(phone){
 	};
 	
 _$('regphone').onkeyup = function(){
-	var itag = getNextElement(this);
+	var itag = Min.dom.next(this);
 	if( (this.value.length != 11 && /^1[\d]*$/.test(this.value)) || this.value == '' ){
 		setError(_$('regphone-error'),'请输入11位手机号码','tips');
 		itag.innerHTML="&#xe619;"

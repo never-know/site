@@ -12,21 +12,7 @@
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/Min.js"></script>
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/event.js"></script>
  
- 
-<!--[if IE]> <![endif]-->
-<!--[if lte IE 8]><![endif]-->
-<!--[if lt IE 9]><![endif]-->
-<!--[if lte IE 7]><![endif]-->	
-<!--[if lte IE 8]><![endif]-->	
-<!--[if  IE 8]>
-<link rel="stylesheet" type="text/css" href="http://cdn.annqi.com/public/css/ie8.css" />
-<![endif]-->
 
-<!--[if lte  IE 6]>
-	<style>
-		body {behavior: url("/public/js/csshover.htc");}
-	</style>
-<![endif]-->
   
 </head>
 <body>
@@ -107,11 +93,6 @@
  
  
 </body>
-<script>
 
-var bh = document.body.scrollHeight;
-//window.top.location.hash = "#height=" + bh;
-console.log(window.parent.location.href);
-</script>
 
 </html>

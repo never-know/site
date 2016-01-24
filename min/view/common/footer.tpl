@@ -1,6 +1,7 @@
  <div style="clear:both;"></div>
 	<div class="footer">
 		<div class="footer_first">
+		<div class="footer_first_inner">
 			<a href=" " title="" data-tc="ad.0.0.17536-18431204" data-ref="17536_18431204_1" target="_blank">
 				<img alt="" src="http://cdn.annqi.com/public/images/yhd/A4.jpg">
 				<b>正品保障</b>
@@ -21,6 +22,7 @@
 				<b>准时送达</b>
 				<span>收货时间由你做主</span>
 			</a>
+		</div>
 		</div>
 		<div class="footer_second">
 			<div   class="footer_help_list"  >

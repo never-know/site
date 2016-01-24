@@ -1,4 +1,6 @@
 function MagicZoom(settings) {
+
+	if( _$(settings['sc']) == null) return;
 	this.lcsize = {w:390,h:390};
     this.positionX = 0;
     this.positionY = 0;

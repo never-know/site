@@ -1,3 +1,7 @@
+/***
+与:hover, querySelectorAll相关的元素，不可以用 dispaly:none;否则无法获取元素
+**/
+
 var	win = window,
 	doc = win.document,
 	body = doc.body,
@@ -7,6 +11,7 @@ var Min={};
 var _$ = function(id){
 	return "string" == typeof id ? document.getElementById(id) : id;
 }
+
 Min.cache = {
 
 	cacheData : {},
@@ -139,7 +144,7 @@ Min.css = {
 		link.setAttribute("rel", "stylesheet");
 		link.setAttribute("type", "text/css");
 		link.setAttribute("href", url);
-
+		
 		var heads = doc.getElementsByTagName("head");
 		if(heads.length)
 			heads[0].appendChild(link);
@@ -179,7 +184,7 @@ Min.util = {
 	 
 		var keyCode  =  e.keyCode||e.which;  
 		var isShift  =  e.shiftKey ||(keyCode  ==   16 ) || false ;
-		var itag=getNextElement(obj);	
+		var itag=Min.dom.next(obj);	
 		if (
 		((keyCode >=   65   &&  keyCode  <=   90 )  &&   !isShift)
 		// Caps Lock 打开，且没有按住shift键
@@ -259,83 +264,6 @@ Min.print ={
 
 Min.dom = {
 
- 
-	eventQueue : [],
- 
-	isReady :false,
- 
- 
-	isBind :false,
-	
-	ready : function(id,fn){
-		 
-		if( !_$(id))  return ;
-		if (this.isReady) {
-			fn.call(window);
-		}else{
-			this.eventQueue.push(fn);
-		}; 
-		if (!this.isBind) {
-			this.bindReady();
-		}
-	},
- 
- 
-	bindReady : function(){
-		if (this.isReady) return;
-		if (this.isBind) return;
-		this.isBind = true;
-	 
-		if (document.addEventListener) {
-			document.addEventListener('DOMContentLoaded',function(){
-					document.removeEventListener( 'DOMContentLoaded', arguments.callee, false );
-					Min.dom.execFn();
-				},false);
-			window.addEventListener( "load", Min.dom.execFn, false );
-		}
-		else if (window.attachEvent) {
-			document.attachEvent( 'onreadystatechange', function(){
-					if( document.readyState === 'complete' ){
-						document.detachEvent( 'onreadystatechange', arguments.callee );
-						Min.dom.execFn();
-					}
-				});
-			window.attachEvent( "onload", Min.dom.execFn );
-			var top = false;
-				 try {
-					 top = window.frameElement == null && document.documentElement;
-				 } catch(e) {}
-				 if ( top && top.doScroll ) {
-					this.doScroll();
-				}
-		};
-	},
- 
- 
-	doScroll : function(){
-		try{
-			document.documentElement.doScroll('left');
-		}
-		catch(error){
-			return setTimeout(Min.dom.doScroll,5);
-		};
-		Min.dom.execFn();
-	},
- 
- 
-	execFn : function(){
-		if (!Min.dom.isReady) {
-			Min.dom.isReady = true;
-			
-			for (var i = 0,len = Min.dom.eventQueue.length; i < len; i++) {
-			   try { 
-					Min.dom.eventQueue[i].call(window);
-			   }catch(e){}
-			};
-			delete Min.dom.eventQueue;
-		};
-	},
-	
 	next : function(element){
 		var tmp = element.nextSibling;
 		while( tmp!= null && tmp.nodeType!=1){
@@ -393,16 +321,22 @@ Min.dom = {
 		return firstStr.toUpperCase() + str.replace( firstStr, '' );
 	},
 	getScroll : function( type ){
-		var upType = this.capitalize( type );		
+		var upType = this.capitalize( type );	
 		return document.documentElement['scroll' + upType] || document.body['scroll' + upType];	
 	},
-	contains : document.defaultView? 
-		function (a, b) {
-			return !!( a.compareDocumentPosition(b) & 16 ); 
-		} : 
-		function (a, b) { 
-			return a != b && a.contains(b); 
-	}
+	contains : function( a, b ){
+        // 标准浏览器支持compareDocumentPosition
+		if(b==null || b == undefined) return false;
+        if( a.compareDocumentPosition ){
+            return !!( a.compareDocumentPosition(b) & 16 );
+        }
+        // IE支持contains
+        else if( a.contains ){
+            return a !== b && a.contains( b );
+        }
+
+        return false;
+    }
 	
 }
 
@@ -431,16 +365,26 @@ Min.obj = {
 			return object[methodName].apply(object, arguments);
 		}
 	},
-	imgLoad : function(a,b,c,d){
-		for(var i=0, args; args=a[i++];){
+	imgLoad : function(a,b,c,d,e){
+		e	= e || false;
+		for(var args; args = a.shift();){
 			var ok = (( Min.UA.belowIE8 && args.readyState ==='complete') || (!Min.UA.belowIE8 && args.complete == true ));
 			if ( args.width == 0 || args.height == 0 ||  !ok ){
 				if( typeof b == 'object' && b != null ){
-					c = c ||'init';
-					Min.event.bind(args, "load", {handler: Min.obj.methodReference(b,c,d),once:true});
+					if( a.length == 0 ){
+						c = c ||'init';
+						Min.event.bind(args, "load", {handler: Min.obj.methodReference(b,c,d),once:true});
+					}else{	
+						Min.event.bind(args, "load", {handler:function(){Min.obj.imgLoad(a,b,c,d,true)},once:true});	
+					}
 				}
 				return false;
 			}
+		}
+		
+		if( typeof b == 'object' && b != null && e== true ){
+			c = c ||'init';
+			setTimeout(Min.obj.methodReference(b,c,d),20);	
 		}
 		return true;
 	},
@@ -456,6 +400,89 @@ Min.obj = {
 		}
 	}
 }
+
+
+
+Min.ready = (function(){
+
+	var eventQueue = [],
+ 
+	isReady =false,
+
+	isBind =false,
+	
+	ready = function(id,fn){
+		
+	if( id!=true) { if(!_$(id)) return ;}
+		if (isReady) {
+			fn.call(window);
+		}else{	
+			eventQueue.push(fn);
+		}; 
+		if (!isBind) {
+			bindReady();
+		}
+	},
+ 
+ 
+	bindReady = function(){
+		if (isReady) return;
+		if (isBind) return;
+		isBind = true;
+	 
+		if (document.addEventListener) {
+			document.addEventListener('DOMContentLoaded',function(){
+					document.removeEventListener( 'DOMContentLoaded', arguments.callee, false );
+					execFn();
+				},false);
+			window.addEventListener( "load", execFn, false );
+		}
+		else if (window.attachEvent) {
+			document.attachEvent( 'onreadystatechange', function(){
+					if( document.readyState === 'complete' ){
+						document.detachEvent( 'onreadystatechange', arguments.callee );
+						execFn();
+					}
+				});
+			window.attachEvent( "onload", execFn );
+			var top = false;
+				 try {
+					 top = window.frameElement == null && document.documentElement;
+				 } catch(e) {}
+				 if ( top && top.doScroll ) {
+					doScroll();
+				}
+		};
+	},
+ 
+ 
+	doScroll = function(){
+		try{
+			document.documentElement.doScroll('left');
+		}
+		catch(error){
+			return setTimeout(doScroll,5);
+		};
+		execFn();
+	},
+ 
+ 
+	execFn = function(){
+		if (!isReady) {
+			isReady = true;
+			
+			for (var i = 0,len = eventQueue.length; i < len; i++) {
+			   try { 
+					eventQueue[i].call(window);
+			   }catch(e){}
+			};
+			delete eventQueue;
+		};
+	};
+	
+	return ready;
+
+})();
  
 if (typeof Array.prototype.forEach != "function") {
   Array.prototype.forEach = function (fn, context) {
@@ -544,6 +571,72 @@ if (!Object.keys) {
 		};
 	}
 
+
+
+
+if (!document.querySelectorAll) {
+	
+    document.querySelectorAll = function (selectors) {
+        var style = document.createElement('style'), elements = [], element;
+        document.documentElement.firstChild.appendChild(style);
+        document._qsa = [];
+
+		 if (style.styleSheet) {   // for IE
+            style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+        } else {                // others
+            var textnode = document.createTextNode(selectors + "{x-qsa:expression(document._qsa && document._qsa.push(this))}");
+            style.appendChild(textnode);
+        }
+
+        window.scrollBy(0, 0);
+        style.parentNode.removeChild(style);
+
+        while (document._qsa.length) {
+            element = document._qsa.shift();
+            element.style.removeAttribute('x-qsa');
+            elements.push(element);
+        }
+        document._qsa = null;
+        return elements;
+    };
+}
+
+if (!document.querySelector) {
+    document.querySelector = function (selectors) {
+        var elements = document.querySelectorAll(selectors);
+        return (elements.length) ? elements[0] : null;
+    };
+}
+
+// 用于在IE6和IE7浏览器中，支持Element.querySelectorAll方法
+
+var query = (function (){ 
+   var idAllocator = 10000;
+    function qsaWorkerShim(element, selector) {	
+		if(element == doc){
+			return document.querySelectorAll(selector);
+		}else{
+			var needsID = element.id === "";
+			if (needsID) {
+				++idAllocator;
+				element.id = "__qsa" + idAllocator;
+			}
+		}
+        try {
+            return document.querySelectorAll("#" + element.id + " " + selector);
+        }
+        finally {
+            if (needsID) {
+                element.id = "";
+            }
+        }
+    }
+    function qsaWorkerWrap(element, selector) {
+        return element.querySelectorAll(selector);
+    }
+    // Return the one this browser wants to use
+    return !!document.createElement('div').querySelectorAll ? qsaWorkerWrap : qsaWorkerShim;
+})();
 	
 	
 if (Min.UA.isIE6) try {
@@ -553,6 +646,7 @@ if (Min.UA.isIE6) try {
 if (Min.UA.isIE8){
 Min.css.addCssByLink('http://cdn.annqi.com/public/css/ie8.css');
 }
+
 
 
 

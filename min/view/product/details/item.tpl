@@ -78,7 +78,7 @@
 			<script>
 			var  p = _$('product-promote');
 			if(p.scrollHeight > 80 ){
-				p.getElementsByTagName('dd')[0].className="Hovmark";
+				p.getElementsByTagName('dd')[0].className="needHover";
 				p.style.height = "62px";
 			}
 		</script>
@@ -113,7 +113,7 @@
 	 
 		<div class="product-button">
 			<span id="buy-now">立即购买</span>
-			<span id="add-to-cart">加入购物车</span>
+			<a href="http://cart.annqi.com/add.html"> <span id="add-to-cart">加入购物车</span></a>
 		</div>
 		<div style="clear:both;"></div>
 		<dl class="product-service-tips">
@@ -202,9 +202,9 @@
 			</div>
 		</div>
 		<div class="product-rightbar"  >
-		 
-			<div id="product-nav-tab" class="product-nav-tab ptn-shadow">
-				<ul>
+		 <div class="product-nav-tab-wrapper" style=" height:42px;">
+			<div id="product-nav-tab"   class="product-nav-tab ptn-shadow">
+				<ul >
 					
 					<li for="product-description" class="pnt-selected">商品详情</li>
 					<li  for="product-parameter">商品参数</li>
@@ -215,7 +215,7 @@
 					<li id="pnt-add-to-cart" class="pnt-add-to-cart hide"> 加入购物车</li>
 				</ul>
 			</div>
-		 
+		 </div>
 			<div class="product-description" id="product-description" >
 				
 				<div class="product-synopsis">
@@ -415,8 +415,8 @@
 									<p>10.24</p></td>
 									<td class="comment-product">奶油口味500G装奶油口味500G装
 									<div class="comment-p-star">
-										<i class=" icon-star iconfont">&#xe64c;</i>
-										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+										<i class=" icon-star iconfont">&#xe660;</i>
+										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 									</div>
 									</td>
 									<td class="comment-author">小红</td>
@@ -432,8 +432,8 @@
 									<p>10.24</p></td>
 									<td class="comment-product">油口味装
 									<div class="comment-p-star">
-										<i class=" icon-star iconfont">&#xe64c;</i>
-										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+										<i class=" icon-star iconfont">&#xe660;</i>
+										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 									</div>
 									</td>
 									<td class="comment-author">小红</td>
@@ -451,8 +451,8 @@
 									<p>10.24</p> </td>
 									<td class="comment-product">油口味500G装
 									<div class="comment-p-star">
-										<i class=" icon-star iconfont">&#xe64c;</i>
-										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+										<i class=" icon-star iconfont">&#xe660;</i>
+										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 									</div>
 									</td>
 									<td class="comment-author">小红</td>
@@ -461,8 +461,8 @@
 									<td class="comment-content">质量很好,送货很快，我很喜欢<p>10.24</p> </td>
 									<td class="comment-product">油口味500G装
 									<div class="comment-p-star">
-										<i class=" icon-star iconfont">&#xe64c;</i>
-										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+										<i class=" icon-star iconfont">&#xe660;</i>
+										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 									</div>
 									</td>
 									<td class="comment-author">小红</td>
@@ -472,8 +472,8 @@
 									<td class="comment-product">
 									油口味500G装
 									<div class="comment-p-star">
-										<i class=" icon-star iconfont">&#xe64c;</i>
-										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe64c;</i> 
+										<i class=" icon-star iconfont">&#xe660;</i>
+										<i class=" icon-star iconfont icon-star-cover" style="width:80%">&#xe660;</i> 
 									</div>
 									</td>
 									<td class="comment-author">小红</td>
@@ -505,5 +505,5 @@
 
  
 </div>
-	
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>	
 		

@@ -1,7 +1,7 @@
 <?php
-namespace min\module\cart;
+namespace min\module\order;
 use min\inc\app;
-class cart{
+class order{
 
 	public function __construct($action){
 		if( $action == 'view') {
@@ -9,7 +9,7 @@ class cart{
 		}elseif($action == 'add'){
 			$this->add();
 		}elseif($action == 'confirm'){
-			$this->confirm();
+			$this->checkout();
 		}
 		exit();
 	}
@@ -26,7 +26,7 @@ class cart{
 	}
 	private function confirm(){ 
 	 
-		 app::display('checkout');
+		 app::display('cart');
 	
 	}
 

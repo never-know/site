@@ -3,7 +3,7 @@
  
 <div id="highlight" style="height:500px;" >	
 	<div class="hc">
-		<div  id="xxx" onselectstart="return false;">
+	<div  id="xxx" onselectstart="return false;">
 		<div class="slide-wrapper">
 			<div class="slide">
 				<div  class="slide_pre " ><i class="icon iconfont">&#xe621;</i></div> 
@@ -23,16 +23,14 @@
 		<div class="ce">
 			<img src="http://cdn.annqi.com/public/images/ce1.jpg"/>
 		</div>
-		<div id="subslide">
-			<div class="recommend_1" style="width:753px;">
-				<ul id="sm1" class="sm1" style="width:753px;" >
-					<li><img src=" " big="http://cdn.annqi.com/public/images/11.png" small="http://cdn.annqi.com/public/images/00.png" alt="" /></li>
-					<li><img src=" " big="http://cdn.annqi.com/public/images/33.png" small="http://cdn.annqi.com/public/images/22.png" alt="" /></li>
-					<li><img src=" " big="http://cdn.annqi.com/public/images/55.png" small="http://cdn.annqi.com/public/images/66.png" alt="" /></li>
+		<div id="slidemenu" class="slidemenu">
+				<ul>
+					<li><img class="b-image" data-rel="http://cdn.annqi.com/public/images/11.png" /> <img class="s-image" data-rel="http://cdn.annqi.com/public/images/00.png"   /></li>
+					<li><img class="b-image" data-rel="http://cdn.annqi.com/public/images/33.png" /><img class="s-image" data-rel="http://cdn.annqi.com/public/images/22.png"  /></li>
+					<li><img class="b-image" data-rel="http://cdn.annqi.com/public/images/55.png"  /><img class="s-image" data-rel="http://cdn.annqi.com/public/images/66.png"  /></li>
 				</ul>
-			</div>
 		</div>
-		</div>	
+	</div>	
 	 
 	 
 		<div id="news" >
@@ -116,7 +114,7 @@
 			</div>
 		</div>
 	<div class="column_ad"><img src="http://cdn.annqi.com/public/images/index/a.jpg" ></div>
-	<div class=" floor" id="floorSx" >
+	<div class="floor" id="floorSa" >
 		<div class="floor_title">
 			<div><a class="bt">进口 • 海购 </a></div>
 			<div class="keyword">
@@ -274,7 +272,7 @@
 		</div>
 	</div>
 	<div class="column_ad"><img src="http://cdn.annqi.com/public/images/index/a.jpg" ></div>
-	<div class=" floor" id="floorSx" >
+	<div class=" floor" id="floorSb" >
 		<div class="floor_title">
 			<div><a class="bt">进口 • 海购 </a></div>
 			<div class="keyword">
@@ -439,11 +437,10 @@
 	
 	
 <style>
+#main_nav{overflow:hidden;}
 #all_cat_hide{
 left:0px;
 top:42px;
-_top:40px;
-
 }
 </style>	
 <script type="text/javascript" src="http://cdn.annqi.com/public/js/index.js"></script>

@@ -1,4 +1,3 @@
- 
 	
 	<div class="login-header">
 		<div class="login-logo">
@@ -35,13 +34,13 @@
 						</div>
 						<div class="reg-pwd">
 							<label for="regpwd"><b class="red">*</b>请设置密码：</label>
-							<input type="password" id="regpwd" name="regpwd" class="regpwd" tabindex="2" autocomplete="off"  onpaste="return  false" maxlength="20"   onkeypress = "checkCapslock(event,this)"/>
+							<input type="password" id="regpwd" name="regpwd" class="regpwd" tabindex="2" autocomplete="off"  onpaste="return  false" maxlength="20"   onkeypress = "Min.util.checkCapslock(event,this)"/>
 							<i class="icon-reg iconfont">&#xe63a;</i>
-							<span id="regpwd-error"   > </span>
+							<span id="regpwd-error"></span>
 						</div>
 						<div class="reg-pwd">
 							<label for="regpwd1"><b class="red">*</b>请确认密码：</label>
-							<input type="password" id="regpwd1" name="regpwd1" class="regpwd" tabindex="2" autocomplete="off"  onpaste="return  false"  onkeypress = "checkCapslock (event,this)" maxlength="20"/>
+							<input type="password" id="regpwd1" name="regpwd1" class="regpwd" tabindex="2" autocomplete="off"  onpaste="return  false"  onkeypress = "Min.util.checkCapslock (event,this)" maxlength="20"/>
 							<i class="icon-reg iconfont">&#xe63a;</i>
 							<span id="regpwd1-error"></span>
 						 
@@ -69,5 +68,5 @@
 			</div>
 		</div>	 
 	</div>
- <script type="text/javascript" src="http://cdn.annqi.com/public/js/reg.js"></script>	
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/reg.js"></script>	
   

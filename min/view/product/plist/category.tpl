@@ -1,20 +1,47 @@
- 
+  
 
 
  
 
 <div class="content-wrapper">	
 
-	<div class="plist-recommend-topbar hide">
-		<dl>
-			<dt><a href=""><img src=""/></a></dt>
-			<dd>
-			<p></p>
-			<span></span>
-			<button></button>
-			</dd>
-		</dl>
+	<div class="plist-recommend plist-recommend-top">
+		<div class="recommend-title">
+		<span>热门推荐</span>
+		</div>
+		
+			<dl>
+				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				</dt>
+				<dd>
+				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
+				<span>￥200.00</span>
+				<em>立即购买</em>
+				</dd>
+			</dl>
+		
+		
+			<dl>
+				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				</dt>
+				<dd>
+				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
+				<span>￥200.00</span>
+				<em>立即购买</em>
+				</dd>
+			</dl>
 	
+		
+			<dl>
+				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				</dt>
+				<dd>
+				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
+				<span>￥200.00</span>
+				<em>立即购买</em>
+				</dd>
+			</dl>
+		
 	</div>
 	 
 	<div class="list-subcategory-header">
@@ -30,14 +57,14 @@
 				<span>笔记本<i class="iconfont">&#xe610;</i></span>
 				<span>15.6寸<i class="iconfont">&#xe610;</i></span>
 				<tt id="tt-tag">&gt;</tt>
-				 <input id="subsearch" type="text" onfocus="getNextElement(this).style.display='none'"/> 
+				 <input id="subsearch" type="text" onfocus="Min.dom.next(this).style.display='none'"/> 
 				<label for="subsearch" class="subsearch-label">当前条件下搜索</label>
 				<em class="submit"><i class="iconfont">&#xe652;</i></em> 
 				
 				 <em class="summary">共<b>3000</b>条记录</em>
 		</div>
 	</div>
-	<div class="list-subcategory ptn-shadow">
+	<div class="list-subcategory ptn-shadow" >
 		
 		<dl class="list-brand">
 			<dt>品牌：</dt> 
@@ -103,7 +130,7 @@
 			 
 			 </dd>
 		</dl>
-		<dl class="list-price">
+		<dl class="list-tag">
 			<dt>价格：</dt> 
 			<dd>
 				<ul>
@@ -118,13 +145,42 @@
 			 
 			 </dd>
 		</dl>
-	 
+		<dl class="list-tag">
+			<dt>价格：</dt> 
+			<dd>
+				<ul>
+				
+					<li>0-15</li>
+					<li>15-30</li>
+					<li>30-45</li>
+					<li>45-50</li>
+					<li>50-85</li>
+					<li>85-1000</li>
+				</ul>
+			 
+			 </dd>
+		</dl>
+		<dl class="list-tag">
+			<dt>价格：</dt> 
+			<dd>
+				<ul>
+				
+					<li>0-15</li>
+					<li>15-30</li>
+					<li>30-45</li>
+					<li>45-50</li>
+					<li>50-85</li>
+					<li>85-1000</li>
+				</ul>
+			 
+			 </dd>
+		</dl>
+		 
 		 
 	</div>
 	<div class="product-recommend plist-recommend-leftbar ptn-shadow">
 		<em class="ptn-shadow"> - - - - &nbsp; 为您推荐  &nbsp; - - - - </em>
-	
-		
+
 		<div class="wrapper">                       
 			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
@@ -297,4 +353,4 @@
 				 
 	</div>
 </div>	
-	 
+<script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>	 

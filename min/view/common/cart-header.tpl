@@ -179,51 +179,22 @@
 	</div>		
 </div>
 <div class="header">
-	<div  class="logo" >
-		<a href="http://www.annqi.com"><img src="http://cdn.annqi.com/public/images/logo-7.png" border="0" />  </a>
+	<div class="logo">
+		<a href="http://www.annqi.com"><img src="http://cdn.annqi.com/public/images/logo-7.png" border="0" /></a>
+		<span>购物车</span>
 	</div>
-	<div class="region full-round"  ><span>世纪联华-金海城店</span><i class="icon iconfont hide">&#xe637;</i></div>
+	
 	 
-	<div class="search" >
+	<div class="search min-search">
 		<div class="form">
 			<form name="searchTop" action=""  class="search-form" accept-charset="utf-8">
-				<input clstag="h|keycount|2015|03a" type="text" onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key" accesskey="s" class="text left-round" />
-			<button type="submit" clstag="h|keycount|2015|03c"  class="button right-round">搜索</button>
+				<input  type="text" onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key" accesskey="s" class="text left-round" />
+			<button type="submit"  class="button right-round">搜索</button>
 			</form>
 		</div>
-		<div style="clear:both;"></div>
-		<div class=" search-hot"><span>满99减10</span>
-			<span>洗衣液</span>
-			<span>抽纸</span>
-			<span>牛奶</span>
-			<span>巧克力</span>
-			<span>食用油</span>
-		</div>
+		 
 	</div>
-	<div class="feature" style="float:left;width:60px;">
-
-	</div>		
-</div>
- 	 
-<div id="main-nav" >	
-		
-	<div class="main-nav" >
-		<ul class="main-title">
-			<li id="all_cat"><i class="icon-cat iconfont">&#xe60b;</i>所有产品分类 
-			
-			<?php include MIN_ROOT.'/view/common/menu.tpl'; ?>
-			
-			</li> 
-			<li><a href="/" class="home" style="padding-left:20px;">首页<span></span></a></li>
-			<li><a href="/video-screencasts/" class="videos"> 服装城<span></span></a></li>
-			<li><a href="/almanac/" class="almanac">果蔬送<span></span></a></li>
-			<li><a href="/almanac/" class="almanac">团购频道<span></span></a></li>
-			<li><a href="/almanac/" class="almanac">闪购频道<span></span></a></li>
-			<li><a href="/almanac/" class="almanac">本地生活<span></span></a></li>
-
-		</ul>
-	</div>	
-	<div style="border-top:2px solid #a10000;position:absolute;bottom:0px;width:100%;font-size:0px;line-height:0px;"></div>
+	
 </div>
 
 	

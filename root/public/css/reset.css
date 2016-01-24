@@ -16,6 +16,7 @@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正�
 
 /** 重置列表元素 **/
 ul, ol ,dl{ list-style: none; }
+ul li{float:left;}
 
 /** 重置文本格式元素 **/
 a{
@@ -62,13 +63,14 @@ input[type=checkbox]:focus {
 	 border:none;
 }
 
-
+input[type=checkbox], input[type=radio]{
+vertical-align: middle;
+}
 
 input::-ms-clear, input::-ms-reveal{display: none;}
 /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
 html { overflow-y: scroll; }
 /*IE下a:hover 背景闪烁 */
-html{overflow:-moz-scrollbars-vertical;
-zoom:expression(function(ele){ele.style.zoom = "1";document.execCommand("BackgroundImageCache",false,true)}(this))}
+html{overflow:-moz-scrollbars-vertical;}
 
 

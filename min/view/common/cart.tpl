@@ -17,9 +17,13 @@
 
 </head>
 <body>
-<div class="container" id="container" >
+<div class="container cart-container" id="container" >
 	
-<?php include MIN_ROOT.'/view/common/header.tpl'; ?>	 
+<?php include MIN_ROOT.'/view/common/cart-header.tpl'; ?>	 
+
+
+
+
 
 <?php  \min\inc\app::view(); ?>
 

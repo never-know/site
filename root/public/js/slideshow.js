@@ -1,16 +1,18 @@
 function scrollSlide(setting){
 	
 	this.sc = setting['sc'];
-	this.mc = setting['mc'];
+	var container  =  _$(this.sc);
+	if(container == null) return;
+	this.mc = setting['mc'];		
 	this.inited = false;
 	this.muststop = false;
 	this.clicked = 1;
 	this.resize = setting['resize'] || {y:false};
 	this.autoplayer = setting['autoplayer']|| 0 ;
 	this.process = setting['process'] || false;
+	
 	// sc settings
-	var container  =  _$(this.sc), 
-		lis = container.getElementsByTagName('li'),
+	var	lis = container.getElementsByTagName('li'),
 		len = lis.length;
 	this.currentHover = lis[len-1];
 	var	conwidth = container.offsetWidth;

@@ -130,19 +130,15 @@ overflow: hidden;
 }
 .icon-pwd{
 color: #FDAA01;
-position: absolute;
-left: 100px; 
-overflow:hidden;
-*margin-top:-2px;
+font-size:12px;
 }
 .icon-hide{
 width:0px;
 height:0px;
 }
 .icon-half{
-    position: absolute;
-    width:7px;
-    overflow: hidden;
-
-    margin-left: -14px;
+position: absolute;
+width:7px;
+overflow: hidden;
+margin-left: -14px;
 }
