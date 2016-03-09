@@ -42,9 +42,11 @@ padding:20px 12px 12px 12px;
 .plist-recommend dd em{
     display: block;
     border: 1px solid silver;
-    width: 50px;
     padding: 0px 8px;
     margin-top: 6px;
+	background: #f8f8f8;
+    width: 70px;
+    text-align: center;
 }
 .plist-recommend dd span{
 color:#a10000;
@@ -97,7 +99,7 @@ margin-bottom: 2px;
 font-size: 12px;
 overflow: hidden;
 background: #f6f6f6;;
-height:34px;
+height:30px;
 }
 .list-subcategory dl{
 overflow:hidden;

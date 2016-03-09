@@ -60,7 +60,7 @@ Min.event.bind(a,'mouseover',{handler:function(){
 				var b = this.getElementsByTagName('img')[0];
 				Min.css.addClass('opacity',b);
 				setTimeout(function(){Min.css.removeClass('opacity',b);},120);
-			},p:true,client:'mouseenter',selector:'dl'});
+			},client:'mouseenter',selector:'dl'});
 
 /*			
 Min.event.bind(a,'mouseout',{handler:function(){

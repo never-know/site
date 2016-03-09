@@ -69,7 +69,7 @@ font-family:"\5b8b\4f53";
 .breadcrumb strong{
 font-size:18px;
 color:#b10000;
-margin-top: 2px;
+margin-top: 1px;
 float:left;
 }
 .breadcrumb a{
@@ -86,8 +86,8 @@ margin:2px 0 0 8px;
 _display:inline;
 }
 .breadcrumb span{
-padding: 4px 0px 5px 10px;
-*padding-bottom:4px;
+padding: 3px 0px 4px 10px;
+*padding-bottom:3px;
 border:1px dotted  #c00000;
 margin: 0 0 0 8px;
 cursor: pointer;
@@ -100,8 +100,8 @@ _display:inline;
 }
 
 .breadcrumb input{
-height: 15px;
-line-height: 15px;
+height: 13px;
+line-height: 13px;
 padding: 4px 20px 4px 6px;
 width: 110px;
 border: 1px solid #c8c8c8;
@@ -109,14 +109,12 @@ float:left;
 margin-left:12px;
 }
 
-
-
 .breadcrumb span i, .breadcrumb span em{
 font-size:14px;
-padding:4px;
-padding-bottom:5px;
-*padding-bottom:4px;
-margin-left:8px;
+line-height:14px;
+padding:3px;
+padding-bottom:4px;
+margin-left:6px;
 }
 .breadcrumb span.bc-cat i, .breadcrumb span.bc-cat em{
 margin-left:2px;
@@ -147,13 +145,13 @@ display:none;
 float: left;
 position: relative;
 margin-left: -130px;
-margin-top:2px;
+margin-top:1px;
 color:silver;
 }
 .breadcrumb .submit{
 float:left;
 margin-left:-20px;
-margin-top:2px;
+margin-top:1px;
 }
 .breadcrumb .submit i{
 font-size:14px;
@@ -190,7 +188,7 @@ margin-right:10px;
 .slide .slide_pre{left:0; text-align:left;}
 .slide-wrapper .slide:hover .slide_next, .slide-wrapper .slide:hover .slide_pre{display:block;}
 
-.slide, .MagicZoomBigImageCont, .slidenabox-z li, .slidemenu ul{
+#region-cover, .slide, .MagicZoomBigImageCont, .slidenabox-z li, .slidemenu ul{
 background-image:url('http://cdn.annqi.com/public/images/loading.gif');
 background-color:#fff;
 background-repeat:no-repeat;
@@ -277,6 +275,11 @@ border-top:2px solid red;
 .login-box{
 padding:20px;
 }
+.login-box i.error{
+    border-color: #e4393c;
+    background: #FFF2F2;
+    color: #FF7777;
+}
 .login-title{
  height: 33px;
  margin-left: -2px;
@@ -291,28 +294,35 @@ padding:20px;
    cursor:pointer;
    color:#999;
 }
+
+.login-title h3{
+ height:32px;
+ width:150px;
+  float: left;
+  font-size: 16px;
+   text-align:left;
+ padding-top:10px;
+   cursor:pointer;
+ 
+}
 .login-title .static{
 color:#000;
 border-bottom:1px solid #f40;
 }
 .login-msg{
   margin:10px 0px;
-  position: relative;
+ 
   background: #ffebeb;
   color: #e4393c;
   border: 1px solid #e4393c;
   padding: 2px 0px;
-  line-height: 20px;
-  height: 20px;
   display:none;
 }
 .msg-warn{
-  background: #FEE89D;
+  background: #FFF5D3;
   color: #666;
   border: 1px solid #ffe57d;
   padding: 2px 0px;
-  line-height: 20px;
-  height: 20px;
   margin :6px 2px;
  
 }
@@ -321,9 +331,11 @@ border-bottom:1px solid #f40;
 height: 38px;
 margin:16px 0px 12px 0px;
 font-size:14px;
-
 }
- 
+.login-name, .login-pwd, .login-code{
+
+margin:20px 0 18px 0;
+} 
 .loginname, .loginpwd, .regname, .regpwd, .regmcode, .regcode, .regphone, .logincode{
   padding: 8px 0px 6px 10px;
   border: 1px solid #CFCFCF;
@@ -337,7 +349,12 @@ font-size:14px;
  display:none;
 }
 .login-code .login-captcha, .reg-code .reg-captcha{
- cursor:pointer;width:100px;height:36px;display:inline-block;line-height:36px;padding-left:8px 
+	cursor:pointer;
+	    height: 36px;
+     
+    display: inline-block;
+      line-height: 36px;  
+    padding-left: 8px;
 }
 .loginname, .loginpwd{
 padding-left:52px;
@@ -349,8 +366,27 @@ margin-top:22px;
 .regmcode, .regcode{
 width:100px;
 }
+.reg-code .code-change{
+float:left;  
+width: 150px;
+}
+.reg-code i.icon-reg{
+*margin-left:-187px;
+}
+.reg-error{
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+	margin-top:-10px;
+    background: #ffebeb;
+    color: #e4393c;
+    border: 1px solid #e4393c;
+    padding: 2px 0px;
+    display: none;
+
+}
 .login-li{
-  margin:3px;
+  margin:12px 3px;
   width:288px;
 }
 .rememberme-checkbox {
@@ -379,6 +415,8 @@ margin-top:6px;
   text-align:center;
    margin:6px auto;
    cursor:pointer;
+       color: white;
+    border: none;
 }
 
 .login-btn a, .reg-btn a{
@@ -402,8 +440,8 @@ margin:0 auto;
 }
 
 .getcode{
-	width: 100px;
-	display: inline-block;
+	width: 112px;
+	    float: left;
 	text-align: center;
 	padding: 7px 12px;
 	background-color: #f4f4f4;
@@ -450,6 +488,7 @@ margin-left:10px;
 	display:inline;
 	color:rgb(237, 20, 91);
 	font-size:12px;
+	cursor:pointer;
 }
 
 .logincode{
@@ -514,12 +553,21 @@ color: #999;
 padding :9px 0 0 6px;
 float:left;
 }
-.reg-form span{
+.reg-form span , .reg-form em{
 padding:8px 12px 6px 8px;;
 position: absolute;
 font-size:12px;
 display:none;
 margin-left:10px;
+}
+.reg-form span{
+min-width:200px;
+}
+.reg-form em{
+padding: 10px 10px 8px 10px;
+display:inline;
+cursor:pointer;
+margin-left: 0;
 }
 .reg-form .tips, .reg-form .tips-s{
 border: 1px solid #E2DDDD;
@@ -545,11 +593,9 @@ background:#FFEBEB;
 .reg-pwd{
 margin-top:32px;
 }
-.reg-code span{
-display:inline;
-color:rgb(237, 20, 91);
-padding-left: 12px;
-}
+
+
+
 .service-agreement{
 width:170px;
 margin:22px auto;
@@ -567,11 +613,11 @@ border-bottom: 1px solid #e5e5e5;
 position: relative;
 z-index: 699;
 width: 100%;
-height:28px;
+height:30px;
 }
 .shortcut{
 width:1216px;
-height: 28px;
+height: 30px;
 margin: 0 auto;
 padding: 0 6px;
 }
@@ -579,111 +625,141 @@ padding: 0 6px;
 margin-left:2px;
 font-size:14px;
 }
-.shortcut .arrow-left i , .region-list i{
+.shortcut .arrow-left i , #region-current i{
 margin-right:4px;
 color:#a10000;
 }
 .shortcut li em{
 display:none;
 }
-.region-list{
+#region-current{
 float:left;
 border-left:1px solid #f5f5f5;
 border-right:1px solid #f5f5f5;
 height:22px;
-padding:3px 12px 3px 8px;
+padding:4px 12px 4px 8px;
 position:relative;
 }
-.region-select{
-position: absolute;
-border: 1px solid #e5e5e5;
-border-top:none;
-padding: 20px;
-background: #fff;
-top:29px;
-_top:28px;
-width:500px;
-left:-9999px;
+#region-select{
+    position: absolute;
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    padding: 10px 20px 20px 20px;
+    background: #fff;
+    top: 31px;
+    _top: 30px;
+    width: 356px;
+    left: -9999px;
 }
-.region-select dt{
-float:left;
-}
-.region-select .region-used dd{
-margin-left:80px;
-width:400px;
-}
-.region-select .region-used dd span{
-padding:6px 12px;
-white-space: nowrap;
-}
-.region-select ul li{
-width:160px;
-}
-.region-select ul li label{
-display: inline-block;
-width: 160px;
-padding: 2px 4px;
-border: 1px solid #85BEE5;
-cursor: pointer;
-background: #E1EFFE;
-text-align:center;
-position:relative;
-z-index:2;
+#region-used{
+    overflow: hidden;
+    padding-bottom: 6px;
+	
 	}
-.region-select ul li.on label{
+#region-select dt{
+    float: left;
+    width: 120px;
+    font-weight: 600;
+    text-align: center;
+}
+ #region-used dd{
+margin-left: 20px;
+    width: 360px;
+    overflow: hidden;
+    float: left;
+    margin-top: 6px;
+}
+#region-used dd span{
+    padding: 0 12px 8px 12px;
+    white-space: nowrap;
+    width: 150px;
+    display: block;
+    float: left;
+}
+#region-select ul li{
+width:178px;
+}
+#region-select ul li label{
+    display: block;
+    width: 160px;
+    padding: 2px 4px;
+    border: 1px solid #85BEE5;
+    cursor: pointer;
+    background: #E1EFFE;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+	}
+#region-select ul li.on label{
 background: #fff;
 border-bottom-color: #fff;
 }
-.region-select ul li div{
-display:none;
-overflow: hidden;
-border-top: 1px solid #85BEE5;
-margin-top: -1px;
-width: 540px;
-position: absolute;
-background: white;
-z-index: 1;
-border-left: 1px solid #e8e8e8;
-left: -1px;
+#region-select ul li div{
+	display:none;
+    overflow: hidden;
+    border-top: 1px solid #85BEE5;
+    margin-top: -1px;
+    width: 396px;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    border: 1px solid #e8e8e8;
+    left: -1px;
 }
-.region-select ul li div a{
+#region-select ul li dd span{
 display: block;
 width: 60px;
 float: left;
 white-space: nowrap;
 padding: 4px 0;
 }
-.region-select   li dl{
+#region-select   li dl{
 display:block;
 overflow:hidden;
 border-bottom: 1px solid #e8e8e8;
 margin: 6px 0;
+padding-bottom: 6px;
 }
-.region-select   li dt{
-float:left;
-width:90px;
-padding: 4px 0;
-font-size: 14px;
-color: #c00000;
-text-align:right;
+#region-select   li dt{
+    float: left;
+    width: 50px;
+    padding: 4px 10px;
+    font-size: 14px;
+    color: #c00000;
+    text-align: center;
 }
-.region-select li dd{
-width:380px;
-margin-left:110px;
-padding-left:20px;
-border-left:1px solid #e8e8e8;
-overflow:hidden;
+#region-select li dd{
+width: 300px;
+    margin-left: 70px;
+    padding-left: 20px;
+    border-left: 1px solid #e8e8e8;
+    overflow: hidden;
 }
-.region-select ul li.on div{
+#region-select ul li.on div{
 display:block;
+}
+
+
+#region-select .shoptab dt{
+	font-weight:normal;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #c00000;
+    text-align: center;
+	font-family:"\5FAE\8F6F\96C5\9ED1";
+}
+#region-select .shoptab dd span{
+
+width:100px;
+
 }
 .shortcut-menu{
 float:right;
-height:28px;
+height:30px;
 }
 .shortcut-menu li{
 position:relative;
-padding:4px 0 2px 0;
+padding:4px 0 4px 0;
 height:22px;
 font-size:12px;
 }
@@ -698,6 +774,10 @@ border-right:1px solid #f5f5f5;
 padding:0 12px;
 margin:0;
 }
+#shortcut-regfree{
+padding-right: 0px;
+}
+ 
 .shortcut-menu .arrow-down span , .shortcut-menu .arrow-left span {
 border-left:1px solid #c5c5c5;
 border-right:1px solid #c5c5c5;
@@ -706,48 +786,79 @@ padding-right:6px;
 .shortcut-menu .arrow-left span {
 padding-right:10px;
 }
-.arrow-down div{
+.arrow-down div, .arrow-left div{
   position: absolute;
   background:white;
   border:1px solid #e5e5e5;
   border-top:none;
   color:black;
   left:-9999px;
-  top:29px;
-  _top:28px;
+  top:31px;
+  _top:30px;
   width:100px;
   z-index:18;
+  padding:6px 0;
 }
-.shortcut .region-list:hover, .shortcut-menu li.arrow-down:hover{
+.shortcut-menu .mobile-e div{
+width:180px;
+padding:20px 0;
+}
+.shortcut-menu .mobile-e h3{
+width:180px;
+text-align:center;
+font-size:16px;
+color:red;
+}
+.arrow-left div img{
+margin:10px 20px;
+width:140px;
+
+}
+.arrow-down div p, .arrow-left div p{
+height:28px;
+line-height:28px;
+margin:0 8px;
+}
+.shortcut-menu li a:hover{
+color:#a10000;
+}
+#region-current.region-current-hover, .shortcut-menu li.arrow-down:hover, .shortcut-menu li.arrow-left:hover{
 background:white;
 border-left:1px solid #e5e5e5;
 border-right:1px solid #e5e5e5;
 border-bottom:1px solid #fff;
 _border-bottom:none;
 z-index:20; 
+
 }
-.shortcut-menu li.arrow-down:hover span{
+.shortcut-menu li.arrow-down a:hover , .shortcut-menu li.arrow-left a:hover{
+color:#555;
+}
+.shortcut-menu li.arrow-down:hover span, .shortcut-menu li.arrow-left:hover span{
 border-left:1px solid #fff;
 border-right:1px solid #fff
 }
- 
+
 .shortcut .arrow-down:hover i{
 display:none;
 }
 .shortcut .arrow-down:hover em{
 display:inline;
 }
-.shortcut .region-list:hover .region-select, .shortcut .arrow-down:hover div {
+.shortcut .region-current-hover #region-select, .shortcut .arrow-down:hover div {
 left:-1px;
 }
-
+.shortcut .arrow-left:hover div {
+left:auto;
+right:-1px;
+}
 
 /*********** header*****************/
 .header{
   width:1216px;
   height:40px;
   margin:0 auto;
-  padding:20px 0 26px 0;
+  padding:26px 0 32px 0;
   font-family: "\5fae\8f6f\96c5\9ed1";
 }
 .header .logo{
@@ -1448,13 +1559,13 @@ text-align:center;
     display: block;
     padding: 5px 20px;
     color: white;
-    background: #AD2020;
+    background: #DE3030;
     float: left;
     margin-right: 16px;
     font-size: 15px;
 }
 .success a{
-color:#a10000;
+color:#EF3232;
 }
 .success em{
 display: block;
@@ -1478,6 +1589,7 @@ overflow: hidden;
 .mycart p.title{
 background: #f6f6f6;
 padding:5px 10px;
+font-weight: 600;
 }
 .mycart span.title{
     display: block;
@@ -1515,8 +1627,18 @@ font-weight:600;
 }
 .mycart dd span  {
 color: #a10000; 
+    margin-left: -12px;
 }
-
+.mycart dd i  {
+    font-style: normal;
+    border: 1px solid silver;
+    padding: 0px 6px;
+    margin-left: 8px;
+    background: #f8f8f8;
+    text-align: center;
+    margin-top: -4px;
+    position: absolute;
+}
 .mycart .summary{
 background-color:#f6f6f6;
 padding-top:6px;
@@ -1903,6 +2025,7 @@ padding:16px 0;
 border: 1px solid #e8e8e8;
 margin-bottom: 8px ;
 overflow: hidden;
+width:988px;
 }
  
 .ck-summary dl{
@@ -2008,6 +2131,7 @@ display:none;
     padding: 30px;
     border: 1px solid #e8e8e8;
     background: #f6f6f6;
+	overflow:hidden;
 }
 .ck-pay span{
     padding: 6px 36px;

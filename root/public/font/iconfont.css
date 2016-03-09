@@ -79,12 +79,11 @@ font-size:14px;
 }
 .icon-reg{
     margin-top: 1px;
-    margin-left: -35px;
+    margin-left: -38px;
     color: silver;
     background: white;
     z-index: 99999;
     position: absolute;
-    font-size: 14px;
 	padding: 7px 10px;
 }
 .icon-login{
@@ -103,16 +102,17 @@ font-size:14px;
   color: rgb(255, 106, 59);
 }
 .icon-error{
-  padding-left: 4px;
-  padding-right: 4px;
-  color: #e4393c;
+padding-left: 12px;
+    padding-right: 16px;
+    color: #e4393c;
+    font-size: 14px;
 }
 .icon-captcha{
-    margin-left: -36px;
+    margin-left: -32px;
     margin-top: 1px;
+
 	padding:7px;
     position: absolute;
-    font-size: 20px;
     display: none;
 	background:white;
 }

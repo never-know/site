@@ -5,13 +5,16 @@ function setCookie(name, value, Hours) {
     var nd = utc + (3600000 * offset);
     var exp = new Date(nd);
     exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
-    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=360doc.com;"
+    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=annqi.com;"
 }
 function getCookie(name) {
     var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
     if (arr != null) return unescape(arr[2]);
     return null
 }
+function clearCookie(name) {  
+    setCookie(name, "", -1);  
+}  
 //加入收藏夹
 function AddFavorite(sURL, sTitle) {
     try {

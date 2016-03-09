@@ -45,20 +45,18 @@ var JSONP = (function(){
 	function encode(str) {
 		return encodeURIComponent(str);
 	}
-	function jsonp(url, params, callback, callbackName) {
+	function jsonp(url, params, callback) {
 		var query = (url||'').indexOf('?') === -1 ? '?' : '&', key;
-				
-		callbackName = (callbackName||config['callbackName']||'callback');
-		var uniqueName = callbackName + "_json" + (++counter);
-		
+
+		var uniqueName =  "callback" + (++counter);
 		params = params || {};
 		for ( key in params ) {
 			if ( params.hasOwnProperty(key) ) {
 				query += encode(key) + "=" + encode(params[key]) + "&";
 			}
 		}	
-		
 		window[ uniqueName ] = function(data){
+			 
 			callback(data);
 			try {
 				delete window[ uniqueName ];
@@ -66,7 +64,7 @@ var JSONP = (function(){
 			window[ uniqueName ] = null;
 		};
  
-		load(url + query + callbackName + '=' + uniqueName);
+		load(url + query +  'isjsonp=1&callback=' + counter);
 		return uniqueName;
 	}
 	function setDefaults(obj){

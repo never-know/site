@@ -16,47 +16,41 @@
 			 </div>
 			 <div class="login-form">
 			 <div class="login-box">
-				<div class="login-title">
-					
-					
-
-                    <h2  class="static">账户登录</h2>
-					<h2  class="quick">扫码登录</h2> 
-					 
+				<div class="login-title"><h3>账户登录</h3>
+                 <!--   <h2  class="static">账户登录</h2>
+					<h2  class="quick">扫码登录</h2>  -->
 				</div>
+			 
 				<div class="login-msg" id="login-msg">
-					 <i class="icon-error iconfont">&#xe644;</i><span></span>
-					 
+					<i class="icon-error iconfont">&#xe632;</i>
+					<span></span> 
 				</div>
 				 
 					<form id="login-form" method="post" onsubmit="return false;">
 
 						<div class="login-name input-focus" id="login-name">
 						
-							<input id="loginname" type="text" class="loginname" name="loginname" tabindex="1" autocomplete="off"   placeholder="邮箱/用户名/已验证手机">
+							<input id="loginname" type="text" class="loginname" name="loginname"  autocomplete="off"   placeholder="邮箱/用户名/已验证手机">
 							<i class="icon-login iconfont">&#xe63b;</i>
 						</div>
 						<div class="login-pwd">
 					
-							<input type="password" id="loginpwd" name="loginpwd" class="loginpwd" tabindex="2" autocomplete="off" placeholder="密码" onkeypress = "checkCapslock(event,this)">
+							<input type="password" id="loginpwd" name="loginpwd" class="loginpwd"  autocomplete="off" placeholder="密码" onkeypress = "Min.util.checkCapslock(event,this)">
 								<i class="icon-login iconfont">&#xe63a;</i>
 						</div>
 						<div class="login-code" id="login-code">
+							 
 							
-							<input id="logincode" type="text" class="logincode" name="logincode" tabindex="1" autocomplete="off"  placeholder="验证码">  <i class="icon-captcha iconfont">&#xe634;</i>
-							
-							<img class="login-captcha"  src="http://cdn.annqi.com/public/images/image.jpg">
-							<span>换一张</span>
 						</div>
 						<div class="login-li">
-							 
+							 <!--
 								<input id="autoLogin"   type="checkbox" class="rememberme-checkbox">
-								 
-								 <label for="autoLogin">自动登录</label>
+								--> 
+								 <label for="autoLogin">免费注册</label>
 						 
 						   
 							<span class="forget-pwd">
-								<a href="#" id="forget-pwd"  class=""  >忘记密码?</a>
+								<a href="#" id="forget-pwd"  class=""  >忘记登陆密码?</a>
 							</span>			
 						</div>
 						 
@@ -65,9 +59,9 @@
 						 
 						<div class="msg-warn hide" id="msg-warn"> <i class="icon-warn iconfont">&#xe644;</i>公共场所不建议自动登录，以防账号丢失</div>
 						
-						<div class="login-btn" id="loginsubmit"  sindex="0">
-							<a href="javascript:;" class="btn-img btn-entry"   clstag="pageclick|keycount|20150112ABD|2">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
-						</div>
+						<button type = "submit" class="login-btn" id="loginsubmit"  sindex="0">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+						</button>
+						<!--
 						<div class="linkBox">
 							<p class="f12 mb20 clear linkBoxTitle">
 							<span class="mr5 mb5 clear block">合作网站账号登录：</span>	
@@ -80,7 +74,8 @@
 							</div>
 							</p>
 				 
-					</div>
+						</div>
+						-->
 					</form>
 				 
 				</div>

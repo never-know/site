@@ -16,17 +16,17 @@ class cart{
 	
 	private function view(){ 
 	 
-		 app::display('cart');
+		 app::layout('cart');
 	
 	}
 	private function add(){ 
 	 
-		 app::display();
+		 app::layout();
 	
 	}
 	private function confirm(){ 
 	 
-		 app::display('checkout');
+		 app::layout('checkout');
 	
 	}
 

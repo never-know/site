@@ -43,37 +43,159 @@
 
 		return $ip_address;
 	}
- 
+	function error_message($error){
+			$message = '{"';
+			$message .= $error['title'];
+			$message .= ': ';
+			$message .= rtrim($error['message'],PHP_EOL);
+			$message .= '" in file [';
+			$message .= $error['file'];
+			$message .= ']  at line [';
+			$message .= $error['line'];
+			$message .= '] [error code/type: ';
+			$message .= $error['type'];
+			$message .= '] }';
+			
+			return $message;
+	
+	}
 
 	function request_not_found() {
-		header("HTTP/1.0 404 Not Found");
-		die('<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL was not found on this server.</p><p>Please go <a href="javascript: history.back(1)">back</a> and try again.</p><hr /><p>Powered By: <a href="http://kissmvc.com">KISSMVC</a></p></body></html>');
+	
+		if ( defined('IS_AJAX') && IS_AJAX ){
+			ajax_return(['status'=>0,'message'=>'请求错误']); 
+		}elseif( defined('IS_JSONP') && IS_JSONP ){
+			if(is_numeric($_GET['callback'])){
+				echo 'callback'.$_GET['callback'].'(-2);';
+			}
+		}else{
+			header('Location: http://www.annqi.com/error.html');
+		}
+		exit();
+	}
+	
+	function request_error_found($arr) {
+ 
+		if ( defined('IS_AJAX') && IS_AJAX ){
+		
+			ajax_return($arr);
+			 
+		}elseif( defined('IS_JSONP') && IS_JSONP ){
+			if(is_numeric($_GET['callback'])){
+				echo 'callback'.$_GET['callback'].'(-1);';
+			}
+		}else{
+			header('Location: http://www.annqi.com/error.html');
+		}
+		exit();
+	}
+	 
+	function redirect($url, $time=0, $msg='') {
+    //多行URL地址支持
+		$url        = str_replace(array("\n", "\r"), '', $url);
+		$url 		= strip_tags($url);
+		if (empty($msg))
+			$msg   = "系统将在{$time}秒之后自动跳转到{$url}！";
+		if (!headers_sent()) {
+			 
+			if (0 === $time) {
+				header('Location: ' . $url);
+			} else {
+				header("refresh:{$time};url={$url}");
+				echo($msg);
+			}
+			exit();
+		} else {
+			$str  = "<meta http-equiv='Refresh' content='{$time};URL={$url}'>";
+			if ($time != 0)
+				$str .= $msg;
+			exit($str);
+		}
 	}
 	
 	function save_gz($data,$filename){
 		$gzdata = gzencode($data,6);
-		$fp = fopen($filename, "w");
+		$fp = fopen($filename, 'w');
 		fwrite($fp, $gzdata);
 		fclose($fp);	
 	}
-	function flash($type,$message){
-	echo $message;
-	exit;
-	
-	}
+
     function validate($type,$value){
+	
+		if(!validate_utf8($value)) return false;
+		
+		if('email' == $type )
+		return (bool)filter_var($value, FILTER_VALIDATE_EMAIL);
+		
 		$pattern = [
-			'username'	=> '/^[a-zA-Z0-9\-_\x{4e00}-\x{9fa5}]{2,31}$/u',
-			'email'		=> '/^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i',
-			'phone'		=> '/^1[\d]{10}/',
+			'quotes'=>'/["\'\s]+/u',
+			'nickname'	=> '/^[a-zA-Z0-9\-_\x{4e00}-\x{9fa5}]{3,31}$/u',
+			'username'=>'/^[a-zA-Z0-9\-_]{3,31}$/',
+			'email' => '/^\w+([-.]\w+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[A-Za-z0-9]+$/',
+			'phone'		=> '/^(13|15|18|14|17)[\d]{9}$/',
 			'alphabet'	=> '/^[a-z]+$/i',
 		];
 		
 		return preg_match($pattern[$type],$value);
-	
-	
-	}
-	function ajax_return($type,$value){
 
-		exit(json_encode(array($type=>$value)));
-	}	
+	}
+	
+	function ajax_return($arr){
+		header('Content-Type:application/json; charset=utf-8');
+		exit(json_encode($arr));	
+	}
+	function jsonp_return($arr){
+	
+		if( is_numeric($_GET['callback'])){
+			header('Content-Type:application/html; charset=utf-8');
+			echo 'callback',$_GET['callback'],'(',json_encode($arr),')';
+		}
+		exit;
+	}
+	function validate_utf8($text) {
+		if (strlen($text) == 0) {
+			return TRUE;
+		}
+		return (preg_match('/^./us', $text) == 1);
+	}
+	
+	function check_plain($text) {
+		return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+	}
+	
+	function t($string, array $args = array(), array $options = array()) {
+	   
+		  if (empty($args)) {
+			return $string;
+		  }
+		  else {
+			return format_string($string, $args);
+		  }
+	}
+
+
+	function format_string($string, array $args = array()) {
+
+		  foreach ($args as $key => $value) {
+			switch ($key[0]) {
+			  case '@':
+				// Escaped only.
+				$args[$key] = check_plain($value);
+				break;
+
+			  case '%':
+			  default:
+				// Escaped and placeholder.
+				$args[$key] = drupal_placeholder($value);
+				break;
+
+			  case '!':
+				// Pass-through.
+			}
+		  }
+		  return strtr($string, $args);
+	}
+
+	function drupal_placeholder($text) {
+		return '<em class="placeholder">' . check_plain($text) . '</em>';
+	}

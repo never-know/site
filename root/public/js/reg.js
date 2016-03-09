@@ -1,8 +1,11 @@
+var error_bordercolor = '#e4393c';	
 	// 密码
 function isPwd(str) {	   
+	return !/[\s'"\\]/.test(str);
 	return /^[a-zA-Z0-9`~!@#$%^&*()_+-=\[\]{}|:;,./<>?]+$/.test(str);
 }
 function Pwd_OK(str){
+	return !/[\s'"\\]/.test(str) && str.length > 5 && str.length <21;
 	return /^[a-zA-Z0-9`~!@#$%^&*()_+-=\[\]{}|:;,./<>?]{6,}$/.test(str);
 }
 function betweenLength(str, _min, _max) {
@@ -56,6 +59,7 @@ function setError(obj,msg,name){
 	obj.innerHTML=msg;	
 	obj.className=name;
 }
+
 
 _$('regpwd').onkeyup =function(e){
 	var itag  = Min.dom.next(this);
@@ -141,12 +145,13 @@ _$('regpwd1').onkeyup =function(e){
 	if((this.value.length<len && pwd.substring(0,this.value.length)!= this.value) || this.value.length>len || (this.value.length==len &&  this.value!= pwd )	){
 		setError(_$('regpwd1-error'),'两次密码不相同，请重新输入','errors');
 		return;
-	}else if( this.value == pwd ) {console.log(3);
+	}else if( this.value == pwd ) {
 			setError(_$('regpwd1-error'),'','hide');
 			itag = Min.dom.next(this);
 			itag.innerHTML="&#xe634;"
 			itag.style.color="#7ABD54";
 	}else{
+		console.log(456);
 		setError(_$('regpwd1-error'),'请再次输入密码','tips');
 		itag = Min.dom.next(this);
 			itag.innerHTML="&#xe63a;"
@@ -172,6 +177,7 @@ _$('regpwd').onfocus=function(){
 };
 
 _$('regpwd').onblur=function(){
+
 	if(this.value==''){
 		setError(_$('regpwd-error'),'','hide');
 		return;
@@ -198,6 +204,7 @@ _$('regpwd').onblur=function(){
 	
 	//确认密码
 	_$('regpwd1').onfocus=function(){
+	console.log(123);
 		var tips=_$('regpwd1-error');
 		tips.innerHTML='请再次输入密码';
 		tips.className="tips";
@@ -219,137 +226,378 @@ _$('regpwd').onblur=function(){
 	
 	}
  
- 
-//验证码
+// 手机
+var current_phone = '';
 
-	_$('regcode').onblur=function(){
-		var code = this.value;
-		var itag=Min.dom.next(this);
-		
-		if(code){
-		
-			JSONP.get( 'http://util.annqi.com/checkcaptcha.html', {code:code}, function(data){
-					if(data==0){
-						 	itag.innerHTML="&#xe632;"
-							itag.style.display="inline"; 
-							itag.style.color='red';
-					}else if(data==1){
-							itag.innerHTML="&#xe634;"
-							itag.style.display="inline"; 
-							itag.style.color='blue';
-					} 
-				 }
-			);
-			 
-		}else{
-			itag.innerHTML=""
-			itag.removeAttribute('style'); 
-							 
-		
-		}
-
-	};	
-	
- _$('regcode').onkeyup=function (event){
-		var obj= _$('regcode')
-		var code = obj.value;
-		var itag = Min.dom.next(obj);
-		 
-		if(code.length==4){
-		
-			JSONP.get( 'http://util.annqi.com/checkcaptcha.html', {code:code}, function(data){
-					if(data==0){
-						 	itag.innerHTML="&#xe632;"
-							itag.style.display="inline"; 
-							itag.style.color='red';
-							 
-					}else if(data==1){
-							itag.innerHTML="&#xe634;"
-							itag.style.display="inline"; 
-							itag.style.color='blue';
-					} 
-					return true;
-				 }
-			);
-			 
-		}else if(code.length >4){
-			
-			itag.innerHTML="&#xe632;"
-			itag.style.display="inline"; 
-			itag.style.color='red';
-		}else{
-			itag.innerHTML=""
-			itag.removeAttribute('style'); 
-							 
-		
-		}
-		return true;
-	}
-	
- 
-function phoneCheck(phone){
+function phone_format(phone){
 	var tips=_$('regphone-error');
 	
 	if(phone.length != 11 && /^1[\d]*$/.test(phone)){
 		setError(tips,'请输入11位手机号码','errors');
 		return false;
 	}
-	if(/^1[\d]{10}$/.test(phone)==false){
+	if(/^(13|15|18|14|17)[\d]{9}$/.test(phone)==false){
 		setError(tips,'手机号码格式不对','errors');
 		return false
 	}
 	return true;
 }
 
-	_$('regphone').onfocus=function(){
-		var tips=_$('regphone-error');
-		tips.innerHTML='请输入11位手机号码';
-		tips.className="tips";
+function phone_check(phone){
+
+	if(phone == current_phone) return;
+		current_phone = phone;
+	JSONP.get( 'http://passport.annqi.com/account/phone.html', {phone:phone}, function(data){
+				
+				if(_$('regphone').value != phone) return;
+				
+				if(data.status==2){
+					itag = Min.dom.next(_$('regphone'));
+					itag.innerHTML="&#xe634;"
+					itag.style.color="#7ABD54";
+					setError(_$('regphone-error'),'','hide'); 
+				}else if(data.status==1){
+					setError(_$('regphone-error'),'此号码已被注册','errors');
+					_$('regphone').style.borderColor = error_bordercolor;
+				}
+			 }
+		); 
+}
+
+_$('regphone').onfocus=function(){
+	if(this.value == ''){
+		setError(_$('regphone-error'),'请输入11位手机号码','tips');
 		this.removeAttribute('style');
-		var itag=Min.dom.next(this);
-		itag.innerHTML="&#xe619;"
-		itag.removeAttribute('style');	 
-	};
-	_$('regphone').onblur=function(){
-		var tips =_$('regphone-error');
-		tips.className ="hide";
-		var name = this.value;
-		if(name==''){return true;}
-		var result = phoneCheck(name);
-		if(result == false){
-			this.style.borderColor="#f00";
-			return;
-		}else{ 
-			var itag=Min.dom.next(this);
-			itag.innerHTML="&#xe634;"
-			itag.style.color="#7ABD54";
-			return ;
-		}
-		
-	};
+	}
+};
+_$('regphone').onblur=function(){
 	
+	var name = this.value;
+	if(name==''){
+	setError(_$('regphone-error'),'','hide');
+	return true;}
+	if(phone_format(name)){
+		return;
+	}else{ 
+		this.style.borderColor="#f00";	 
+	}
+};
+
 _$('regphone').onkeyup = function(){
+	
 	var itag = Min.dom.next(this);
 	if( (this.value.length != 11 && /^1[\d]*$/.test(this.value)) || this.value == '' ){
 		setError(_$('regphone-error'),'请输入11位手机号码','tips');
+		this.removeAttribute('style');
 		itag.innerHTML="&#xe619;"
 		itag.removeAttribute("style");
-		return ;
-		 
+		current_phone = this.value;
+		return ;	 
 	}
-	 if(/^1[\d]{10}$/.test(this.value)==false){
+	 if(/^(13|15|18|14|17)[\d]{9}$/.test(this.value)==false){
 		setError(_$('regphone-error'),'手机号码格式不对','errors');
-		 
+		current_phone = this.value;
 	}else{
-		
-		itag.innerHTML="&#xe634;"
-		itag.style.color="#7ABD54";
-		setError(_$('regphone-error'),'','hide');
-		return ;
-	
+		phone_check(this.value);
 	}
-	 
-
 }	
-
+Min.event.bind('regphone','paste',  function(e){
 	
+	var pastedText = undefined;
+     if (window.clipboardData && window.clipboardData.getData) { // IE
+            pastedText = window.clipboardData.getData('Text');
+    } else {
+            pastedText = e.clipboardData.getData('text/plain');//e.originalEvent.clipboardData.getData('Text');//e.clipboardData.getData('text/plain');
+          }
+	console.log(pastedText);
+	
+	var itag = Min.dom.next(this);
+	if( (pastedText.length != 11 && /^1[\d]*$/.test(pastedText)) || pastedText == '' ){
+		setError(_$('regphone-error'),'请输入11位手机号码','tips');
+		this.removeAttribute('style');
+		itag.innerHTML="&#xe619;"
+		itag.removeAttribute("style");
+		current_phone = pastedText;
+		return ;	 
+	}
+	 if(/^(13|15|18|14|17)[\d]{9}$/.test(pastedText)==false){
+		setError(_$('regphone-error'),'手机号码格式不对','errors');
+		current_phone = pastedText;
+	}else{
+		phone_check(pastedText);
+	}
+});	
+
+
+//          图片验证码 
+
+var current_code = '';
+function code_tag(show){
+	var  code = _$('regcode'); itag = Min.dom.next(code);
+	code.setAttribute('status',show);
+	if(show == 1){
+		itag.innerHTML="&#xe634;"
+	//	itag.style.display="inline"; 
+		itag.style.color="#7ABD54";
+		code.removeAttribute('style');		
+	}else if(show == 2){
+		if(code.value != ''){
+		itag.innerHTML="&#xe632;"
+	//	itag.style.display="inline"; 
+		itag.style.color='red';
+		}
+		code.style.borderColor = error_bordercolor;
+	}else if(show == -1){
+		itag.innerHTML=""
+		itag.removeAttribute('style');
+		code.removeAttribute('style');		
+	}
+}
+
+function code_check(){
+	var code = _$('regcode').value;
+	if(code == current_code) return;
+	current_code = code;
+		setError(_$('regcode-error'),'','hide');
+	JSONP.get( 'http://util.annqi.com/captcha/check.html', {code:code,type:'reg'}, function(data){
+		 
+			if(_$('regcode').value != code) return;
+			 if( data.status ==1 ) { 
+				code_tag(1);
+			 }else if( data.status == 2 ){
+				code_tag(2);
+				console.log(data.message);
+				setError(_$('regcode-error'),data.message,'errors');
+			 }
+		 }
+	); 
+}
+
+Min.event.bind('regcode','blur', function(){
+	var code = this.value;
+	if(code && code.length!=4){
+		 code_tag(2);
+	}
+});
+	
+Min.event.bind('regcode','keyup',function(event){		 
+		var code = this.value;
+
+		if(code.length == 4){
+			code_check(); 
+		}else if(code.length >4){
+			current_code = code;
+			code_tag(2);
+		}else{
+			current_code = code;
+			setError(_$('regcode-error'),'','hide');
+			code_tag(-1);
+		}
+		return;
+});
+	
+Min.event.bind('reg-code','click',{handler:function(e){
+	e.currentTarget.getElementsByTagName('IMG')[0].src='http://util.annqi.com/captcha/get.html?type=reg&v='+new Date().getTime();
+	e.currentTarget.getElementsByTagName('i')[0].removeAttribute('style');
+	e.currentTarget.getElementsByTagName('i')[0].innerHTML='';
+	_$('regcode').value='';
+	_$('regcode').focus();
+},selector:'em,img'});
+
+Min.event.bind('regcode','focus',function(){
+	if(this.value ==''){
+		this.removeAttribute('style');	
+		setError(_$('regcode-error'),'','hide');
+	}
+});
+
+
+// 手机验证码
+
+var delayTime = 120;
+
+Min.event.bind('getcode','click',function(e){
+	
+	var phone = _$('regphone').value, code = _$('regcode').value;
+	
+	if(code == '') { 
+		code_tag(2);
+		setError(_$('regcode-error'),'请输入验证码','errors');
+	}else if(code.length != 4) { 
+		code_tag(2);
+		setError(_$('regcode-error'),'验证码错误，请重新输入','errors');
+	}
+	
+	if(phone == '') {
+		_$('regphone').style.borderColor = error_bordercolor;
+		setError(_$('regphone-error'),'请输入手机号码','errors');
+		return;
+	}
+	
+	if( false == phone_format(phone) ||  4 != code.length )  return false;
+	
+	
+	var sindex	= this.getAttribute('sindex');
+	
+	if(sindex == 0){
+	
+	this.setAttribute("sindex", 1);
+
+	minAjax({
+		url:'http://passport.annqi.com/regist/sendsms.html', 
+		type:'POST', 
+		data:{
+			phone:phone,
+			code:code
+		},
+		success: function(data){
+			if(data.status == 1) {
+				setTimeout(countDown, 1000);
+			}else{
+				_$('getcode').setAttribute("sindex", 0);
+				switch(data.status){
+					case -1:
+					case 0:
+						setError(_$('regmcode-error'),data.message||'发送失败，请重试','errors');
+						break;
+					case 2:
+						code_tag(2);
+						setError(_$('regcode-error'),data.message,'errors');
+						break;
+					case 100:
+						setError(_$('regphone-error'),data.message,'errors');
+					break;
+				}
+			}
+		},
+		fail:function(){
+			_$('getcode').setAttribute("sindex", 0);
+			setError(_$('regmcode-error'),'网络错误，请重试','errors');
+		
+		}
+	});
+	}
+});
+function countDown() {
+     delayTime--;
+	 var code = _$('getcode');
+    
+    code.innerHTML = delayTime + '秒后重新获取';
+    if (delayTime == 1) {
+        delayTime = 120;
+        code.setAttribute("sindex", 0);
+        code.innerHTML = "获取短信验证码";
+    } else {
+        setTimeout(countDown, 1000);
+    }
+}
+
+Min.event.bind('regmcode','focus',function(e){
+	this.removeAttribute('style');	
+	setError(_$('regmcode-error'),'','hide');
+});
+
+Min.event.bind('regsubmit','click',function(){
+
+var phone = _$('regphone').value, code = _$('regcode').value, mcode = _$('regmcode').value,
+	pwd = _$('regpwd').value, pwd1 = _$('regpwd1').value;
+	
+	
+	if(code == '') { 
+		code_tag(2);
+		setError(_$('regcode-error'),'请输入图片验证码','errors');
+	}
+	
+	if(mcode == '') { 
+		setError(_$('regmcode-error'),'请输入短信验证码','errors');
+		_$('regmcode').style.borderColor = error_bordercolor;
+	}
+	
+	if(phone == '') {
+		_$('regphone').style.borderColor = error_bordercolor;
+		setError(_$('regphone-error'),'请输入手机号码','errors');
+		 
+	}
+	if(pwd ==''){
+		_$('regpwd').style.borderColor = error_bordercolor;
+		setError(_$('regpwd-error'),'请输入密码','errors');
+	}
+	if(pwd1 ==''){
+		_$('regpwd1').style.borderColor = error_bordercolor;
+		setError(_$('regpwd1-error'),'请确认密码','errors');
+	}
+ 
+	
+	if(pwd!= pwd1){
+		_$('regpwd1').style.borderColor = error_bordercolor;
+		setError(_$('regpwd1-error'),'两次输入密码不相同','errors');
+	}
+	
+	if( false == phone_format(phone) ||  4 != code.length || 6 != mcode.length || !Pwd_OK(pwd) || pwd != pwd1 )  return false;
+	
+	
+	var sindex	= this.getAttribute('sindex');
+	
+	if(sindex == 0){
+	
+	this.setAttribute("sindex", 1);
+
+	minAjax({
+		url:'http://passport.annqi.com/regist.html', 
+		type:'POST', 
+		data:{
+			phone:phone,
+			code:code,
+			mcode:mcode,
+			pwd:pwd,
+			pwd1:pwd1,
+			reg:1
+		},
+		success: function(data){
+			if(data.status == 1) {
+				 
+				window.location.href = "http://account.annqi.com/regist/success.html";
+			}else{
+				_$('regsubmit').setAttribute("sindex", 0);
+				switch(data.status){
+					case -1:
+					case 0:
+						 _$('reg-error').style.display="block";
+						 _$('reg-error').innerHTML = '系统开小差，亲，请重试';
+						break;
+					case 2:
+						code_tag(2);
+						setError(_$('regcode-error'),data.message,'errors');
+						break;
+					case 100:
+						_$('regphone').style.borderColor = error_bordercolor;
+						setError(_$('regphone-error'),data.message,'errors');
+						break;
+					case 101:
+						_$('regmcode').style.borderColor = error_bordercolor;
+						setError(_$('regmcode-error'),data.message,'errors');
+						break;
+					case 102:
+						_$('regpwd').style.borderColor = error_bordercolor;
+						setError(_$('regpwd-error'),data.message,'errors');
+						break;
+					case 103:
+					 _$('regpwd1').style.borderColor = error_bordercolor;
+						setError(_$('regpwd1-error'),data.message,'errors');
+						break;
+					
+				}
+			}
+		},
+		fail:function(){
+			_$('regsubmit').setAttribute("sindex", 0);
+			 _$('reg-error').style.display="block";
+			 _$('reg-error').innerHTML ="网络异常，请重试";
+		
+		}
+	});
+	}
+
+
+
+});

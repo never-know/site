@@ -1,4 +1,30 @@
+// 顶栏 初始化
+Min.ready('shortcut-login', function(){
 
+	var nickname = getCookie('nickname');
+	var login = getCookie('logged');
+
+	if( nickname && /^[A-Za-z0-9_\-\u4e00-\u9fa5]+$/.test(nickname) ){
+	  
+	  var a = _$('shortcut-regfree').getElementsByTagName('a')[0];
+	  a.innerHTML='您好,&nbsp;&nbsp;'+nickname+'&nbsp;...';
+	  a.href = 'http://account.annqi.com/view.html';
+	}
+	 
+	if(null === login ){
+
+			JSONP.get( 'http://passport.annqi.com/login/islogged.html', {}, function(data){
+				console.log(data);
+				 if( data.status == 1 ) { 
+					_$('shortcut-login').innerHTML='<a href ="http://passport.annqi.com/logout.html " target="_blank" >退出</a>';
+				 } 
+			 });
+	}else if( '1' === login){
+		 
+		_$('shortcut-login').innerHTML='<a href ="http://passport.annqi.com/logout.html " target="_blank" >退出</a>';
+	}
+
+});
  // 首页幻灯片 1
 Min.ready('slidebox', function(){
 	var settings = {
@@ -106,4 +132,57 @@ Min.event.bind('ck-address','click',{handler:function(){
 
 var uls = _$('ck-address').getElementsByTagName('li');
 
+});
+
+Min.ready('region-current',function(){
+
+	Min.event.bind('region-list','click' ,{handler:function(e){
+	
+		_$('region-select').style.left = '-1px';
+	
+		var p = Min.dom.grand(e.target,4), q = Min.dom.next(p);
+		if(q){
+			Min.css.addClass('on',q);
+			p.getElementsByTagName('LABEL')[0].innerHTML = this.innerHTML;
+			q.getElementsByTagName('LABEL')[0].innerHTML = '超市';
+			Min.css.removeClass('on',p);
+		}else{
+			$shop = Min.dom.grand(e.target,2).getElementsByTagName('DT')[0].innerHTML;
+			p.getElementsByTagName('LABEL')[0].innerHTML = $shop + ' - '+ this.innerHTML;
+			_$("region-select").removeAttribute('style');
+			_$("region-current").className='';
+			setCookie('region',this.innerHTML);
+			window.location.reload();
+		}
+	
+	},selector:'span'});
+	
+	Min.event.bind('region-used','click',{handler:function(){
+	
+			setCookie('region',this.innerHTML);
+			window.location.reload();
+	
+	},selector:'span'});
+	
+	Min.event.bind('region-list','click',{handler:function(){
+		Min.obj.each(this.parentNode.parentNode.getElementsByTagName('li'),function(a){
+			a.className='';
+		});
+		this.parentNode.className='on';
+	
+	},selector:'label'});
+	 
+	Min.event.bind('region-close','click',function(){
+		_$("region-current").className='';
+		_$('region-select').removeAttribute('style');;
+	
+	});
+	 
+	Min.event.bind('region-current','mouseover',{handler:function(e){
+		e.currentTarget.className='region-current-hover';
+	},client:'mouseenter'});
+	Min.event.bind('region-current','mouseout',{handler:function(e){
+		e.currentTarget.className='';
+	},client :'mouseleave'});
+	 
 });

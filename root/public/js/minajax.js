@@ -28,44 +28,29 @@ function minAjax(config) {
             success: "(OPTIONAL) Callback function to process after response | function(data,status)"
     */
 
-    if (!config.url) {
-        if (config.debugLog == true)
-            console.log("No Url!");
-        return;
-    }
-    if (!config.type) {
-        if (config.debugLog == true)
-            console.log("No Default type (GET/POST) given!");
-        return;
-    }
-    if (!config.method) {
-        config.method = true;
-    }
-
-
-    if (!config.debugLog) {
-        config.debugLog = false;
-    }
+    if (!config.url)  return;
+    if (!config.type) return;
+    if (!config.method) config.method = true;
 
     var xmlhttp = initXMLhttp();
 
     xmlhttp.onreadystatechange = function() {
-		 
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-            if (config.success) {
-                config.success(xmlhttp.responseText, xmlhttp.readyState);
-            }
-            if (config.debugLog == true)
-                console.log("SuccessResponse ----  Response Data:" + xmlhttp.responseText);
+        if (xmlhttp.readyState == 4 ){
+		
+			if(xmlhttp.status == 200) {
 
-        } else {
-			 
-            if (config.debugLog == true)
-             console.log("FailureResponse --> State:" + xmlhttp.readyState + "---Status:" + xmlhttp.status);
-				 
+				if (config.success) {
+					config.success(Min.util.parseJSON(xmlhttp.responseText), xmlhttp.readyState);
+				}
 				
-        }
+			}else{
+			
+				if (config.fail) {
+					config.fail();
+				}
+			}
+        } 
     }
 
     var sendString = [],
@@ -88,25 +73,17 @@ function minAjax(config) {
             }
         }
     }
+	sendString.push('isajax=1');
     sendString = sendString.join('&');
-
+	 
     if (config.type == "GET") {
         xmlhttp.open("GET", config.url + "?" + sendString, config.method);
         xmlhttp.send();
-
-        if (config.debugLog == true)
-            console.log("GET fired at:" + config.url + "?" + sendString);
     }
     if (config.type == "POST") {
         xmlhttp.open("POST", config.url, config.method);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send(sendString);
-
-        if (config.debugLog == true)
-            console.log("POST fired at:" + config.url + " || Data:" + sendString);
     }
-
-
-
 
 }

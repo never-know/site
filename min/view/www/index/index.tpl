@@ -434,8 +434,6 @@
 	
 </div>
 
-	
-	
 <style>
 #main_nav{overflow:hidden;}
 #all_cat_hide{

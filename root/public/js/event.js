@@ -84,7 +84,7 @@ Min.event = {
 			var type = event.type,
 				orginalTarget = event.target,
 				options = Min.cache.data( elem, 'e' + type );
-
+			// option.p  只在绑定元素触发。  不触发冒泡事件
 			for(var i=options.length, option; option = options[--i];){
 
 				if( option.selector) {
@@ -94,7 +94,7 @@ Min.event = {
 					for( ; target !== elem; target = target.parentNode || elem ){
 						
 						if( Min.event.delegateFilter(target, option.selector) ){
-							if( option.client != undefined && Min.dom.contains(target,event.relatedTarget) )
+							if( option.client != undefined && ( Min.dom.contains(target,event.relatedTarget) || target==event.relatedTarget ))
 							break;
 							
 							event.delegateTarget = target;
@@ -108,13 +108,14 @@ Min.event = {
 							}	
 							if( option.p == true) break;
 							
-						}else if( option.p == true ){
+						}
+						else if( option.p == true ){
 							break;
 						}						
 					}      
 				}else{
-				
-					if( option.client != undefined  && Min.dom.contains(elem,event.relatedTarget) )
+					
+					if( option.client != undefined  && ( Min.dom.contains(elem,event.relatedTarget) || elem == event.relatedTarget ))
 							continue;
 				
 					if( orginalTarget != elem && option.p == true ) continue;

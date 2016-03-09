@@ -69,12 +69,12 @@
 				<em>共3项优惠</em>
 				<span><strong>加价购</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
 				<span><strong>满减</strong> 满99.00减15.00   详情 >></span>
-				<span style="padding-bottom:4px;"><strong>满减</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
+				<span ><strong>满减</strong> 满1.00另加29.00元，即可购买热销商品   详情 >></span>
 			
 			</dd>
 			
 			</dl>
-			
+			<!--
 			<script>
 			var  p = _$('product-promote');
 			if(p.scrollHeight > 80 ){
@@ -82,7 +82,7 @@
 				p.style.height = "62px";
 			}
 		</script>
-	 
+	 -->
 		 
 		</div>
 

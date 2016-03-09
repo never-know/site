@@ -5,6 +5,8 @@ class index{
 	public function __construct($args){
 		if($args=='index') {
 			$this->index();
+		}elseif($args=='test'){
+			$this->test();
 		}
 	}
 
@@ -12,7 +14,12 @@ class index{
 
 	private function index(){
  
-		app::display();
+		app::layout();
+
+	}
+	private function test(){
+ 
+		app::layout();
 
 	}
 

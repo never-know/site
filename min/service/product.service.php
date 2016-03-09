@@ -6,10 +6,10 @@ class product
 	
 
 	public function item($id) {
-		app::display();
+		app::layout();
 	}
 	public function category($id) {
-		app::display();
+		app::layout();
 	}
 
 

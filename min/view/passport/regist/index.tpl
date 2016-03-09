@@ -3,10 +3,8 @@
 		<div class="login-logo">
 			<a href="http://www.annqi.com/" target="_blank" class="login-logo-image"></a>
 			<em>欢迎注册</em>
-			<span class="regist-link">已有安琪账号？<a href="http://passport.annqi.com/login.html?ReturnUrl=http%3A%2F%2Fwww.annqi.com" target="_blank" clstag="pageclick|keycount|20150112ABD|1">立即登陆</a></span>
-					 
+			<span class="regist-link">已有安琪账号？<a href="http://passport.annqi.com/login.html?ReturnUrl=http%3A%2F%2Fwww.annqi.com" target="_blank" clstag="pageclick|keycount|20150112ABD|1">立即登陆</a></span>		 
 		</div>
-		 
 	</div>
 	<div class="nav-2"> </div> 	
 	<div class="reg-wrapper">
@@ -25,12 +23,19 @@
 							<input id="regphone" type="text" class="regphone" name="regphone" tabindex="1" autocomplete="off"   maxlength="11" style="IME-MODE: disabled;"/>
 							<i class="icon-reg iconfont">&#xe619;</i>
 							<span id="regphone-error"></span>
-						</div>	 
+						</div>	
+						<div class="reg-code" id="reg-code">
+							<label for="regcode"><b class="red">*</b>验证码：</label>
+							 
+							<input id="regcode" type="text" class="regcode" name="regcode" tabindex="1" autocomplete="off"  maxlength="4" /> <i class="icon-reg iconfont">&nbsp;</i><div class="code-change"><img  class="reg-captcha" src="http://util.annqi.com/captcha/get.html?type=reg" /><em>换一张</em>
+							 </div>
+							 <span id="regcode-error"></span>
+						</div>
 						<div class="reg-mcode">
 							<label for="regmcode"><b class="red">*</b>短信验证码：</label>
-							<input id="regmcode" type="text" class="regmcode" name="regmcode" tabindex="1" autocomplete="off" /> 
-							<a  href="javascript:();"class="getcode">获取短信验证码</a>
-							
+							<input id="regmcode" type="text" class="regmcode" name="regmcode" tabindex="1" autocomplete="off"  maxlength="6" /> 
+							<a  href="javascript:void(0)" class="getcode" id="getcode" sindex="0" >获取短信验证码</a>
+							<span id="regmcode-error"></span>
 						</div>
 						<div class="reg-pwd">
 							<label for="regpwd"><b class="red">*</b>请设置密码：</label>
@@ -47,16 +52,11 @@
 						</div>
 						
 						
-						<div class="reg-code hide">
-							<label for="regcode"><b class="red">*</b>验证码：</label>
-							<input id="regcode" type="text" class="regcode" name="regcode" tabindex="1" autocomplete="off"  /> 
-							<i class="icon_captcha iconfont">&#xe634;</i>
-							<img  class="reg-captcha" src="http://cdn.annqi.com/public/images/image.jpg" />
-							<span>换一张</span>
-						</div>
+						
 						<div class="service-agreement">请阅读<a href="" >《安琪用户注册协议》</a></div>
+						<div id="reg-error" class="reg-error">注册失败,请重试</div>
 						<div class="reg-btn">
-							<a href="javascript:;" class="btn-img btn-entry" id="loginsubmit" tabindex="6" clstag="pageclick|keycount|20150112ABD|2">同意协议并注册</a>
+							<a href="javascript:void(0)" class="btn-img btn-entry" id="regsubmit" tabindex="6"  sindex=0>同意协议并注册</a>
 						</div>
 						
 

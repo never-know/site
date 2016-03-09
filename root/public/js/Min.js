@@ -233,7 +233,42 @@ Min.util = {
 			o = obj;  
 		}  
 		return o;  
-	}
+	},
+	 parseJSON : function( data ) {
+        if ( !data ){
+            return null;
+        }
+
+        // 标准浏览器可以直接使用原生的方法
+        if( window.JSON && window.JSON.parse ){
+            return window.JSON.parse( data );
+        }
+        
+		var rValidtokens = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,    
+    rValidescape = /\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,    
+    rValidbraces = /(?:^|:|,)(?:\s*\[)+/g,
+  
+    rValidchars = /^[\],:{}\s]*$/; 
+		
+		
+        if ( rValidchars.test( data.replace( rValidescape, '@' )
+            .replace( rValidtokens, ']' )
+            .replace( rValidbraces, '')) ) {
+
+            return (new Function( 'return ' + data ))();
+        }
+    },
+	htmlencode : function(s){  
+		var div = document.createElement('div');  
+		div.appendChild(document.createTextNode(s));  
+		return div.innerHTML;  
+	},  
+	htmldecode :function (s){  
+		var div = document.createElement('div');  
+		div.innerHTML = s;  
+		return div.innerText || div.textContent;  
+	}  
+	
 	
 
 };
