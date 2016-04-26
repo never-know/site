@@ -35,7 +35,7 @@ class cache{
 	}
 	 	
 	
-	private function connect_db(){
+	public function connect_db(){
 	
 		if(empty($this->connections[$this->active_db])){
 			$info	= $this->conf[$this->active_db];

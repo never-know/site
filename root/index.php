@@ -7,7 +7,7 @@
 	define('MIN_ROOT', DOC_ROOT.'/../min');
 	define('LOG_ROOT', DOC_ROOT.'/../log');
 
-	define('MIN_SITE','www.annqi.com');
+	define('MIN_SITE','http://www.annqi.com');
 	define('COOKIE_DOMAIN','.annqi.com');
 
 	require MIN_ROOT.'/inc/app.inc';

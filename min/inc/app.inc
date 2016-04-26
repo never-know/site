@@ -3,24 +3,15 @@
 程序运行必须配置：
 php.ini:   	session.gc_maxlifetime;
 			session.use_cookies
-
-
-
-
-
 */
 
 /* 
-预定义通用状态代码 ：-9999 到99
-
-状态类 ：	成功   			1
-			基本失败 		0 
+预定义通用状态代码 ：-1 到99
 			
-			系统错误 		-1 
-			图片 显示验证码或验证码错误  	2
-
-
-
+			系统错误 									-1 
+			基本错误，如登录页面的用户名密码错误 		0 
+			成功   										1
+			图片 显示验证码或验证码错误  				2
 
 自定义错误代码 100+
 
@@ -43,7 +34,7 @@ class app{
 		self::$container = new di();
 	}
 	protected static function dispatch(){
-		 
+		// path info 在服务器完成配置
 		if(empty($_SERVER['PATH_INFO'])|| !preg_match('/^(?:[a-zA-Z0-9]+\/)+[a-zA-Z0-9]+$/', $_SERVER['PATH_INFO'])) {	
 			request_not_found();
 		}else{	
@@ -68,8 +59,8 @@ class app{
 	 
 	}
 	public static function autoload($class){
-		// new \min\service\login();
-		// new \min\module\passport\login();
+		// new \min\service\login;
+		// new \min\module\passport\login;
 		$list	= explode('\\',$class);
 		if('min' != $list[0]) return;
 		$type	= $list[1];
@@ -89,7 +80,7 @@ class app{
 		if ( $error['type'] == E_ERROR ){
 			$error['title'] = 'fatal error';
 			$message = error_message($error);
-			$log->log( 'fatal.error',  $message, debug_backtrace());
+			$log->log('fatal.error', $message, debug_backtrace());
 		}
 		$log->record();
 	}
@@ -107,9 +98,14 @@ class app{
 				
 		$type = isset( $level[$errno] ) ? $level[$errno] : 'error'; 
 
-		$message = error_message(['title'=>'unexpected error','message'=>$errstr,'file'=>$errfile,'line'=>$errline,'type'=>$errno]);
+		$message = error_message([	'title'		=> 'unexpected error', 
+									'message'	=> $errstr, 
+									'file'		=> $errfile, 
+									'line'		=> $errline, 
+									'type'		=> $errno
+								]);
 		
-		self::$container->log()->log('sys.'.$type , $message ,debug_backtrace());
+		self::$container->log()->log('sys.'.$type, $message, debug_backtrace());
 		
 		if($type == 'error') {
 			self::response(-1);
@@ -121,9 +117,14 @@ class app{
 
 	public static function appexception($e){
 		
-		$message = error_message(['title'=>'unexpected expection','message'=>$e->getMessage(),'file'=>$e->getFile(),'line'=>$e->getLine(),'type'=>$e->getCode()]);
+		$message = error_message([	'title'		=> 'unexpected expection', 
+									'message'	=> $e->getMessage(), 
+									'file'		=> $e->getFile(), 
+									'line'		=> $e->getLine(),
+									'type'		=> $e->getCode()
+								]);
 		
-		self::$container->log()->log('sys.expection',$message,debug_backtrace());
+		self::$container->log()->log('sys.expection', $message, debug_backtrace());
 		
 		self::response(-1);
 		exit;
@@ -131,7 +132,7 @@ class app{
 	}
 	
 	
-	public static function usrerror( $code= 0 ,   $msg='',  $extra=[] ){
+	public static function usrerror($code=0, $msg='', $extra=[]){
 
 		self::$container->log()->log('usr.error', $msg, $extra );
 		
@@ -218,36 +219,48 @@ class app{
 		}
 	
 	}
-	
-	public static function response( $code=0,  $msg ='',  $flag ='0' ){
+	/* 
+		@parameter
+			$code return code int;
+			$msg  return msg string
+			$flag if 1 return direct
+				else if not ajax and not jsonp  
+				redirect to refer
+		@result
+
+
+
+	*/
+	public static function response($code=0, $msg='', $flag=0){
 	
 		$result = ['status'=>$code];
 		
-		if($msg !='') $result['message'] = $msg;
+		if($msg != '') $result['message'] = $msg;
 		
-		if($flag === '1') return $result;
+		if( 1 === $flag ) return $result;
 
-		if ( defined('IS_AJAX') && IS_AJAX ){	
-			ajax_return($result); 		
-		}elseif( defined('IS_JSONP') && IS_JSONP ){	
-			jsonp_return($result);			
-		}elseif($result['status'] < 1){ 
-			header('Location: http://www.annqi.com/error.html');
+		defined('IS_AJAX') && IS_AJAX  && ajax_return($result); 		
+		defined('IS_JSONP') && IS_JSONP && jsonp_return($result);
+		
+		// 系统错误 跳转ERROR PAGE
+		if( -1 == $code ){ 
+			header('Location: '.ERROR_PAGE);
 		}else{
-			if (stripos($flag, SCHEME_TYPE) !== 0 ){
-				
-				if( isset($_SERVER['HTTP_REFERER']) && preg_match('@^http[s]?://[a-z][a-z0-9]*\.'.substr(MIN_SITE,3).'(?:/[a-zA-Z0-9]+)+\.html@', $_SERVER['HTTP_REFERER'])){
+			if (stripos($flag, 'http') !== 0 ){
+			
+				if( isset($_SERVER['HTTP_REFERER']) && preg_match('@^http[s]?://[a-z][a-z0-9\.]*\.'.explode('.',MIN_SITE,2)[1] .'(?:/[a-zA-Z0-9]+)+\.html@', $_SERVER['HTTP_REFERER'])){
 					$flag = strip_tags($_SERVER['HTTP_REFERER']);
 				}else{
-					$flag = 'http://'.MIN_SITE;
+					$flag = MIN_SITE;
 				}
 			}
 			header('Location: '.$flag);
 		}
+		
 		exit;
 	}
 	
-	public static function session_init( $force = FALSE ){
+	public static function session_init($force = FALSE){
 		// 与 未登陆不使用session
 		$session_name = 'appid';
 		if( empty($_COOKIE[$session_name]) && $force == false ) return;

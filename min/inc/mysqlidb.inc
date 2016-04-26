@@ -111,7 +111,7 @@ class mysqlidb{
 		
 		while(true){
 		
-			$stmt 	= mysqli_prepare($this->connect($db_type),$sql);
+			$stmt = mysqli_prepare($this->connect($db_type),$sql);
 			
 			if(!$stmt){ 
 				if(true === $this->retry($db_type) ) continue;
