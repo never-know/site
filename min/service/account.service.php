@@ -4,7 +4,7 @@ use min\inc\app;
 class account
 {
 	// 是否清理 checkaccount 产生的缓存
-	private $cache_clean = false;
+	private $clean_cache = false;
 	
 	/**
 	* 检测账号是否存在
@@ -30,7 +30,7 @@ class account
 		
 			$key		= $type.md5($name);
 			$result 	= app::cache('checkaccount')->get($key);
-			$this->reg 	= true;
+			$this->clean_cache 	= true;
 			
 			if( empty($result) ){	
 				$sql = "SELECT 1 FROM user  WHERE  $type = ? limit 1";
@@ -51,23 +51,23 @@ class account
 	public function adduserbyphone($phone,$pwd) {
 	
 		$pwd = password_hash($pwd, PASSWORD_BCRYPT,['cost'=>10]);
-		$sql = 'insert into user (`phone`,`pwd`) values(? ,?)';
+		$sql = 'insert into user (phone,pwd) values(? ,?)';
 		return app::mysqli('user#user')->query('insert',$sql,'ss',[$phone,$pwd]);
 	}
 	
 	public function checkpwd($name) {
 	
 		if(validate('phone',$name)){
-			$sql = 'SELECT uid,name, email, phone, pwd FROM user  WHERE phone =?';
+			$sql = 'SELECT uid,name, email, phone, pwd FROM user  WHERE phone = \''.$name.'\'';
          }elseif(validate('email',$name)){
-			$sql = 'SELECT uid,name, email, pwd , phone FROM user  WHERE email =?';
+			$sql = 'SELECT uid,name, email, pwd , phone FROM user  WHERE email = \''.$name.'\'';
 		 }elseif(validate('username',$name)){
-			$sql = 'SELECT uid,name, email, phone, pwd FROM user  WHERE name =?';
+			$sql = 'SELECT uid,name, email, phone, pwd FROM user  WHERE name = \''.$name.'\'';
 		 }else{
 			app::usrerror(0,'用户名或密码错误',['loginname'=>$name]);	
 		 }
 
-		$sql_result	= app::mysqli('user#user')->query('single',$sql,'s',[$name]);
+		$sql_result	= app::mysqli('user#user')->query('single',$sql);
 		
 		return $sql_result;	
 	}
@@ -90,7 +90,7 @@ class account
 			$_SESSION['UID'] = $user['uid'];
 
 			//清理 注册缓存
-			if($this->cache_clean)
+			if($this->clean_cache)
 			app::cache('checkaccount')->delete('{phone:}'.md5($_user['phone']));
 	
 		}

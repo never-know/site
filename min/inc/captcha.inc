@@ -180,9 +180,7 @@ class captcha{
 		if( empty($code)){
 			app::usrerror( 2,'请输入验证码进行验证');
 		}elseif (empty($_SESSION[$key.'_code']) ){
-		
 			app::usrerror( 2,'请使用正常流程验证');
-			
 		}elseif( $_SESSION[$key.'_code'] === strtolower($code) ) {
 			return true;
 		}else{

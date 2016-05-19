@@ -74,14 +74,14 @@ class sms{
 		if( isset($sc['ctime']) && isset($sc['code'])){
 			
 			if( 600 < ($_SERVER['REQUEST_TIME']-$sc['ctime'] )){
-				app::usrerror( 101,'验证码超时，请重新发送' );
+				app::usrerror( 3,'验证码超时，请重新发送' );
 			}elseif($sc['code'] == $code){
 				return true;
 			}else{
-				app::usrerror( 101,'验证码错误，请重试' );
+				app::usrerror( 3,'验证码错误，请重试' );
 			}	
 		}else{
-			app::usrerror( 101,'验证码错误或超时，请重试' );
+			app::usrerror( 3,'验证码错误或超时，请重试' );
 		}
 	
 	}

@@ -95,7 +95,7 @@ class mysqlidb{
 	
 		if(true == $this->intrans){
 			return false;
-		}elseif( 2006 == mysqli_errno($this->connect($db_type)) || false ==mysqli_ping($this->connect($db_type)) ){
+		}elseif( 2006 == mysqli_errno($this->connect($db_type)) || false == mysqli_ping($this->connect($db_type)) ){
 			 unset($this->connections[$db_type.$ths->active_db]);
 			 return true;
 		}else{			 
@@ -103,9 +103,10 @@ class mysqlidb{
 		}
 	
 	}
-	public function query($type,$sql,$marker,$param){
 	
-		if(empty($marker)) return $this->query_none_prepare($type,$sql);
+	public function query($sql,$type,$marker='',$param){
+	
+		if(empty($marker)) return $this->query_none_prepare($sql,$type);
 	
 		$db_type = empty($this->intrans) ? (( $this->DB_RW_SEPARATE == true && ( $type=='single'|| $type=='couple'))?  'slave': 'master') : $this->intrans; 
 		
@@ -161,7 +162,7 @@ class mysqlidb{
 		}
 	} 
 	
-	public function query_none_prepare($type,$sql){
+	public function query_none_prepare($sql,$type){
 		
 		$db_type = empty($this->intrans) ? (( $this->DB_RW_SEPARATE == true && ( $type=='single'|| $type=='couple'))?  'slave': 'master') : $this->intrans;
 		
@@ -187,7 +188,7 @@ class mysqlidb{
 				return $result;
 				
 			}else{
-				
+				if(true === $this->retry($db_type) ) continue;
 			}
 		}
 		

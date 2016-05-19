@@ -22,11 +22,8 @@ class login
 		if($action == 'islogged'){
 			$this->islogged();
 		}elseif(isset($_SESSION['logined']) && TRUE === $_SESSION['logined']){
-			redirect('http://www.annqi.com');
+			header('Location: '.MIN_SITE);
 		}elseif( isset($_POST['login']) && $_POST['login'] == 1 ){
-			if(!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],'http://passport.annqi.com')!== 0 ){
-				redirect('http://passport.annqi.com/login.html');
-			}
 			$this->dologin();			
 		}else{	
 			switch ($action){
