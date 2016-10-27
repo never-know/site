@@ -136,12 +136,12 @@
 		<ul class="shortcut-menu">
 				<li>
 					<i class="iconfont" style="color: #c00000;">&#xe63f;</i>
-					<span id="shortcut-regfree"><a href="http://passport.annqi.com/regist.html" target="_blank">免费注册</a></span><span id="shortcut-login"><a href="http://passport.annqi.com/login.html" target="_blank">请登录</a></span>
+					<span id="shortcut-regfree"><a href="http://passport.qi.com/regist.html" target="_blank">免费注册</a></span><span id="shortcut-login"><a href="http://passport.qi.com/login.html" target="_blank">请登录</a></span>
 				</li>
 				 
 				<li class="arrow-down" id="arrow-first">
 					<span>
-						<a href="#" >我的安琪<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
+						<a href="#" >我的QI<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
 						<div>
 						<p><a href="#">已买到的宝贝</a></p>
 						<p><a href="#">待收货订单</a></p>
@@ -165,9 +165,9 @@
 			<li class="arrow-left mobile-e"><span><a href="javascript();;" ><i class="iconfont">&#xe609;</i>手机版</a></span>
 			<div>
 				<h3>ios版本</h3>
-				<img src="http://cdn.annqi.com/public/images/yhd/khd.jpg" />
+				<img src="http://cdn.qi.com/public/images/yhd/khd.jpg" />
 				<h3>Android版本</h3>
-				<img src="http://cdn.annqi.com/public/images/yhd/wx.jpg" />
+				<img src="http://cdn.qi.com/public/images/yhd/wx.jpg" />
 			
 			</div>
 			</li>
@@ -186,7 +186,7 @@
 </div>
 <div class="header">
 	<div  class="logo" >
-		<a href="http://www.annqi.com"><img src="http://cdn.annqi.com/public/images/logo-7.png" border="0" />  </a>
+		<a href="http://www.qi.com"><img src="http://cdn.qi.com/public/images/logo-7.png" border="0" />  </a>
 	</div>
 	<div class="region full-round"  ><span>世纪联华-金海城店</span><i class="icon iconfont hide">&#xe637;</i></div>
 	 

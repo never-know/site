@@ -247,7 +247,7 @@ function phone_check(phone){
 
 	if(phone == current_phone) return;
 		current_phone = phone;
-	JSONP.get( 'http://passport.annqi.com/account/phone.html', {phone:phone}, function(data){
+	JSONP.get( 'http://passport.qi.com/account/phone.html', {phone:phone}, function(data){
 				
 				if(_$('regphone').value != phone) return;
 				
@@ -359,7 +359,7 @@ function code_check(){
 	if(code == current_code) return;
 	current_code = code;
 		setError(_$('regcode-error'),'','hide');
-	JSONP.get( 'http://util.annqi.com/captcha/check.html', {code:code,type:'reg'}, function(data){
+	JSONP.get( 'http://util.qi.com/captcha/check.html', {code:code,type:'reg'}, function(data){
 		 
 			if(_$('regcode').value != code) return;
 			 if( data.status ==1 ) { 
@@ -397,7 +397,7 @@ Min.event.bind('regcode','keyup',function(event){
 });
 	
 Min.event.bind('reg-code','click',{handler:function(e){
-	e.currentTarget.getElementsByTagName('IMG')[0].src='http://util.annqi.com/captcha/get.html?type=reg&v='+new Date().getTime();
+	e.currentTarget.getElementsByTagName('IMG')[0].src='http://util.qi.com/captcha/get.html?type=reg&v='+new Date().getTime();
 	e.currentTarget.getElementsByTagName('i')[0].removeAttribute('style');
 	e.currentTarget.getElementsByTagName('i')[0].innerHTML='';
 	_$('regcode').value='';
@@ -444,7 +444,7 @@ Min.event.bind('getcode','click',function(e){
 	this.setAttribute("sindex", 1);
 
 	minAjax({
-		url:'http://passport.annqi.com/regist/sendsms.html', 
+		url:'http://passport.qi.com/regist/sendsms.html', 
 		type:'POST', 
 		data:{
 			phone:phone,
@@ -543,7 +543,7 @@ var phone = _$('regphone').value, code = _$('regcode').value, mcode = _$('regmco
 	this.setAttribute("sindex", 1);
 
 	minAjax({
-		url:'http://passport.annqi.com/regist.html', 
+		url:'http://passport.qi.com/regist.html', 
 		type:'POST', 
 		data:{
 			phone:phone,
@@ -556,7 +556,7 @@ var phone = _$('regphone').value, code = _$('regcode').value, mcode = _$('regmco
 		success: function(data){
 			if(data.status == 1) {
 				 
-				window.location.href = "http://account.annqi.com/regist/success.html";
+				window.location.href = "http://account.qi.com/regist/success.html";
 			}else{
 				_$('regsubmit').setAttribute("sindex", 0);
 				switch(data.status){

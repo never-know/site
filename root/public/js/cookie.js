@@ -5,7 +5,7 @@ function setCookie(name, value, Hours) {
     var nd = utc + (3600000 * offset);
     var exp = new Date(nd);
     exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
-    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=annqi.com;"
+    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=qi.com;"
 }
 function getCookie(name) {
     var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));

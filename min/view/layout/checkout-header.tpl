@@ -144,12 +144,12 @@
 		
 		<ul class="shortcut-menu">
 				<li>
-					<span><i class="iconfont" style="margin-right:16px;color: #c00000;">&#xe63f;</i><a href="http://passport.annqi.com/login.html">请登录</a></span><span><a href="http://passport.annqi.com/regist.html">免费注册</a></span>
+					<span><i class="iconfont" style="margin-right:16px;color: #c00000;">&#xe63f;</i><a href="http://passport.qi.com/login.html">请登录</a></span><span><a href="http://passport.qi.com/regist.html">免费注册</a></span>
 				</li>
 				 
 				<li class="arrow-down" id="arrow-first">
 					<span>
-						<a href="#" >我的安琪<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
+						<a href="#" >我的QI<i class="iconfont">&#xe604;</i><em class="iconfont">&#xe606;</em></a></span>
 						<div>
 						<p><a href="#">Chinese</a></p>
 						<p><a href="#">English</a></p>
@@ -180,7 +180,7 @@
 </div>
 <div class="header">
 	<div class="logo">
-		<a href="http://www.annqi.com"><img src="http://cdn.annqi.com/public/images/logo-7.png" border="0" /></a>
+		<a href="http://www.qi.com"><img src="http://cdn.qi.com/public/images/logo-7.png" border="0" /></a>
 		<span>结算页</span>
 	</div>
 	

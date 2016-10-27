@@ -17,24 +17,24 @@
 			<div  class="slidena_pre" ></div> 
 			<div id="tsImgSCon" class="slidenabox-z">
 				<ul>
-					<li mi="http://cdn.annqi.com/public/images/product/0.jpg"  bi="http://cdn.annqi.com/public/images/product/big-0.jpg" si="http://cdn.annqi.com/public/images/product/small-0.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/1.jpg"  bi="http://cdn.annqi.com/public/images/product/big-1.jpg"  si="http://cdn.annqi.com/public/images/product/small-1.jpg"></li>
-					<li mi="http://cdn.annqi.com/public/images/product/2.jpg"    bi="http://cdn.annqi.com/public/images/product/big-2.jpg"   si="http://cdn.annqi.com/public/images/product/small-2.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/3.jpg" bi="http://cdn.annqi.com/public/images/product/big-3.jpg"    si="http://cdn.annqi.com/public/images/product/small-3.jpg"  ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/4.jpg" bi="http://cdn.annqi.com/public/images/product/big-4.jpg"   si="http://cdn.annqi.com/public/images/product/small-4.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/5.jpg" bi="http://cdn.annqi.com/public/images/product/big-5.jpg"    si="http://cdn.annqi.com/public/images/product/small-5.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/6.jpg" bi="http://cdn.annqi.com/public/images/product/big-6.jpg"   si="http://cdn.annqi.com/public/images/product/small-6.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/7.jpg" bi="http://cdn.annqi.com/public/images/product/big-7.jpg"   si="http://cdn.annqi.com/public/images/product/small-7.jpg"></li>
-					<li mi="http://cdn.annqi.com/public/images/product/8.jpg" bi="http://cdn.annqi.com/public/images/product/big-8.jpg"   si="http://cdn.annqi.com/public/images/product/small-8.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/product/9.jpg" bi="http://cdn.annqi.com/public/images/product/big-9.jpg"   si="http://cdn.annqi.com/public/images/product/small-9.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/09.jpg" bi="http://cdn.annqi.com/public/images/mz/09.jpg"   si="http://cdn.annqi.com/public/images/mz/09.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/08.jpg" bi="http://cdn.annqi.com/public/images/mz/08.jpg"   si="http://cdn.annqi.com/public/images/mz/08.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/07.jpg" bi="http://cdn.annqi.com/public/images/mz/07.jpg"   si="http://cdn.annqi.com/public/images/mz/07.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/06.jpg" bi="http://cdn.annqi.com/public/images/mz/06.jpg"   si="http://cdn.annqi.com/public/images/mz/05.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/05.jpg" bi="http://cdn.annqi.com/public/images/mz/05.jpg"   si="http://cdn.annqi.com/public/images/mz/05.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/04.jpg" bi="http://cdn.annqi.com/public/images/mz/04.jpg"   si="http://cdn.annqi.com/public/images/mz/04.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/03.jpg" bi="http://cdn.annqi.com/public/images/mz/03.jpg"   si="http://cdn.annqi.com/public/images/mz/03.jpg" ></li>
-					<li mi="http://cdn.annqi.com/public/images/mz/02.jpg" bi="http://cdn.annqi.com/public/images/mz/02.jpg"   si="http://cdn.annqi.com/public/images/mz/02.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/0.jpg"  bi="http://cdn.qi.com/public/images/product/big-0.jpg" si="http://cdn.qi.com/public/images/product/small-0.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/1.jpg"  bi="http://cdn.qi.com/public/images/product/big-1.jpg"  si="http://cdn.qi.com/public/images/product/small-1.jpg"></li>
+					<li mi="http://cdn.qi.com/public/images/product/2.jpg"    bi="http://cdn.qi.com/public/images/product/big-2.jpg"   si="http://cdn.qi.com/public/images/product/small-2.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/3.jpg" bi="http://cdn.qi.com/public/images/product/big-3.jpg"    si="http://cdn.qi.com/public/images/product/small-3.jpg"  ></li>
+					<li mi="http://cdn.qi.com/public/images/product/4.jpg" bi="http://cdn.qi.com/public/images/product/big-4.jpg"   si="http://cdn.qi.com/public/images/product/small-4.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/5.jpg" bi="http://cdn.qi.com/public/images/product/big-5.jpg"    si="http://cdn.qi.com/public/images/product/small-5.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/6.jpg" bi="http://cdn.qi.com/public/images/product/big-6.jpg"   si="http://cdn.qi.com/public/images/product/small-6.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/7.jpg" bi="http://cdn.qi.com/public/images/product/big-7.jpg"   si="http://cdn.qi.com/public/images/product/small-7.jpg"></li>
+					<li mi="http://cdn.qi.com/public/images/product/8.jpg" bi="http://cdn.qi.com/public/images/product/big-8.jpg"   si="http://cdn.qi.com/public/images/product/small-8.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/product/9.jpg" bi="http://cdn.qi.com/public/images/product/big-9.jpg"   si="http://cdn.qi.com/public/images/product/small-9.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/09.jpg" bi="http://cdn.qi.com/public/images/mz/09.jpg"   si="http://cdn.qi.com/public/images/mz/09.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/08.jpg" bi="http://cdn.qi.com/public/images/mz/08.jpg"   si="http://cdn.qi.com/public/images/mz/08.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/07.jpg" bi="http://cdn.qi.com/public/images/mz/07.jpg"   si="http://cdn.qi.com/public/images/mz/07.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/06.jpg" bi="http://cdn.qi.com/public/images/mz/06.jpg"   si="http://cdn.qi.com/public/images/mz/05.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/05.jpg" bi="http://cdn.qi.com/public/images/mz/05.jpg"   si="http://cdn.qi.com/public/images/mz/05.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/04.jpg" bi="http://cdn.qi.com/public/images/mz/04.jpg"   si="http://cdn.qi.com/public/images/mz/04.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/03.jpg" bi="http://cdn.qi.com/public/images/mz/03.jpg"   si="http://cdn.qi.com/public/images/mz/03.jpg" ></li>
+					<li mi="http://cdn.qi.com/public/images/mz/02.jpg" bi="http://cdn.qi.com/public/images/mz/02.jpg"   si="http://cdn.qi.com/public/images/mz/02.jpg" ></li>
 				</ul>
 			</div>
 			<div class="slidena_next" ></div>
@@ -113,7 +113,7 @@
 	 
 		<div class="product-button">
 			<span id="buy-now">立即购买</span>
-			<a href="http://cart.annqi.com/add.html"> <span id="add-to-cart">加入购物车</span></a>
+			<a href="http://cart.qi.com/add.html"> <span id="add-to-cart">加入购物车</span></a>
 		</div>
 		<div style="clear:both;"></div>
 		<dl class="product-service-tips">
@@ -128,17 +128,17 @@
 	<div class="product-recommend">
 		<p> ------- &nbsp;为您推荐 &nbsp; -------- </p>
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div> 
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>  
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>   
@@ -169,32 +169,32 @@
 
 			<div class="product-recommend">
 	 			<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
 				<div class="wrapper">                       
-					<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> 
+					<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> 
 					<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 					<span>￥200.00</span>
 				</div> 
@@ -505,5 +505,5 @@
 
  
 </div>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>	
+<script type="text/javascript" src="http://cdn.qi.com/public/js/product.js"></script>	
 		

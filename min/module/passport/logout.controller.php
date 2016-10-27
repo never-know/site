@@ -23,7 +23,7 @@ class logout
 		
 		setcookie('logged',0, 0,'/',COOKIE_DOMAIN);
 		setcookie('nickname','',time()-10,'/',COOKIE_DOMAIN);
-		redirect('http://passport.annqi.com/login.html');
+		redirect('http://passport.qi.com/login.html');
 		exit;
 	}
 }

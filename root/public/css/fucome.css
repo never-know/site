@@ -189,7 +189,7 @@ margin-right:10px;
 .slide-wrapper .slide:hover .slide_next, .slide-wrapper .slide:hover .slide_pre{display:block;}
 
 #region-cover, .slide, .MagicZoomBigImageCont, .slidenabox-z li, .slidemenu ul{
-background-image:url('http://cdn.annqi.com/public/images/loading.gif');
+background-image:url('http://cdn.qi.com/public/images/loading.gif');
 background-color:#fff;
 background-repeat:no-repeat;
 background-position:center;
@@ -217,7 +217,7 @@ font-family: "\5fae\8f6f\96c5\9ed1";
   height: 60px;
 }
 .login-logo .login-logo-image{
-  background:url( http://cdn.annqi.com/public/images/logo-5.png ) no-repeat center top;
+  background:url( http://cdn.qi.com/public/images/logo-5.png ) no-repeat center top;
   height:60px;
   width:280px;
   float:left;
@@ -245,7 +245,7 @@ font-family: "\5fae\8f6f\96c5\9ed1";
 }
 .nav-2 {
     height: 10px;
-    background: url(http://cdn.annqi.com/public/images/reg_hr_e84a6d3b.png) no-repeat center top;
+    background: url(http://cdn.qi.com/public/images/reg_hr_e84a6d3b.png) no-repeat center top;
 }
 .login-wrapper, .reg-wrapper{
 width:100%;
@@ -261,7 +261,7 @@ width:612px;
 height:350px;
 float:left;
 margin-top:20px;
-background:url(http://cdn.annqi.com/public/images/loginPic.jpg) no-repeat;
+background:url(http://cdn.qi.com/public/images/loginPic.jpg) no-repeat;
 }
 
 .login-form{
@@ -453,7 +453,7 @@ margin:0 auto;
     height: 24px;
     width: 24px;
     float: left;
-    background: url(http://cdn.annqi.com/public/images/icon_links.png) no-repeat;
+    background: url(http://cdn.qi.com/public/images/icon_links.png) no-repeat;
     line-height: 24px;
     margin-right: 8px;
 }
@@ -535,7 +535,7 @@ width: 432px;
 height: 500px;
 float: right;
 margin-top: 30px;
-background:url(http://cdn.annqi.com/public/images/signPic.jpg) no-repeat;
+background:url(http://cdn.qi.com/public/images/signPic.jpg) no-repeat;
 }
 .reg-box{
 width:538px;

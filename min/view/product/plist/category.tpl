@@ -11,7 +11,7 @@
 		</div>
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -22,7 +22,7 @@
 		
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt="" /> </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt="" /> </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -33,7 +33,7 @@
 	
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  /> </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  /> </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -181,32 +181,32 @@
 		<em class="ptn-shadow"> - - - - &nbsp; 为您推荐  &nbsp; - - - - </em>
 
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div> 
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>  
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>   
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div> 
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>  
 		<div class="wrapper">                       
-			<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > 
+			<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > 
 			<p>内蒙古科尔沁 休闲零食 风干牛肉干原味400g</p>
 			<span>￥200.00</span>
 		</div>   
@@ -237,8 +237,8 @@
 	
 	<div class="goods" >
 		 
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -251,8 +251,8 @@
 			</dd>
 			</a>
 		</dl>                            
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_3.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_3.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -265,8 +265,8 @@
 			</dd>
 			</a>
 		</dl>  
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -279,8 +279,8 @@
 			</dd>
 			</a>
 		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_3.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_3.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -293,8 +293,8 @@
 			</dd>
 			</a>
 		</dl>  
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -307,8 +307,8 @@
 			</dd>
 			</a>
 		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -321,8 +321,8 @@
 			</dd>
 			</a>
 		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_2.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_2.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -335,8 +335,8 @@
 			</dd>
 			</a>
 		</dl>   
-		<dl><a href="http://details.annqi.com/item/123456123456.html" target="_blank">
-			<dt><img src="http://cdn.annqi.com/public/images/good_1.jpg"  /></dt>
+		<dl><a href="http://details.qi.com/item/123456123456.html" target="_blank">
+			<dt><img src="http://cdn.qi.com/public/images/good_1.jpg"  /></dt>
 			<dd>
 				<div class="pl-title">
 					<p>美国西北车厘子樱桃1kg（果径约26mm)进口新鲜水果</p>
@@ -352,4 +352,4 @@
 				 
 	</div>
 </div>	
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/product.js"></script>	 
+<script type="text/javascript" src="http://cdn.qi.com/public/js/product.js"></script>	 

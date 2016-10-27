@@ -5,7 +5,7 @@ class regist{
 	public function __construct($action){
 		
 		if( isset($_SESSION['logined']) && TRUE === $_SESSION['logined'] ){
-			redirect('http://www.annqi.com');
+			redirect('http://www.qi.com');
 		}elseif ($action == 'sendsms'){		
 			$this->send();		
 		}elseif( isset($_POST['reg'] )){		

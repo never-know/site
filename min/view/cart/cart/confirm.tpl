@@ -83,8 +83,8 @@
 					<ul>
 						<li class="sa"></li>
 						<li class="im">
-							<a href="http://details.annqi.com/item/123456123456.html">
-							<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+							<a href="http://details.qi.com/item/123456123456.html">
+							<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 							</a>
 						</li>
 						 
@@ -109,8 +109,8 @@
 					<ul>
 						<li class="sa"></li>
 						<li class="im">
-							<a href="http://details.annqi.com/item/123456123456.html">
-							<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+							<a href="http://details.qi.com/item/123456123456.html">
+							<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 							</a>
 						</li>
 						 
@@ -135,8 +135,8 @@
 					<ul>
 						<li class="sa"></li>
 						<li class="im">
-							<a href="http://details.annqi.com/item/123456123456.html">
-							<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+							<a href="http://details.qi.com/item/123456123456.html">
+							<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 							</a>
 						</li>
 						 

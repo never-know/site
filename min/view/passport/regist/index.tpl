@@ -1,9 +1,9 @@
 	
 	<div class="login-header">
 		<div class="login-logo">
-			<a href="http://www.annqi.com/" target="_blank" class="login-logo-image"></a>
+			<a href="http://www.qi.com/" target="_blank" class="login-logo-image"></a>
 			<em>欢迎注册</em>
-			<span class="regist-link">已有安琪账号？<a href="http://passport.annqi.com/login.html?ReturnUrl=http%3A%2F%2Fwww.annqi.com" target="_blank" clstag="pageclick|keycount|20150112ABD|1">立即登陆</a></span>		 
+			<span class="regist-link">已有QI账号？<a href="http://passport.qi.com/login.html?ReturnUrl=http%3A%2F%2Fwww.qi.com" target="_blank" clstag="pageclick|keycount|20150112ABD|1">立即登陆</a></span>		 
 		</div>
 	</div>
 	<div class="nav-2"> </div> 	
@@ -27,7 +27,7 @@
 						<div class="reg-code" id="reg-code">
 							<label for="regcode"><b class="red">*</b>验证码：</label>
 							 
-							<input id="regcode" type="text" class="regcode" name="regcode" tabindex="1" autocomplete="off"  maxlength="4" /> <i class="icon-reg iconfont">&nbsp;</i><div class="code-change"><img  class="reg-captcha" src="http://util.annqi.com/captcha/get.html?type=reg" /><em>换一张</em>
+							<input id="regcode" type="text" class="regcode" name="regcode" tabindex="1" autocomplete="off"  maxlength="4" /> <i class="icon-reg iconfont">&nbsp;</i><div class="code-change"><img  class="reg-captcha" src="http://util.qi.com/captcha/get.html?type=reg" /><em>换一张</em>
 							 </div>
 							 <span id="regcode-error"></span>
 						</div>
@@ -53,7 +53,7 @@
 						
 						
 						
-						<div class="service-agreement">请阅读<a href="" >《安琪用户注册协议》</a></div>
+						<div class="service-agreement">请阅读<a href="" >《QI用户注册协议》</a></div>
 						<div id="reg-error" class="reg-error">注册失败,请重试</div>
 						<div class="reg-btn">
 							<a href="javascript:void(0)" class="btn-img btn-entry" id="regsubmit" tabindex="6"  sindex=0>同意协议并注册</a>
@@ -64,9 +64,9 @@
 				 
 				</div>
 			</div>
-			<div class="reg-image"><img src="http://cdn.annqi.com/public/images/signPic.jpg" >
+			<div class="reg-image"><img src="http://cdn.qi.com/public/images/signPic.jpg" >
 			</div>
 		</div>	 
 	</div>
-<script type="text/javascript" src="http://cdn.annqi.com/public/js/reg.js"></script>	
+<script type="text/javascript" src="http://cdn.qi.com/public/js/reg.js"></script>	
   

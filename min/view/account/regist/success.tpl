@@ -5,8 +5,8 @@
 		
 			<h3> <i class="iconfont">&#xe634;</i>恭喜你，注册成功！</h3>
 			 
-			<a class="to-cart"  href="http://account.annqi.com/details.html" >完善个人资料</a>
-			<em class="ml10">您还可以 <a href="http://www.annqi.com">继续浏览网站</a></em>
+			<a class="to-cart"  href="http://account.qi.com/details.html" >完善个人资料</a>
+			<em class="ml10">您还可以 <a href="http://www.qi.com">继续浏览网站</a></em>
 				 
 		</div>
 		
@@ -17,7 +17,7 @@
 			</div>
 			
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -28,7 +28,7 @@
 		
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -39,7 +39,7 @@
 	
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -48,7 +48,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -57,7 +57,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -66,7 +66,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -84,7 +84,7 @@
 			</div>
 			
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -95,7 +95,7 @@
 		
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -106,7 +106,7 @@
 	
 		
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -115,7 +115,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -124,7 +124,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -133,7 +133,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a>
+				<dt><a href="http://details.qi.com/item/123456123456.html"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a>
 				</dt>
 				<dd>
 				<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -154,7 +154,7 @@
 			<p  class="title">我的浏览记录<span style="position:relative;left:122px;font-weight:100;">更多...</span></p>
 			
 			<dl>
-				<dt><a href="http://details.annqi.com/item/123456123456.html" class="sn"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a></dt>
+				<dt><a href="http://details.qi.com/item/123456123456.html" class="sn"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a></dt>
 				<dd>
 					<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
 					<span>￥200.00</span>
@@ -163,7 +163,7 @@
 			</dl>
 			 
 			<dl>
-				<dt> <a href="http://details.annqi.com/item/123456123456.html" class="sn"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a></dt>
+				<dt> <a href="http://details.qi.com/item/123456123456.html" class="sn"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a></dt>
 				<dd>
 					
 					<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -172,7 +172,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt> <a href="http://details.annqi.com/item/123456123456.html" class="sn"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a></dt>
+				<dt> <a href="http://details.qi.com/item/123456123456.html" class="sn"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a></dt>
 				<dd>
 					
 					<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -181,7 +181,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt> <a href="http://details.annqi.com/item/123456123456.html" class="sn"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a></dt>
+				<dt> <a href="http://details.qi.com/item/123456123456.html" class="sn"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a></dt>
 				<dd>
 					
 					<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>
@@ -190,7 +190,7 @@
 				</dd>
 			</dl>
 			<dl>
-				<dt> <a href="http://details.annqi.com/item/123456123456.html" class="sn"><img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""  > </a></dt>
+				<dt> <a href="http://details.qi.com/item/123456123456.html" class="sn"><img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""  > </a></dt>
 				<dd>
 					
 					<p><a href="">内蒙古科尔沁 休闲零食 风干牛肉干原味400g</a></p>

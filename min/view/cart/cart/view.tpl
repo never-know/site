@@ -26,8 +26,8 @@
 				<ul>
 					<li class="sa"><input type="checkbox"/></li>
 					<li class="im">
-						<a href="http://details.annqi.com/item/123456123456.html">
-						<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+						<a href="http://details.qi.com/item/123456123456.html">
+						<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 						</a>
 					</li>
 					 
@@ -60,8 +60,8 @@
 				<ul>
 					<li class="sa"><input type="checkbox"/></li>
 					<li class="im">
-						<a href="http://details.annqi.com/item/123456123456.html">
-						<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+						<a href="http://details.qi.com/item/123456123456.html">
+						<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 						</a>
 					</li>
 					 
@@ -92,8 +92,8 @@
 				<ul>
 					<li class="sa"><input type="checkbox"/></li>
 					<li class="im">
-						<a href="http://details.annqi.com/item/123456123456.html">
-						<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+						<a href="http://details.qi.com/item/123456123456.html">
+						<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 						</a>
 					</li>
 					 
@@ -128,8 +128,8 @@
 				<ul>
 					<li class="sa"><input type="checkbox"/></li>
 					<li class="im">
-						<a href="http://details.annqi.com/item/123456123456.html">
-						<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+						<a href="http://details.qi.com/item/123456123456.html">
+						<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 						</a>
 					</li>
 					 
@@ -160,8 +160,8 @@
 <ul>
 					<li class="sa"><input type="checkbox"/></li>
 					<li class="im">
-						<a href="http://details.annqi.com/item/123456123456.html">
-						<img src="http://cdn.annqi.com/public/images/product/2.jpg" alt=""/> 
+						<a href="http://details.qi.com/item/123456123456.html">
+						<img src="http://cdn.qi.com/public/images/product/2.jpg" alt=""/> 
 						</a>
 					</li>
 					 
@@ -206,7 +206,7 @@
 	<div class="cart-br">
 		<span>已选商品<strong>0</strong>件</span>
 		<span>合计（不含运费）<strong>￥100.00</strong></span>
-		<a href="http://cart.annqi.com/confirm.html"><span class="checkout">结算</span>
+		<a href="http://cart.qi.com/confirm.html"><span class="checkout">结算</span>
 	</div>
 	</div>
 	
